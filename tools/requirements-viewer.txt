@@ -1,0 +1,6 @@
+# Separate environment for tools/view_benchmark.py (keeps the analysis .venv unchanged):
+#   python3.12 -m venv .venv-viewer
+#   .venv-viewer/bin/pip install -r tools/requirements-viewer.txt
+#   .venv-viewer/bin/python tools/view_benchmark.py 8765
+neuroglancer==2.40.1
+numpy==2.0.2

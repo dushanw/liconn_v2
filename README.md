@@ -33,3 +33,9 @@ evaluations and GFLOP per correctly segmented voxel. Design: `docs/benchmark_des
 .venv/bin/python examples/run_benchmark.py --only-notebook-seed   # ~2.5 min
 .venv/bin/python examples/run_benchmark.py                        # all seeds; long on CPU
 ```
+
+## 3D viewer
+
+`tools/view_benchmark.py` serves a local Neuroglancer view: the image crop, the FFN
+traces of a full benchmark run and the matching proofread objects, with labelled seed
+points. Setup and usage are in `tools/requirements-viewer.txt`.
