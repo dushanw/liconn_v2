@@ -1,0 +1,2 @@
+# Install with: pip install --no-deps -r requirements-ffn.txt (after requirements.txt).
+ffn @ git+https://github.com/google/ffn@12d680e21f96e41b6a893859364fa4a3e924e51a

@@ -1,0 +1,28 @@
+# Environment for reproducing the authors' LICONN FFN inference example on CPU.
+# FFN is pinned to the commit cited in the paper (Tavakoli et al., Nature 2025, Methods);
+# connectomics is pinned to the last main commit before that FFN commit (2024-12-21).
+# ffn itself is installed separately with --no-deps (see requirements-ffn.txt) because its
+# setup.py requires connectomics@main, which conflicts with the pin above.
+# Other versions are pinned to releases contemporary with that commit (Jan 2025).
+connectomics @ git+https://github.com/google-research/connectomics@73b76a7f6cd18969a8f6379207a63d121aa36a9c
+jax==0.4.38
+jaxlib==0.4.38
+flax==0.10.2
+optax==0.2.4
+orbax-checkpoint==0.10.3
+clu==0.0.12
+tensorflow==2.18.0
+tensorstore==0.1.71
+numpy==2.0.2
+scipy==1.14.1
+scikit-image==0.25.0
+ml_collections==1.0.0
+protobuf==5.29.2
+# Remaining ffn install_requires (setup.py at the pinned commit).
+edt==3.0.0
+pandas==2.2.3
+dataclasses-json==0.6.7
+h5py==3.12.1
+Pillow==11.1.0
+absl-py==2.1.0
+tf-slim==1.1.0

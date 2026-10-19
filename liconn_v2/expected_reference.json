@@ -1,0 +1,14 @@
+{
+  "seed_sha256": "cfd7f4d7c0024214642d4ea359d6a3298dfec6439d46268a9f29ef834c91bfa2",
+  "seed_canonical_sha256": "cfd7f4d7c0024214642d4ea359d6a3298dfec6439d46268a9f29ef834c91bfa2",
+  "predicted_voxels": 1323410,
+  "predicted_mask_sha256": "2d22fc6c30368f4fba0cf76c25f18194d39f1ba85b3a66abd0446d7a90303e9c",
+  "iterations": 359,
+  "history_sha256": "1c93008f2ea070193ffaaea430991e3682aacc5807cfbcfa30df81c004992482",
+  "history_first": [225, 171, 123],
+  "notebook_mask_sha256": "949aefe0145382a06733bd602fb5f089b88aa84e7f98842e4cb8287c03368cb2",
+  "notebook_mask_voxels": 94905,
+  "notebook_mask_contains_seed": true,
+  "seed_component_sha256": "54f0c73c7925bbb8dab4ebb9ff411a46c2571e59b069a9a370aaadbc73cfefcc",
+  "seed_component_voxels": 94534
+}
