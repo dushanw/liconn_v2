@@ -1,0 +1,23 @@
+# Environments
+.venv/
+venv/
+
+# Python caches and build output
+__pycache__/
+*.egg-info/
+.pytest_cache/
+.mypy_cache/
+.ruff_cache/
+
+# Data, models and generated outputs
+data/
+datasets/
+outputs/
+runs/
+
+# Credentials and local settings
+.env
+.env.*
+
+# macOS
+.DS_Store
