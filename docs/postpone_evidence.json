@@ -1,0 +1,606 @@
+{
+ "about": "Evidence for docs/postpone_results.md, checked by tests/test_postpone_evidence.py.",
+ "slurm_jobs": {
+  "default": 7359122,
+  "skip_enclosed": 7359123,
+  "postpone": 7359124,
+  "postpone_drop_enclosed": 7359125
+ },
+ "wahab_clone_commit_label": "ac5ad6a-dirty",
+ "source_note": "The Wahab clone was last updated at commit ac5ad6a; the files were synced directly (rsync), so git describe prints ac5ad6a-dirty. The code that ran is identified by run_source_sha256 (from the synced manifest, identical for all four runs).",
+ "reference_run": "gpu-baseline-a-20261019/merged",
+ "run_source_sha256": {
+  "liconn_v2/policies.py": "a0b567e1b1a677e789dbd5f8f647297f8e0afd2d8967424d01a1d4663366e38e",
+  "examples/run_policy_benchmark.py": "2fad76f43d2b05921fa7fe45e20fdb4c0849c6b33307a49e726986ad25086579",
+  "cluster/wahab/policy_array.sbatch": "1aec1a50a20415f4d19efeb88ac26001e715bd053b81035ace638fa986c273c0",
+  "liconn_v2/reference.py": "2de09cfa1545c20fcc60c6ab2428e803c48bdad27c2e33145101d4ac118ceb73",
+  "liconn_v2/benchmark.py": "309ea0a4d5d31ead276fbd1a87e7bf7575cda1e1ad1ffb98c1248dcbdbfbc23e",
+  "liconn_v2/data.py": "033ea6c8dcdf782acfdad5ac6c43d3fc5e8b43359bbeecf1aec6033c3a9b99e8",
+  "liconn_v2/compare.py": "ac0c0552f041d8dc2891fdaf42a1bfe77cd8238a7879d0f62e543ad28c4bf845",
+  "examples/merge_benchmark.py": "3179de529b9bde5022fc9def030049ce737a0adcf58a070a030332efa5149440",
+  "liconn_v2/proofread_classes.json": "7e5d3c5e310bd0fdaf042075c7b3fe3d75393e3fc749fa046dc0ae241fe4313b",
+  "requirements.txt": "cc471b0d037e310573c597e665b4bb9ae7152fa572d36d7e53aefc52553d6190",
+  "requirements-cuda.txt": "f36c5ae9388fec87525869d0f868b832517a533dc05a9ae6516803dfb145ca87",
+  "requirements-ffn.txt": "022d1938cf35b564012e1322bfada1057ba7c3ed8631ab7a2dd09523e63e894a"
+ },
+ "outputs_sha256": {
+  "policy-default-20261019/merged/benchmark.json": "e3ff6db8339695e4e802987e5a840b17e88dbad094ee1de5bde9eb979f4c7626",
+  "policy-default-20261019/merged/benchmark_masks.npz": "2474393f02bfea381d1563138d5e97d7541c824323e3c4a0da060ff1596ac349",
+  "policy-default-20261019/compare_to_reference.json": "8648237b99e13b5aed728913742d453e69faf3cc6d1978f60615e38b1a532518",
+  "policy-default-20261019/source_sha256.txt": "ce30cf1a424d053254d550c8a32c4faf2ef3a6d00c3225d490679c65bbc20aa9",
+  "policy-default-20261019/parts/axon_10801/benchmark.json": "13641fb4325af390e425fd093c2e0007480fa5e17f02569b216401f0fc201510",
+  "policy-default-20261019/parts/axon_10801/benchmark_masks.npz": "62a4ffe20b6ed213ca3029b7c5cc14f642d8ada57e2ba11a46c41212c688ae82",
+  "policy-default-20261019/parts/axon_13395/benchmark.json": "6052414f5aae1ef5c8a06afca9f8d0a3481cab888d1e6733c665c6107f50cb41",
+  "policy-default-20261019/parts/axon_13395/benchmark_masks.npz": "c1cca7a1a465c2ef454435028a7ca670a2b32c74e6f339d38e23fcd86a85f568",
+  "policy-default-20261019/parts/axon_218/benchmark.json": "ee792df540b8350f1f0399de8de9917d3b9911ed79c369a1bd5bbf6a60e467d4",
+  "policy-default-20261019/parts/axon_218/benchmark_masks.npz": "dbf2bb2bef70347a5ab16b39fb39377e20a14ff893d4331fde52466fa819ea88",
+  "policy-default-20261019/parts/axon_3574/benchmark.json": "5af1fc5fdd1c4edab4010861d19bcc5a21133752fa57eec3f4e31a2b77a68620",
+  "policy-default-20261019/parts/axon_3574/benchmark_masks.npz": "9dead421a3052f6a34898e7f3a97828975438ba486a82532afe8906353e8a657",
+  "policy-default-20261019/parts/axon_5506/benchmark.json": "eabf79b0b19be78c757f40a99d7059dcbd8e42ca7faa00ec7ca9df1907c914f2",
+  "policy-default-20261019/parts/axon_5506/benchmark_masks.npz": "60c11e2843a4e11a747a8c5bf8ba6058de4593737a110bc51d501f3cefc1ca09",
+  "policy-default-20261019/parts/axon_57259/benchmark.json": "c91f6e72ca9ccd33ca8dc748a8f49d2f3aa9016a74de205b17a76f31f85c2e43",
+  "policy-default-20261019/parts/axon_57259/benchmark_masks.npz": "06d686f120ac1a20496e2eb7e0948c717ce921a148e3d4699eee249ea3babe5c",
+  "policy-default-20261019/parts/dendrite_1525/benchmark.json": "9663f7cd4cce6f66b7b198bf0de4c8b2f5fd8d0d6eb33efb5c3f62820d567421",
+  "policy-default-20261019/parts/dendrite_1525/benchmark_masks.npz": "2974d436679287fdbd98d74bd2585396c38471e42409d005154e5f6b085e6731",
+  "policy-default-20261019/parts/dendrite_56789/benchmark.json": "d8be5c11eea24e53a2ae7b8f3cfc015c9997ba5efdfea7b1d9d8ddd0fc22bd49",
+  "policy-default-20261019/parts/dendrite_56789/benchmark_masks.npz": "740700a048155b89a65e7a678d2249a2e2284d762f8b96d90cf085fb1f13a687",
+  "policy-default-20261019/parts/dendrite_61046/benchmark.json": "d24b9292046db766136b045c5b9305ae7eaf0f648c9fe0cfffa689ff557210c2",
+  "policy-default-20261019/parts/dendrite_61046/benchmark_masks.npz": "c852ef40a550ade48912d6654d84112bc5a837f6bb87bff2d16d441aec6b73b0",
+  "policy-default-20261019/parts/dendrite_93375/benchmark.json": "5643a832833a2fb11322fbdfd771df2282947a25e758e27e568b0b513a309703",
+  "policy-default-20261019/parts/dendrite_93375/benchmark_masks.npz": "2e559550044849813d0fd89be1905feeb17cf8f08747039554a5eb4bc8db4b3d",
+  "policy-default-20261019/parts/dendrite_99141/benchmark.json": "fb989fb9e2ecbd6e76adf6eb21aa1248e27b6d8f0d01b0ebf9e2971ad5a87b97",
+  "policy-default-20261019/parts/dendrite_99141/benchmark_masks.npz": "e1c1e74907685edb9a703dbac803e27a5c8ecfcdfe1bbb6fc0b4000d066086a5",
+  "policy-default-20261019/parts/notebook/benchmark.json": "de6632c75f26bcd8ff0edfe585efe5f28b9c2347f0cce8b40db254e313b96bbf",
+  "policy-default-20261019/parts/notebook/benchmark_masks.npz": "98a4a3fcace7ad81b1ea81596418b077ff5dd91dfcf8b0480995491f1faa2d1a",
+  "policy-skip_enclosed-20261019/merged/benchmark.json": "a75c34ad5f2fd6b043de785673a9622f5544f6ca227612dad30ab602ae8d3566",
+  "policy-skip_enclosed-20261019/merged/benchmark_masks.npz": "411dd80150ff50d2e368cb5a200a4e6a440f213da6f6fd9a13500bf30e4d72d7",
+  "policy-skip_enclosed-20261019/compare_to_reference.json": "26e250fc899ab13b376fd197fa7a807925662ed70f143d058a87d9eb9c07db35",
+  "policy-skip_enclosed-20261019/source_sha256.txt": "ce30cf1a424d053254d550c8a32c4faf2ef3a6d00c3225d490679c65bbc20aa9",
+  "policy-skip_enclosed-20261019/parts/axon_10801/benchmark.json": "de835449d16dbef733f3b2914a20154fb37f814082beba52376b02c0feb89f87",
+  "policy-skip_enclosed-20261019/parts/axon_10801/benchmark_masks.npz": "ca3931c45622b280dfacf531aea87e1e0b338eefcd9a7ad77450393ec4bdde8b",
+  "policy-skip_enclosed-20261019/parts/axon_13395/benchmark.json": "d72cfd9b55660d33abd067efff47499bae2e12e088c0072a6a7ac8da49238cc2",
+  "policy-skip_enclosed-20261019/parts/axon_13395/benchmark_masks.npz": "49baa5a2d7031a05078f32a6dc162a7fab84df692afda8c3e3095bba874b3e03",
+  "policy-skip_enclosed-20261019/parts/axon_218/benchmark.json": "6c4849928dc096a5b110a8e3279f18cc8687b1236602d195bfd7b933e6b02971",
+  "policy-skip_enclosed-20261019/parts/axon_218/benchmark_masks.npz": "dbf2bb2bef70347a5ab16b39fb39377e20a14ff893d4331fde52466fa819ea88",
+  "policy-skip_enclosed-20261019/parts/axon_3574/benchmark.json": "3af4ef0fb5227c9569a02655b428e320cb9d2276b35fd333ad7c2dcbbc11b93f",
+  "policy-skip_enclosed-20261019/parts/axon_3574/benchmark_masks.npz": "9c5bfda991975a3b11a5cdf40e316abd7389266d7cbfaafee852cb8ed733a29c",
+  "policy-skip_enclosed-20261019/parts/axon_5506/benchmark.json": "e3a5ebfd3b382194a1ce43c2d8a9038dd65b4ddafc654c4ebd9a13c73d545dee",
+  "policy-skip_enclosed-20261019/parts/axon_5506/benchmark_masks.npz": "3b1f2c6d5c216ffb660642ef682249514898f460a3532fc5206ce1dfedbea0ab",
+  "policy-skip_enclosed-20261019/parts/axon_57259/benchmark.json": "0f8ae71f7e56bb22e9c7c91916c1375424943c93c0cebe07eb19e88b3d89bd16",
+  "policy-skip_enclosed-20261019/parts/axon_57259/benchmark_masks.npz": "2e7b3a11f5a396482eea7b4fdfb7f7f96b0f53a1ffe1ae9672c170e91f13a6af",
+  "policy-skip_enclosed-20261019/parts/dendrite_1525/benchmark.json": "bb5fa5490c2ee93041379aabc201f66f28f5e5c6765f8aeaa7cbb6d6e922afc5",
+  "policy-skip_enclosed-20261019/parts/dendrite_1525/benchmark_masks.npz": "5414984084d6f144eb3421464421d35c208b8af7304dc1d0f274161df729e756",
+  "policy-skip_enclosed-20261019/parts/dendrite_56789/benchmark.json": "a54db02baad0d1fde8d08923fb195d23f50b81e13cf9e28ea60c08d8a8a01f1a",
+  "policy-skip_enclosed-20261019/parts/dendrite_56789/benchmark_masks.npz": "8f671db19d6cd6388ea72e9cc8b73ec39c35bd226aac9321a634c25ad8074f4e",
+  "policy-skip_enclosed-20261019/parts/dendrite_61046/benchmark.json": "1d057c99a2936827ed31c8bdb22b8798c9972c3d8e7826bba1440786dc2ec23c",
+  "policy-skip_enclosed-20261019/parts/dendrite_61046/benchmark_masks.npz": "97a25223d1bb42d3c0f417dbf1e393f07ea58eb44f2dea6483a919af9369586f",
+  "policy-skip_enclosed-20261019/parts/dendrite_93375/benchmark.json": "99b0aa686d5a73de8d02bfd5fc477cc5c014b55167cac26be16593c953bd973a",
+  "policy-skip_enclosed-20261019/parts/dendrite_93375/benchmark_masks.npz": "f91e60f95c81943775ebc9e52525bf0ca7c3af3ad2934f40d211212f95558a0c",
+  "policy-skip_enclosed-20261019/parts/dendrite_99141/benchmark.json": "678d9b01d367d0d4c35fafa2ad1b9e2fab8a71d248332bb6c5b8b0a21fcc7324",
+  "policy-skip_enclosed-20261019/parts/dendrite_99141/benchmark_masks.npz": "77b6a8f4f46315d5b3c81dd6cadf0174c2023e6affc32c19be3f7579c7b19ea2",
+  "policy-skip_enclosed-20261019/parts/notebook/benchmark.json": "63e8bb1f3eb524d7f3df547b1de61f50ed807a85070f0c7551e85ae9acde6ebb",
+  "policy-skip_enclosed-20261019/parts/notebook/benchmark_masks.npz": "f65b1392faea5f2602fd29fbf6f1667656fe9e93ed31855c676b3002821dfa4c",
+  "policy-postpone-20261019/merged/benchmark.json": "b5cf30c3d413d626a7718dff82fa4bc0afdc0b61501ce2109235b99cff4226e9",
+  "policy-postpone-20261019/merged/benchmark_masks.npz": "dba820703e8ad27d2f3b5becb8b83ca7cebbc37442a7f0e8a1fe268d4955246f",
+  "policy-postpone-20261019/compare_to_reference.json": "e392bc629b1c23426006b1ca81329a0a1a00544f291b53ac3c80d83fc0528e83",
+  "policy-postpone-20261019/source_sha256.txt": "ce30cf1a424d053254d550c8a32c4faf2ef3a6d00c3225d490679c65bbc20aa9",
+  "policy-postpone-20261019/parts/axon_10801/benchmark.json": "2a090046badd18d9c95f578bd4a641f2948112f9d8d365c0f240532e91e3ff61",
+  "policy-postpone-20261019/parts/axon_10801/benchmark_masks.npz": "7f9889fd3b22913094595ecfcc530b2000c83b40b57e209583e54e8b9594a981",
+  "policy-postpone-20261019/parts/axon_13395/benchmark.json": "abd2c9ee3c142c8c40bd0aa0e4bf1e1d9178a97c1332f6578386270824dd24d5",
+  "policy-postpone-20261019/parts/axon_13395/benchmark_masks.npz": "9c8970cd879f9a3dc2f7cec728564996ae80c176f76d9a0c8793e44f8770cc4e",
+  "policy-postpone-20261019/parts/axon_218/benchmark.json": "d567be35b5aef524ea4fd5a6298cdb2d9233077a4184f79a2bcef064da2b1fef",
+  "policy-postpone-20261019/parts/axon_218/benchmark_masks.npz": "dbf2bb2bef70347a5ab16b39fb39377e20a14ff893d4331fde52466fa819ea88",
+  "policy-postpone-20261019/parts/axon_3574/benchmark.json": "dfc3af4adbab8ff95412da8eff48914d3bfb8834bf55f0d318c6ee81fef93f2c",
+  "policy-postpone-20261019/parts/axon_3574/benchmark_masks.npz": "e1681ff8796ae574c0af7ab86730d39eef7c035f150693c7cda0ca8801e4267a",
+  "policy-postpone-20261019/parts/axon_5506/benchmark.json": "16be93d84046271378e908c0668c7e92ba8e5d008e756ff9d5a955b0a9f11c85",
+  "policy-postpone-20261019/parts/axon_5506/benchmark_masks.npz": "820c6cd1f413c036c2d012cd86ee544514eb8d5d52190f03c4a01535a5b9e2a9",
+  "policy-postpone-20261019/parts/axon_57259/benchmark.json": "3ceb7e16ff6ef0a53c1beb5531ab8fd28b1baf2547638189010852f13521e32e",
+  "policy-postpone-20261019/parts/axon_57259/benchmark_masks.npz": "502cec27c36f4e14003cceae9c5fbe1d9414b9787c213b3cb5918c598f30c4b9",
+  "policy-postpone-20261019/parts/dendrite_1525/benchmark.json": "45cbfa9d854823f56d6c83e066f096ae2dd60cc1cd4ff526635683b85113d4f6",
+  "policy-postpone-20261019/parts/dendrite_1525/benchmark_masks.npz": "324adda970c9a0a6a4272f9b2d350b3acf6dd933bdbb013561477eabac4a835b",
+  "policy-postpone-20261019/parts/dendrite_56789/benchmark.json": "c3be76a05a735292e0ac0473a8a6aaad113b917b6958b2c8a463e16c27f75e2a",
+  "policy-postpone-20261019/parts/dendrite_56789/benchmark_masks.npz": "9df2bcf7075df9831b89451b99f80621224757b0281bc09a4a8d33e78416eac9",
+  "policy-postpone-20261019/parts/dendrite_61046/benchmark.json": "daccc8f4fb42491ffe9dcc46a4cb11b5b28de9732a13e242108430bae428efab",
+  "policy-postpone-20261019/parts/dendrite_61046/benchmark_masks.npz": "1111014808b60f1b3390edac0c57d84759df8af5204d86f59dc87f78e8bb77aa",
+  "policy-postpone-20261019/parts/dendrite_93375/benchmark.json": "36148419adde2e4ed754501862f395d0f6e684473c1436f7d53a73d27b770369",
+  "policy-postpone-20261019/parts/dendrite_93375/benchmark_masks.npz": "1aa65e733dbdf6cf27d854627a9915cb64323133ca2848809c4f976fb8eac323",
+  "policy-postpone-20261019/parts/dendrite_99141/benchmark.json": "e5904dc29b7d386a120a4af7a7a7cdb972a91160d051a935cc5cbeed2f55a745",
+  "policy-postpone-20261019/parts/dendrite_99141/benchmark_masks.npz": "8179d75b3b4759801313245d04d0388a86270911381a5eb781861a0c1694e62b",
+  "policy-postpone-20261019/parts/notebook/benchmark.json": "8c3013f14871213a2f72a8664be7a250523b63504d2a44f165157d54f57d2b0f",
+  "policy-postpone-20261019/parts/notebook/benchmark_masks.npz": "2f97e6a57d58614361722ed9e685bd97186341d56bb0c255e72ee87f088a41bf",
+  "policy-postpone_drop_enclosed-20261019/merged/benchmark.json": "44b96d074a0133725cd498931daedf8cffd72669959c696a0a15740e2dff327f",
+  "policy-postpone_drop_enclosed-20261019/merged/benchmark_masks.npz": "dc15fcef7989b22e52b7f217deecc3c544f05f5b2560199db2959b76f8608a0c",
+  "policy-postpone_drop_enclosed-20261019/compare_to_reference.json": "612c6fef0ae48d202dc5fb2b8fd33b2f811a960c182fdab5a86f56377e6f8960",
+  "policy-postpone_drop_enclosed-20261019/source_sha256.txt": "ce30cf1a424d053254d550c8a32c4faf2ef3a6d00c3225d490679c65bbc20aa9",
+  "policy-postpone_drop_enclosed-20261019/parts/axon_10801/benchmark.json": "9f3e0caf970c00b1aff543c4993eaa17a58673706c684c6c2bf3d8e9684bf20b",
+  "policy-postpone_drop_enclosed-20261019/parts/axon_10801/benchmark_masks.npz": "fb32a50ed8c7d6d02f3d1db13fdda28e6f079f3dd3dca11df49ed6776abb75a9",
+  "policy-postpone_drop_enclosed-20261019/parts/axon_13395/benchmark.json": "cf450f3785d96c3b98cbf4e5af86351fa299d529b6525110ac0d49dc9d84a1fb",
+  "policy-postpone_drop_enclosed-20261019/parts/axon_13395/benchmark_masks.npz": "da5f72b192ff980aca4145a7b72bd7c57faf809db11d76b90b960bfa4fe3a573",
+  "policy-postpone_drop_enclosed-20261019/parts/axon_218/benchmark.json": "c0bac2a12051f4e68e8829926234868acfc6ba17f3eaa6d9c88b5aa130931ce5",
+  "policy-postpone_drop_enclosed-20261019/parts/axon_218/benchmark_masks.npz": "dbf2bb2bef70347a5ab16b39fb39377e20a14ff893d4331fde52466fa819ea88",
+  "policy-postpone_drop_enclosed-20261019/parts/axon_3574/benchmark.json": "d6be5447d1d6cc29558b2dc4a072a2d4c0a6ed577134398f12aba8fb54c9d3b6",
+  "policy-postpone_drop_enclosed-20261019/parts/axon_3574/benchmark_masks.npz": "6a7b6e34fdfb28f2faacdebf6740d03e8db466fe1ad8b710abe15ba9c6ef9ed3",
+  "policy-postpone_drop_enclosed-20261019/parts/axon_5506/benchmark.json": "1e66c5a0037dc6e1439b3d5c92be05944ab8daf25ab873a9530fdc0401503f78",
+  "policy-postpone_drop_enclosed-20261019/parts/axon_5506/benchmark_masks.npz": "ed2199eeb73b12a2b76b651e52a9c75ae224960bf197414d100416f205da397b",
+  "policy-postpone_drop_enclosed-20261019/parts/axon_57259/benchmark.json": "70f6d466ea2ec98d9ba746468d6f654fc108851521560148a15938c64f4ca0d9",
+  "policy-postpone_drop_enclosed-20261019/parts/axon_57259/benchmark_masks.npz": "26b6a8306db863f68f7e9e0fe2004f8d27aeda8578ac4ace7802d4875d32d27f",
+  "policy-postpone_drop_enclosed-20261019/parts/dendrite_1525/benchmark.json": "0c13efe2bd8cca1aae953726e880c27ca0efb989f8ab72234f421602e6fa70c8",
+  "policy-postpone_drop_enclosed-20261019/parts/dendrite_1525/benchmark_masks.npz": "d96fe1acec6e3ebe35e41bef617e1bfcd49750fa713570d76b3e454a2e9c1c22",
+  "policy-postpone_drop_enclosed-20261019/parts/dendrite_56789/benchmark.json": "0d3fc4018317149c91366bc625df3dfdd40003bc09926dc6b5b9dad8a0a4e241",
+  "policy-postpone_drop_enclosed-20261019/parts/dendrite_56789/benchmark_masks.npz": "2bca2da479c86fac38f973b156c85f6921195eb019a567f4c1eebf77f9d559e4",
+  "policy-postpone_drop_enclosed-20261019/parts/dendrite_61046/benchmark.json": "22fe065d0d3b65d07ccde3a71350c0eaaa5ed8c180c8372ff4d3ec38806c6c97",
+  "policy-postpone_drop_enclosed-20261019/parts/dendrite_61046/benchmark_masks.npz": "4f33e21d77d0655e04d0e38be4ce4b6967d62640dc05b87d2f28b2c3b532fd70",
+  "policy-postpone_drop_enclosed-20261019/parts/dendrite_93375/benchmark.json": "a5dedb91ce578f029377d1566aaaf70ce1ad750036f065d76e31db997c2df3a6",
+  "policy-postpone_drop_enclosed-20261019/parts/dendrite_93375/benchmark_masks.npz": "c27c9a33d8ce36076134cab0991f4fb29175b789c8b08fcad92dd0f145aaf581",
+  "policy-postpone_drop_enclosed-20261019/parts/dendrite_99141/benchmark.json": "5461656418b91a251cfad82ba526f9b2e9a7e4060b930be37aada15ce67660e0",
+  "policy-postpone_drop_enclosed-20261019/parts/dendrite_99141/benchmark_masks.npz": "cbada085e05b3dc0f984787fe73380decee41512be32173a33685e6af0084cee",
+  "policy-postpone_drop_enclosed-20261019/parts/notebook/benchmark.json": "08853a0788be4af900a921386b6356bfd16345c1cb3e6db292ebf0d86fb0f00d",
+  "policy-postpone_drop_enclosed-20261019/parts/notebook/benchmark_masks.npz": "5d6a3dc6d70d45778ef6a3cc1ac95a21fbcb6f790dff9e91664cf4bf3cbe651d"
+ },
+ "documented": {
+  "default": {
+   "passes_tolerance": true,
+   "seeds_outside_seed_rules": [],
+   "per_seed": {
+    "axon_3574": {
+     "iou_4dp": 1.0,
+     "steps": 312,
+     "delta_recall_4dp": 0.0
+    },
+    "axon_13395": {
+     "iou_4dp": 1.0,
+     "steps": 532,
+     "delta_recall_4dp": 0.0
+    },
+    "axon_10801": {
+     "iou_4dp": 1.0,
+     "steps": 507,
+     "delta_recall_4dp": 0.0
+    },
+    "axon_5506": {
+     "iou_4dp": 1.0,
+     "steps": 318,
+     "delta_recall_4dp": 0.0
+    },
+    "axon_218": {
+     "iou_4dp": 1.0,
+     "steps": 8,
+     "delta_recall_4dp": 0.0
+    },
+    "axon_57259": {
+     "iou_4dp": 1.0,
+     "steps": 159,
+     "delta_recall_4dp": 0.0
+    },
+    "dendrite_1525": {
+     "iou_4dp": 1.0,
+     "steps": 2558,
+     "delta_recall_4dp": 0.0
+    },
+    "dendrite_99141": {
+     "iou_4dp": 1.0,
+     "steps": 959,
+     "delta_recall_4dp": 0.0
+    },
+    "dendrite_56789": {
+     "iou_4dp": 1.0,
+     "steps": 934,
+     "delta_recall_4dp": 0.0
+    },
+    "dendrite_61046": {
+     "iou_4dp": 1.0,
+     "steps": 931,
+     "delta_recall_4dp": 0.0
+    },
+    "dendrite_93375": {
+     "iou_4dp": 1.0,
+     "steps": 830,
+     "delta_recall_4dp": 0.0
+    },
+    "notebook": {
+     "iou_4dp": 1.0,
+     "steps": 359,
+     "delta_recall_4dp": 0.0
+    }
+   },
+   "all": {
+    "base_steps": 8407,
+    "steps": 8407,
+    "evals_per_1000_4dp": 4.3822,
+    "within_tolerance": true,
+    "mean_recall_drop_pts_2dp": 0.0,
+    "mean_precision_drop_pts_2dp": 0.0,
+    "mean_unlabeled_rise_pts_2dp": 0.0,
+    "merged_voxels_growth_pct_1dp": 0.0
+   },
+   "without_sensitive_seeds": {
+    "base_steps": 5841,
+    "steps": 5841,
+    "evals_per_1000_4dp": 3.3184,
+    "within_tolerance": true,
+    "mean_recall_drop_pts_2dp": 0.0,
+    "mean_precision_drop_pts_2dp": 0.0,
+    "mean_unlabeled_rise_pts_2dp": 0.0,
+    "merged_voxels_growth_pct_1dp": 0.0
+   },
+   "flagged_for_review": [],
+   "dendrite_1525": {
+    "merges_ref_cand": [
+     1,
+     1
+    ],
+    "delta_precision_pts_1dp": 0.0,
+    "delta_recall_pts_2dp": 0.0
+   }
+  },
+  "skip_enclosed": {
+   "passes_tolerance": false,
+   "seeds_outside_seed_rules": [
+    "dendrite_61046"
+   ],
+   "per_seed": {
+    "axon_3574": {
+     "iou_4dp": 0.9973,
+     "steps": 304,
+     "delta_recall_4dp": 0.0001
+    },
+    "axon_13395": {
+     "iou_4dp": 0.9867,
+     "steps": 494,
+     "delta_recall_4dp": 0.0004
+    },
+    "axon_10801": {
+     "iou_4dp": 0.9709,
+     "steps": 471,
+     "delta_recall_4dp": -0.0013
+    },
+    "axon_5506": {
+     "iou_4dp": 0.9937,
+     "steps": 313,
+     "delta_recall_4dp": 0.0001
+    },
+    "axon_218": {
+     "iou_4dp": 1.0,
+     "steps": 8,
+     "delta_recall_4dp": 0.0
+    },
+    "axon_57259": {
+     "iou_4dp": 0.9997,
+     "steps": 158,
+     "delta_recall_4dp": 0.0
+    },
+    "dendrite_1525": {
+     "iou_4dp": 0.9609,
+     "steps": 2206,
+     "delta_recall_4dp": 0.0003
+    },
+    "dendrite_99141": {
+     "iou_4dp": 0.9814,
+     "steps": 910,
+     "delta_recall_4dp": 0.0006
+    },
+    "dendrite_56789": {
+     "iou_4dp": 0.9609,
+     "steps": 867,
+     "delta_recall_4dp": -0.0071
+    },
+    "dendrite_61046": {
+     "iou_4dp": 0.963,
+     "steps": 850,
+     "delta_recall_4dp": -0.0121
+    },
+    "dendrite_93375": {
+     "iou_4dp": 0.9572,
+     "steps": 744,
+     "delta_recall_4dp": 0.004
+    },
+    "notebook": {
+     "iou_4dp": 0.9996,
+     "steps": 357,
+     "delta_recall_4dp": 0.0
+    }
+   },
+   "all": {
+    "base_steps": 8407,
+    "steps": 7682,
+    "evals_per_1000_4dp": 4.0145,
+    "within_tolerance": false,
+    "mean_recall_drop_pts_2dp": 0.12,
+    "mean_precision_drop_pts_2dp": 0.07,
+    "mean_unlabeled_rise_pts_2dp": 0.16,
+    "merged_voxels_growth_pct_1dp": 0.8
+   },
+   "without_sensitive_seeds": {
+    "base_steps": 5841,
+    "steps": 5468,
+    "evals_per_1000_4dp": 3.1152,
+    "within_tolerance": false,
+    "mean_recall_drop_pts_2dp": 0.15,
+    "mean_precision_drop_pts_2dp": 0.07,
+    "mean_unlabeled_rise_pts_2dp": 0.14,
+    "merged_voxels_growth_pct_1dp": 2.3
+   },
+   "flagged_for_review": [
+    "axon_3574",
+    "axon_13395",
+    "axon_10801",
+    "axon_5506",
+    "dendrite_1525",
+    "dendrite_99141",
+    "dendrite_56789",
+    "dendrite_61046",
+    "dendrite_93375"
+   ],
+   "dendrite_1525": {
+    "merges_ref_cand": [
+     1,
+     1
+    ],
+    "delta_precision_pts_1dp": -0.1,
+    "delta_recall_pts_2dp": 0.03
+   },
+   "policy_stats_total": {
+    "main_popped": 37651,
+    "main_dropped_done": 28519,
+    "main_dropped_invalid": 854,
+    "main_skipped_enclosed": 596,
+    "postponed": 0,
+    "main_evaluated": 7682,
+    "postponed_popped": 0,
+    "postponed_dropped_done": 0,
+    "postponed_dropped_invalid": 0,
+    "postponed_dropped_enclosed": 0,
+    "postponed_evaluated": 0,
+    "postponed_evaluated_enclosed": 0
+   }
+  },
+  "postpone": {
+   "passes_tolerance": false,
+   "seeds_outside_seed_rules": [
+    "axon_10801",
+    "notebook"
+   ],
+   "per_seed": {
+    "axon_3574": {
+     "iou_4dp": 0.9636,
+     "steps": 308,
+     "delta_recall_4dp": -0.0027
+    },
+    "axon_13395": {
+     "iou_4dp": 0.958,
+     "steps": 537,
+     "delta_recall_4dp": -0.0021
+    },
+    "axon_10801": {
+     "iou_4dp": 0.9414,
+     "steps": 483,
+     "delta_recall_4dp": -0.0151
+    },
+    "axon_5506": {
+     "iou_4dp": 0.9555,
+     "steps": 310,
+     "delta_recall_4dp": 0.0014
+    },
+    "axon_218": {
+     "iou_4dp": 1.0,
+     "steps": 8,
+     "delta_recall_4dp": 0.0
+    },
+    "axon_57259": {
+     "iou_4dp": 0.9729,
+     "steps": 165,
+     "delta_recall_4dp": 0.0038
+    },
+    "dendrite_1525": {
+     "iou_4dp": 0.1771,
+     "steps": 379,
+     "delta_recall_4dp": 0.0044
+    },
+    "dendrite_99141": {
+     "iou_4dp": 0.9661,
+     "steps": 941,
+     "delta_recall_4dp": -0.0008
+    },
+    "dendrite_56789": {
+     "iou_4dp": 0.9556,
+     "steps": 952,
+     "delta_recall_4dp": -0.0029
+    },
+    "dendrite_61046": {
+     "iou_4dp": 0.9401,
+     "steps": 940,
+     "delta_recall_4dp": -0.0021
+    },
+    "dendrite_93375": {
+     "iou_4dp": 0.9604,
+     "steps": 808,
+     "delta_recall_4dp": -0.0042
+    },
+    "notebook": {
+     "iou_4dp": 0.9317,
+     "steps": 343,
+     "delta_recall_4dp": -0.0238
+    }
+   },
+   "all": {
+    "base_steps": 8407,
+    "steps": 6174,
+    "evals_per_1000_4dp": 3.2294,
+    "within_tolerance": false,
+    "mean_recall_drop_pts_2dp": 0.37,
+    "mean_precision_drop_pts_2dp": -6.86,
+    "mean_unlabeled_rise_pts_2dp": 0.11,
+    "merged_voxels_growth_pct_1dp": -88.7
+   },
+   "without_sensitive_seeds": {
+    "base_steps": 5841,
+    "steps": 5787,
+    "evals_per_1000_4dp": 3.3017,
+    "within_tolerance": false,
+    "mean_recall_drop_pts_2dp": 0.48,
+    "mean_precision_drop_pts_2dp": -0.03,
+    "mean_unlabeled_rise_pts_2dp": -0.02,
+    "merged_voxels_growth_pct_1dp": -1.5
+   },
+   "flagged_for_review": [
+    "axon_3574",
+    "axon_13395",
+    "axon_10801",
+    "axon_5506",
+    "axon_57259",
+    "dendrite_1525",
+    "dendrite_99141",
+    "dendrite_56789",
+    "dendrite_61046",
+    "dendrite_93375",
+    "notebook"
+   ],
+   "dendrite_1525": {
+    "merges_ref_cand": [
+     1,
+     0
+    ],
+    "delta_precision_pts_1dp": 82.0,
+    "delta_recall_pts_2dp": 0.44
+   },
+   "policy_stats_total": {
+    "main_popped": 30409,
+    "main_dropped_done": 21363,
+    "main_dropped_invalid": 767,
+    "main_skipped_enclosed": 0,
+    "postponed": 3357,
+    "main_evaluated": 4922,
+    "postponed_popped": 3357,
+    "postponed_dropped_done": 2095,
+    "postponed_dropped_invalid": 10,
+    "postponed_dropped_enclosed": 0,
+    "postponed_evaluated": 1252,
+    "postponed_evaluated_enclosed": 546
+   }
+  },
+  "postpone_drop_enclosed": {
+   "passes_tolerance": false,
+   "seeds_outside_seed_rules": [
+    "axon_10801",
+    "notebook"
+   ],
+   "per_seed": {
+    "axon_3574": {
+     "iou_4dp": 0.9627,
+     "steps": 297,
+     "delta_recall_4dp": -0.0026
+    },
+    "axon_13395": {
+     "iou_4dp": 0.9563,
+     "steps": 474,
+     "delta_recall_4dp": -0.0009
+    },
+    "axon_10801": {
+     "iou_4dp": 0.9386,
+     "steps": 458,
+     "delta_recall_4dp": -0.0146
+    },
+    "axon_5506": {
+     "iou_4dp": 0.9552,
+     "steps": 306,
+     "delta_recall_4dp": 0.0014
+    },
+    "axon_218": {
+     "iou_4dp": 1.0,
+     "steps": 8,
+     "delta_recall_4dp": 0.0
+    },
+    "axon_57259": {
+     "iou_4dp": 0.9722,
+     "steps": 159,
+     "delta_recall_4dp": 0.0039
+    },
+    "dendrite_1525": {
+     "iou_4dp": 0.1773,
+     "steps": 342,
+     "delta_recall_4dp": 0.0038
+    },
+    "dendrite_99141": {
+     "iou_4dp": 0.9651,
+     "steps": 847,
+     "delta_recall_4dp": -0.0004
+    },
+    "dendrite_56789": {
+     "iou_4dp": 0.9539,
+     "steps": 810,
+     "delta_recall_4dp": -0.0026
+    },
+    "dendrite_61046": {
+     "iou_4dp": 0.9399,
+     "steps": 816,
+     "delta_recall_4dp": -0.0017
+    },
+    "dendrite_93375": {
+     "iou_4dp": 0.9579,
+     "steps": 686,
+     "delta_recall_4dp": -0.0036
+    },
+    "notebook": {
+     "iou_4dp": 0.9316,
+     "steps": 338,
+     "delta_recall_4dp": -0.0237
+    }
+   },
+   "all": {
+    "base_steps": 8407,
+    "steps": 5541,
+    "evals_per_1000_4dp": 2.8972,
+    "within_tolerance": false,
+    "mean_recall_drop_pts_2dp": 0.34,
+    "mean_precision_drop_pts_2dp": -6.86,
+    "mean_unlabeled_rise_pts_2dp": 0.41,
+    "merged_voxels_growth_pct_1dp": -88.7
+   },
+   "without_sensitive_seeds": {
+    "base_steps": 5841,
+    "steps": 5191,
+    "evals_per_1000_4dp": 2.9602,
+    "within_tolerance": false,
+    "mean_recall_drop_pts_2dp": 0.45,
+    "mean_precision_drop_pts_2dp": -0.02,
+    "mean_unlabeled_rise_pts_2dp": 0.3,
+    "merged_voxels_growth_pct_1dp": -1.3
+   },
+   "flagged_for_review": [
+    "axon_3574",
+    "axon_13395",
+    "axon_10801",
+    "axon_5506",
+    "axon_57259",
+    "dendrite_1525",
+    "dendrite_99141",
+    "dendrite_56789",
+    "dendrite_61046",
+    "dendrite_93375",
+    "notebook"
+   ],
+   "dendrite_1525": {
+    "merges_ref_cand": [
+     1,
+     0
+    ],
+    "delta_precision_pts_1dp": 82.0,
+    "delta_recall_pts_2dp": 0.38
+   },
+   "policy_stats_total": {
+    "main_popped": 27011,
+    "main_dropped_done": 18414,
+    "main_dropped_invalid": 710,
+    "main_skipped_enclosed": 0,
+    "postponed": 3035,
+    "main_evaluated": 4852,
+    "postponed_popped": 3035,
+    "postponed_dropped_done": 1834,
+    "postponed_dropped_invalid": 8,
+    "postponed_dropped_enclosed": 504,
+    "postponed_evaluated": 689,
+    "postponed_evaluated_enclosed": 0
+   }
+  }
+ }
+}
