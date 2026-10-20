@@ -39,3 +39,10 @@ evaluations and GFLOP per correctly segmented voxel. Design: `docs/benchmark_des
 `tools/view_benchmark.py` serves a local Neuroglancer view: the image crop, the FFN
 traces of a full benchmark run and the matching proofread objects, with labelled seed
 points. Setup and usage are in `tools/requirements-viewer.txt`.
+
+## GPU runs (Wahab)
+
+Set `LICONN_BACKEND=gpu` to run on an NVIDIA GPU. The CPU stays the default, and the
+bitwise reference is CPU-only. Cluster setup, job arrays and combining results:
+`cluster/wahab/README.md`. Comparing two runs seed by seed: `examples/compare_runs.py`.
+GPU baseline and its comparison with the CPU: `docs/gpu_baseline.md`.

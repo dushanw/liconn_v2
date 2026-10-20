@@ -1,0 +1,152 @@
+{
+ "about": "Evidence for docs/gpu_baseline.md, checked by tests/test_gpu_baseline_evidence.py against the run outputs in the data folder (liconn_v2.data.cache_dir()/runs).",
+ "slurm_jobs": {
+  "gpu-baseline-a-20261019": 7358888,
+  "gpu-baseline-b-20261019": 7358889
+ },
+ "run_source_sha256": {
+  "liconn_v2/reference.py": "2de09cfa1545c20fcc60c6ab2428e803c48bdad27c2e33145101d4ac118ceb73",
+  "liconn_v2/benchmark.py": "309ea0a4d5d31ead276fbd1a87e7bf7575cda1e1ad1ffb98c1248dcbdbfbc23e",
+  "liconn_v2/data.py": "033ea6c8dcdf782acfdad5ac6c43d3fc5e8b43359bbeecf1aec6033c3a9b99e8",
+  "liconn_v2/proofread_classes.json": "7e5d3c5e310bd0fdaf042075c7b3fe3d75393e3fc749fa046dc0ae241fe4313b",
+  "liconn_v2/expected_reference.json": "3bc97429b45e47099d4dc4d573eaa7dc8cf1a67c4a1effda87da3ef8c8067d5d",
+  "examples/run_benchmark.py": "0179a5d76191fd60c9afd20ec86786f41ab7c3d09ea1a7782456359a684dfcad",
+  "examples/merge_benchmark.py": "3179de529b9bde5022fc9def030049ce737a0adcf58a070a030332efa5149440",
+  "cluster/wahab/benchmark_array.sbatch": "fa50545706b9dae089acaa42f4c828b686f144dba58e18f424b27aa1f85eab55",
+  "requirements.txt": "cc471b0d037e310573c597e665b4bb9ae7152fa572d36d7e53aefc52553d6190",
+  "requirements-cuda.txt": "f36c5ae9388fec87525869d0f868b832517a533dc05a9ae6516803dfb145ca87",
+  "requirements-ffn.txt": "022d1938cf35b564012e1322bfada1057ba7c3ed8631ab7a2dd09523e63e894a"
+ },
+ "run_source_note": "sha256 of files used by the GPU jobs, from the source manifest synced to Wahab (source_sha256.txt in each run). liconn_v2/compare.py was changed after the runs (comparison edge cases, merge input checks, per-seed tolerance fields); The per-seed part outputs written by the GPU jobs are hashed below; the merged files were rebuilt from them.",
+ "outputs_sha256": {
+  "baseline-20261018/benchmark.json": "629e35d39a6b18f83623eec6c681f5906e06bf27f1b60cdf57c098c138be5b44",
+  "baseline-20261018/benchmark_masks.npz": "cf8f510b8cdbef621586c4e6b678c1807d951c4f35bc52efd7133f06d73a3591",
+  "gpu-baseline-a-20261019/source_sha256.txt": "1621701f044682c4024e4d06f2d0d2e7d3704156c24cfb30ca0cbcb4d58bac45",
+  "gpu-baseline-a-20261019/merged/benchmark.json": "d640bf803f938ed0710dd5446be4d103f333b5839783ef0bd65eb82045aff704",
+  "gpu-baseline-a-20261019/merged/benchmark_masks.npz": "2474393f02bfea381d1563138d5e97d7541c824323e3c4a0da060ff1596ac349",
+  "gpu-baseline-a-20261019/parts/axon_10801/benchmark.json": "84f56ac148f124bd5b4ec20bf4e6fc9b61da442cf5ab335c8960f7c831cc97d6",
+  "gpu-baseline-a-20261019/parts/axon_10801/benchmark_masks.npz": "62a4ffe20b6ed213ca3029b7c5cc14f642d8ada57e2ba11a46c41212c688ae82",
+  "gpu-baseline-a-20261019/parts/axon_13395/benchmark.json": "5b38c52030cb3e202504f825d121f4c71fd270c0102efa7ba90198ee40e160b5",
+  "gpu-baseline-a-20261019/parts/axon_13395/benchmark_masks.npz": "c1cca7a1a465c2ef454435028a7ca670a2b32c74e6f339d38e23fcd86a85f568",
+  "gpu-baseline-a-20261019/parts/axon_218/benchmark.json": "da68f9a7c3aef5292d4b3c2b2f262ba971c3995bf686880f1d712740d8257751",
+  "gpu-baseline-a-20261019/parts/axon_218/benchmark_masks.npz": "dbf2bb2bef70347a5ab16b39fb39377e20a14ff893d4331fde52466fa819ea88",
+  "gpu-baseline-a-20261019/parts/axon_3574/benchmark.json": "13cc99b6538784cab677659e92fe21a26a329a94c6c54408dc2c880a8a88a3d7",
+  "gpu-baseline-a-20261019/parts/axon_3574/benchmark_masks.npz": "9dead421a3052f6a34898e7f3a97828975438ba486a82532afe8906353e8a657",
+  "gpu-baseline-a-20261019/parts/axon_5506/benchmark.json": "4413a89304d73d45697bc88e8227d582800c420ef58a47ea7b4dd0d2cb8f6dee",
+  "gpu-baseline-a-20261019/parts/axon_5506/benchmark_masks.npz": "60c11e2843a4e11a747a8c5bf8ba6058de4593737a110bc51d501f3cefc1ca09",
+  "gpu-baseline-a-20261019/parts/axon_57259/benchmark.json": "e4340a4a334f5732636926090dfda79343412aa33e9e92ba4df78baf1ba176b9",
+  "gpu-baseline-a-20261019/parts/axon_57259/benchmark_masks.npz": "06d686f120ac1a20496e2eb7e0948c717ce921a148e3d4699eee249ea3babe5c",
+  "gpu-baseline-a-20261019/parts/dendrite_1525/benchmark.json": "874ae4a0feb31c1ea109bb6c1b45c5666d7d65fe6a8ea80f0de13af70578044c",
+  "gpu-baseline-a-20261019/parts/dendrite_1525/benchmark_masks.npz": "2974d436679287fdbd98d74bd2585396c38471e42409d005154e5f6b085e6731",
+  "gpu-baseline-a-20261019/parts/dendrite_56789/benchmark.json": "ef37993f87805b4a54cbc86807313b4f51e9e2f0252bb031978c45ea824b4a06",
+  "gpu-baseline-a-20261019/parts/dendrite_56789/benchmark_masks.npz": "740700a048155b89a65e7a678d2249a2e2284d762f8b96d90cf085fb1f13a687",
+  "gpu-baseline-a-20261019/parts/dendrite_61046/benchmark.json": "4e5ed01dacadb438686397f1c9609b3c815f8d69a87782995959a306f6501056",
+  "gpu-baseline-a-20261019/parts/dendrite_61046/benchmark_masks.npz": "c852ef40a550ade48912d6654d84112bc5a837f6bb87bff2d16d441aec6b73b0",
+  "gpu-baseline-a-20261019/parts/dendrite_93375/benchmark.json": "28e97669cc222750dc3ee71feca391252246ee24b4e1bf8d55b53b987685e787",
+  "gpu-baseline-a-20261019/parts/dendrite_93375/benchmark_masks.npz": "2e559550044849813d0fd89be1905feeb17cf8f08747039554a5eb4bc8db4b3d",
+  "gpu-baseline-a-20261019/parts/dendrite_99141/benchmark.json": "26abea2820ce75cc130269e28def0db5b59ae1a5ead6d210ee1b587ae053499d",
+  "gpu-baseline-a-20261019/parts/dendrite_99141/benchmark_masks.npz": "e1c1e74907685edb9a703dbac803e27a5c8ecfcdfe1bbb6fc0b4000d066086a5",
+  "gpu-baseline-a-20261019/parts/notebook/benchmark.json": "e6b78ba9bb23bf2d08030e6d6cd1279140e53b7de4ff9e995fe52be5228801e0",
+  "gpu-baseline-a-20261019/parts/notebook/benchmark_masks.npz": "98a4a3fcace7ad81b1ea81596418b077ff5dd91dfcf8b0480995491f1faa2d1a",
+  "gpu-baseline-b-20261019/merged/benchmark.json": "6608b804cd035c0c1b5ced6268294d62dd5c88e506a21fb09d3eff43513cd41c",
+  "gpu-baseline-b-20261019/merged/benchmark_masks.npz": "2474393f02bfea381d1563138d5e97d7541c824323e3c4a0da060ff1596ac349",
+  "gpu-baseline-b-20261019/parts/axon_10801/benchmark.json": "9b59065c0c8e55b970a16b339c2143e3cc6606ce52cb99a67d0068daf08e911c",
+  "gpu-baseline-b-20261019/parts/axon_10801/benchmark_masks.npz": "62a4ffe20b6ed213ca3029b7c5cc14f642d8ada57e2ba11a46c41212c688ae82",
+  "gpu-baseline-b-20261019/parts/axon_13395/benchmark.json": "7552ea6171252b31b92c19d1bad2be03dbfb894107452cd70773232de0905bcd",
+  "gpu-baseline-b-20261019/parts/axon_13395/benchmark_masks.npz": "c1cca7a1a465c2ef454435028a7ca670a2b32c74e6f339d38e23fcd86a85f568",
+  "gpu-baseline-b-20261019/parts/axon_218/benchmark.json": "de7f708a1d5d6aedb058b8773ece5bf259e0dc7bb3c0a28aa3e026da363b6835",
+  "gpu-baseline-b-20261019/parts/axon_218/benchmark_masks.npz": "dbf2bb2bef70347a5ab16b39fb39377e20a14ff893d4331fde52466fa819ea88",
+  "gpu-baseline-b-20261019/parts/axon_3574/benchmark.json": "cd7a04ead80ec24330659f93ab9689cefc4a8a57bc03390f8b0f359095cfa3d4",
+  "gpu-baseline-b-20261019/parts/axon_3574/benchmark_masks.npz": "9dead421a3052f6a34898e7f3a97828975438ba486a82532afe8906353e8a657",
+  "gpu-baseline-b-20261019/parts/axon_5506/benchmark.json": "bcc2945860bef6b0e36be48a648099f1909684cfc78d7e987fdb925c1d96a4e0",
+  "gpu-baseline-b-20261019/parts/axon_5506/benchmark_masks.npz": "60c11e2843a4e11a747a8c5bf8ba6058de4593737a110bc51d501f3cefc1ca09",
+  "gpu-baseline-b-20261019/parts/axon_57259/benchmark.json": "1d23e0df09c8d77413b490075115b26813c6c05d929147adaaf66f0597c99d08",
+  "gpu-baseline-b-20261019/parts/axon_57259/benchmark_masks.npz": "06d686f120ac1a20496e2eb7e0948c717ce921a148e3d4699eee249ea3babe5c",
+  "gpu-baseline-b-20261019/parts/dendrite_1525/benchmark.json": "c400ede9cedd6308e3342cf9a91aaef78cb0424fecada4960f4c7ad0e4b23783",
+  "gpu-baseline-b-20261019/parts/dendrite_1525/benchmark_masks.npz": "2974d436679287fdbd98d74bd2585396c38471e42409d005154e5f6b085e6731",
+  "gpu-baseline-b-20261019/parts/dendrite_56789/benchmark.json": "7499ba9177b8f94ca8116b99e6f9b17b78f6df895336b631ee26ef77a820854e",
+  "gpu-baseline-b-20261019/parts/dendrite_56789/benchmark_masks.npz": "740700a048155b89a65e7a678d2249a2e2284d762f8b96d90cf085fb1f13a687",
+  "gpu-baseline-b-20261019/parts/dendrite_61046/benchmark.json": "c97eba041cbd379e54289a8a1274e7647a8abff6a2498ba48041dcd8d7f0b8fd",
+  "gpu-baseline-b-20261019/parts/dendrite_61046/benchmark_masks.npz": "c852ef40a550ade48912d6654d84112bc5a837f6bb87bff2d16d441aec6b73b0",
+  "gpu-baseline-b-20261019/parts/dendrite_93375/benchmark.json": "03ab05d1a9220e78c3c4ae15c2bc84ef3b889d244f7989ad2e81cca348c6a637",
+  "gpu-baseline-b-20261019/parts/dendrite_93375/benchmark_masks.npz": "2e559550044849813d0fd89be1905feeb17cf8f08747039554a5eb4bc8db4b3d",
+  "gpu-baseline-b-20261019/parts/dendrite_99141/benchmark.json": "128e631359dc9b15febd9079ee77abace90ebfd62925ba7f312d3c049d3181cc",
+  "gpu-baseline-b-20261019/parts/dendrite_99141/benchmark_masks.npz": "e1c1e74907685edb9a703dbac803e27a5c8ecfcdfe1bbb6fc0b4000d066086a5",
+  "gpu-baseline-b-20261019/parts/notebook/benchmark.json": "502e78791955bb2d8fb6680e6fd21d198f00facabab9545e43e0e8137996e184",
+  "gpu-baseline-b-20261019/parts/notebook/benchmark_masks.npz": "98a4a3fcace7ad81b1ea81596418b077ff5dd91dfcf8b0480995491f1faa2d1a"
+ },
+ "documented_cpu_vs_gpu": {
+  "axon_3574": {
+   "mask_iou_6dp": 1.0,
+   "cpu_steps": 312,
+   "gpu_steps": 312
+  },
+  "axon_13395": {
+   "mask_iou_6dp": 1.0,
+   "cpu_steps": 532,
+   "gpu_steps": 532
+  },
+  "axon_10801": {
+   "mask_iou_6dp": 1.0,
+   "cpu_steps": 507,
+   "gpu_steps": 507
+  },
+  "axon_5506": {
+   "mask_iou_6dp": 1.0,
+   "cpu_steps": 318,
+   "gpu_steps": 318
+  },
+  "axon_218": {
+   "mask_iou_6dp": 1.0,
+   "cpu_steps": 8,
+   "gpu_steps": 8
+  },
+  "axon_57259": {
+   "mask_iou_6dp": 1.0,
+   "cpu_steps": 159,
+   "gpu_steps": 159
+  },
+  "dendrite_1525": {
+   "mask_iou_6dp": 0.986744,
+   "cpu_steps": 2568,
+   "gpu_steps": 2558
+  },
+  "dendrite_99141": {
+   "mask_iou_6dp": 0.996254,
+   "cpu_steps": 957,
+   "gpu_steps": 959
+  },
+  "dendrite_56789": {
+   "mask_iou_6dp": 1.0,
+   "cpu_steps": 934,
+   "gpu_steps": 934
+  },
+  "dendrite_61046": {
+   "mask_iou_6dp": 1.0,
+   "cpu_steps": 931,
+   "gpu_steps": 931
+  },
+  "dendrite_93375": {
+   "mask_iou_6dp": 1.0,
+   "cpu_steps": 830,
+   "gpu_steps": 830
+  },
+  "notebook": {
+   "mask_iou_6dp": 1.0,
+   "cpu_steps": 359,
+   "gpu_steps": 359
+  }
+ },
+ "documented_flagged_for_review": [
+  "dendrite_1525"
+ ],
+ "base_commit": "ac5ad6a",
+ "base_commit_note": "All 24 job logs print \"source ac5ad6a-dirty\" (git describe --always --dirty on Wahab): the last commit plus uncommitted changes, which are identified exactly by run_source_sha256.",
+ "superseded_merged_sha256": {
+  "gpu-baseline-a-20261019/merged/benchmark.json": "cdf0086e919e5e34ed08ad8fbe68a40ad89c33f9f5c9d9d3d352bf5425d63d36",
+  "gpu-baseline-a-20261019/merged/benchmark_masks.npz": "2474393f02bfea381d1563138d5e97d7541c824323e3c4a0da060ff1596ac349",
+  "gpu-baseline-b-20261019/merged/benchmark.json": "6038a85509f115b7d6c45b5dd9bcda07263315214dec64932a246c72ccef4c1c",
+  "gpu-baseline-b-20261019/merged/benchmark_masks.npz": "2474393f02bfea381d1563138d5e97d7541c824323e3c4a0da060ff1596ac349"
+ },
+ "superseded_note": "Merged files first written by the earlier merge code (no inputs_sha256). Rebuilt on 2026-10-19 from the same per-seed part outputs with the current merge code. Records, summaries and masks are identical; the masks file is byte-identical. Old copies are kept in merged-superseded/."
+}
