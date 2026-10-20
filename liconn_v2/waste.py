@@ -17,6 +17,12 @@ HALF = np.array(reference.FOV_SIZE) // 2
 BOX_VOXELS = int(np.prod(reference.FOV_SIZE))
 LOW_YIELD_VOXELS = BOX_VOXELS // 100  # 359
 FIELDS = ('new_fg', 'new_bg', 'gained', 'lost', 'new_cells', 'mean_abs_dlogit')
+# Pre-step features (docs/predictability_design.md): computed from the canvas and the
+# queue before the step's evaluation, so a policy could use them.
+FEATURES = ('unpredicted_fraction', 'fg_fraction', 'uncertain_fraction', 'mean_margin',
+            'center_value', 'queue_score', 'overlap_count', 'step_index')
+UNCERTAIN_BAND = 1.0  # |value - T| < 1 in logits, about p = 0.35-0.80
+OVERLAP_DIST = 2 * int(HALF[0])  # boxes overlap if every |d| <= 32
 CLASSES = ('idle', 'low_yield', 'no_final_decision',
            'mask_idle', 'mask_low_yield', 'enclosed', 'no_established_decision')
 
@@ -31,6 +37,8 @@ class StepRecorder:
     self.last_writer = None    # last step that wrote each voxel
     self.last_write_established = None  # did that last write establish the decision?
     self._seed_pos = None
+    self.features = []
+    self._queue_after_update = []  # queue contents right after the last policy update
 
   def attach(self, cv):
     self.owner = np.full(cv.seed.shape, -1, np.int32)
@@ -46,6 +54,7 @@ class StepRecorder:
       lo = np.array(pos) - HALF
       sel = tuple(slice(a, a + n) for a, n in zip(lo, reference.FOV_SIZE))
       old = np.array(cv.seed[sel])
+      self.features.append(self._pre_step_features(old, pos, policy))
       if not self.rows:
         # init_seed pre-set the seed voxel; count it as not yet predicted.
         old[tuple(HALF)] = np.nan
@@ -77,10 +86,40 @@ class StepRecorder:
       appended = itertools.islice(policy.scored_coords, n_before, None)
       cells = {policy.quantize_pos(tuple(c)) for _, c in appended}
       self.rows[-1]['new_cells'] = len(cells - set(policy.done_rounded_coords) - queued_before)
+      self._queue_after_update = list(policy.scored_coords)
       return out
 
     cv.update_at = update_at
     policy.update = policy_update
+
+  def _pre_step_features(self, old, pos, policy) -> dict:
+    """Features of the step about to run, from state that exists before it runs."""
+    step = len(self.rows)
+    predicted = ~np.isnan(old)
+    n_pred = int(predicted.sum())
+    vals = old[predicted]
+    margin = np.abs(vals - T)
+    # Between the last policy update and this step FFN only pops from the queue's
+    # front; the last popped entry is the one being evaluated now.
+    popped = len(self._queue_after_update) - len(policy.scored_coords)
+    queue_score, queue_match = np.nan, step == 0
+    if step > 0 and popped >= 1:
+      score, coord = self._queue_after_update[popped - 1]
+      queue_score = float(score)
+      queue_match = tuple(int(v) for v in coord) == tuple(int(v) for v in pos)
+    prev = np.array(self.positions, np.int64).reshape(-1, 3)
+    overlap = int((np.abs(prev - np.array(pos)).max(axis=1) <= OVERLAP_DIST).sum()) if len(prev) else 0
+    return {
+        'unpredicted_fraction': 1.0 - n_pred / old.size,
+        'fg_fraction': float((vals >= T).mean()) if n_pred else np.nan,
+        'uncertain_fraction': float((margin < UNCERTAIN_BAND).mean()) if n_pred else np.nan,
+        'mean_margin': float(margin.mean()) if n_pred else np.nan,
+        'center_value': float(old[tuple(HALF)]),
+        'queue_score': queue_score,
+        'overlap_count': overlap,
+        'step_index': step,
+        'queue_match': queue_match,
+    }
 
   def arrays(self) -> dict:
     out = {k: np.array([r[k] for r in self.rows]) for k in FIELDS}
@@ -92,6 +131,8 @@ class StepRecorder:
     out['established_owner_voxels'] = np.bincount(self.owner[self.owner >= 0],
                                                   minlength=len(self.rows))
     out['positions'] = np.array(self.positions, np.int32).reshape(-1, 3)
+    for k in (*FEATURES, 'queue_match'):
+      out['feat_' + k] = np.array([f[k] for f in self.features])
     return out
 
 
