@@ -43,6 +43,12 @@ class PrecisionEvidenceTest(unittest.TestCase):
     for rel, expected in EVIDENCE['outputs_sha256'].items():
       self.assertEqual(_sha(RUNS / rel), expected, rel)
 
+  def test_superseded_batch8_screen_matches_batch1(self):
+    # The batch-1 screen gave the same decision changes and non-finite counts as batch 8.
+    old = json.loads((RUNS / 'superseded-precision-screen-20261021' / 'precision_screen.json').read_text())
+    key = lambda v: (v['variant'], round(v['flip_rate'], 9), round(v['non_finite_rate'], 9), v['inputs_with_non_finite'])
+    self.assertEqual(sorted(map(key, old['variants'])), sorted(map(key, self.screen['variants'])))
+
   def test_screen(self):
     s, doc = self.screen, EVIDENCE['documented_screen']
     self.assertEqual(s['backend'], 'gpu')
@@ -105,6 +111,9 @@ class TrainingSurveyEvidenceTest(unittest.TestCase):
     doc = EVIDENCE['documented_training_survey']
     self.assertEqual(round(s['expid82_proofread_coverage']['labeled_fraction'], 3), doc['labeled_fraction_3dp'])
     self.assertEqual(s['expid82_proofread_coverage']['objects'], doc['objects'])
+    self.assertEqual(s['expid82_proofread_coverage']['shape_xyz'], doc['shape_xyz'])
+    self.assertEqual([round(x, 2) for x in s['expid82_proofread_coverage']['labeled_fraction_by_z_decile']],
+                     doc['labeled_fraction_by_z_decile_2dp'])
     self.assertEqual(s['bucket_top_level'], doc['bucket_top_level'])
     self.assertEqual({k: {'finest_resolution_nm': v['finest_resolution_nm'], 'finest_size_xyz': v['finest_size_xyz']}
                       for k, v in s['volumes'].items()}, doc['volumes'])

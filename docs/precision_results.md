@@ -1,5 +1,10 @@
 # Lever B, part 2: lower precision. Results (runs 2026-10-21)
 
+**Update (held-out confirmation, docs/heldout_results.md): float16 failed on held-out
+seeds.** Two held-out dendrites formed large false merges that float32 does not.
+float16 is therefore not an acceptable speedup under the current tolerance. The
+benchmark results below stand as recorded.
+
 **Outcome: float16 passes the owner-confirmed 1% tolerance on the 12 benchmark seeds
 and is 2.19x faster per step on a V100. bfloat16 fails.** The float16 pass is a
 candidate, not an established speedup:

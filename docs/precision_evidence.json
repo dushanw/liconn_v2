@@ -87,7 +87,8 @@
   "precision-bf16-20261021/parts/notebook/benchmark.json": "3f9979aab0f80c8d008b95051623929271e2c641e24159c9a698680c8cd20903",
   "precision-bf16-20261021/parts/notebook/benchmark_masks.npz": "2c01f74a5f3dc0cde0777bef4e57ee41bd18d42d28524e851a90b32940bea58a",
   "superseded-precision-bf16-20261021/merged/benchmark.json": "c34c54e37b2261868d63185d7b90b15e6ec8f53e6d3794e6e5d3e86b42ec74e5",
-  "training-survey-20261021/training_data_survey.json": "d37ca27568b34a530ccc4eb3b868af450ea418a0cd3532b5260da824f0930749"
+  "training-survey-20261021/training_data_survey.json": "d37ca27568b34a530ccc4eb3b868af450ea418a0cd3532b5260da824f0930749",
+  "superseded-precision-screen-20261021/precision_screen.json": "7ee3a54c9676d0e6ae20183b67be76f907d799fde4bd1a2565dd44f275b64559"
  },
  "documented_screen": {
   "device_kind": "Tesla V100-SXM2-16GB",
@@ -480,7 +481,24 @@
      12000
     ]
    }
-  }
+  },
+  "shape_xyz": [
+   240,
+   305,
+   50
+  ],
+  "labeled_fraction_by_z_decile_2dp": [
+   0.0,
+   0.46,
+   0.47,
+   0.47,
+   0.47,
+   0.47,
+   0.47,
+   0.44,
+   0.0,
+   0.0
+  ]
  },
  "survey_note": "examples/survey_training_data.py runs locally (not on Wahab). It was revised after review to read the coarse label level once and to describe that read accurately; re-running the revised script reproduced training_data_survey.json byte for byte."
 }
