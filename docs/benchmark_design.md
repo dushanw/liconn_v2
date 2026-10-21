@@ -86,14 +86,16 @@ voxels, total steps, total GFLOP, and total steps per 1,000 correctly segmented 
 (a ratio of totals). Single-seed evaluations-per-voxel figures reward stopping before thin,
 low-yield branches. Read them together with recall.
 
-## Tolerance change decided 2026-10-21 (definition to be written)
+## Tolerance change decided 2026-10-21
 
 After float16 failed on held-out seeds through rare large merge flips
 (docs/heldout_results.md), the owner decided to move to a tolerance judged over many
-more seeds that accepts rare merge flips. The exact definition is still to be
-proposed and confirmed: number of seeds and crops, an allowed rate of merge or unmerge
-flips, and aggregate accuracy limits. Until then, the rules below remain the recorded
-criterion for all results so far.
+more seeds that accepts rare merge flips. The owner confirmed the numbers the same day:
+300 fresh seeds; a flip is a per-seed precision or recall change of more than 10
+points; at most 3 of 300 new merges and at most 3 of 300 new early stops; mean recall
+and precision may each fall by at most 1 point. The full definition, crops and seed
+rule are in docs/manyseed_design.md. The rules below remain the recorded criterion
+for all results obtained before that milestone.
 
 ## Accuracy tolerance for speed variants (owner-confirmed 2026-10-19)
 
