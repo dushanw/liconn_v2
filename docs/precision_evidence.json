@@ -1,0 +1,486 @@
+{
+ "about": "Evidence for docs/precision_results.md, checked by tests/test_precision_evidence.py.",
+ "slurm_jobs": {
+  "precision-screen-20261021": 7369485,
+  "precision-fp16-20261021": 7369486,
+  "precision-bf16-20261021": 7369487
+ },
+ "failed_attempt": "Screen job 7365841 failed after all 12 traces matched the reference: a 16-bit variant produced non-finite outputs and writing JSON failed. The screen was changed to count non-finite outputs as changed decisions and re-run as 7365849; logs kept on Wahab under liconn_runs/failed-precision-screen-20261021.",
+ "source_note": "The Wahab clone was last updated at commit ac5ad6a; files were synced directly, so git describe prints ac5ad6a-dirty. run_source_sha256 identifies the code (one manifest for the screen and both benchmark runs).",
+ "reference_run": "gpu-baseline-a-20261019/merged",
+ "run_source_sha256": {
+  "liconn_v2/precision.py": "1e389994f83ec0a702b6be83788594d009ec6183cfd8bb6d39f0c6ff37592ea7",
+  "liconn_v2/pruned.py": "9d3f5fb60a38c476d52bee4509b49a8555fe0bbc9edfe0d3710a56676b504993",
+  "examples/run_precision_screen.py": "40bc7179548883920873f27dc1adc5794eaed483c6b2e11552b7f17fa36857d9",
+  "examples/run_precision_benchmark.py": "61811fbf2cd3ee87c4d6e9174ad8f87192e5996dff9e8784416d004a9ddd065f",
+  "examples/run_policy_benchmark.py": "2fad76f43d2b05921fa7fe45e20fdb4c0849c6b33307a49e726986ad25086579",
+  "cluster/wahab/precision_array.sbatch": "b1c895d4f9479f2a152f204bee3a96dfc3262249199ba00e65f23e37a47b39e5",
+  "liconn_v2/reference.py": "2de09cfa1545c20fcc60c6ab2428e803c48bdad27c2e33145101d4ac118ceb73",
+  "liconn_v2/benchmark.py": "309ea0a4d5d31ead276fbd1a87e7bf7575cda1e1ad1ffb98c1248dcbdbfbc23e",
+  "liconn_v2/data.py": "033ea6c8dcdf782acfdad5ac6c43d3fc5e8b43359bbeecf1aec6033c3a9b99e8",
+  "liconn_v2/predict.py": "b0916d7f1a6a2702bad94a230073868bb1ec676369fa281a417c345c5931b35f",
+  "liconn_v2/compare.py": "ac0c0552f041d8dc2891fdaf42a1bfe77cd8238a7879d0f62e543ad28c4bf845",
+  "examples/merge_benchmark.py": "3179de529b9bde5022fc9def030049ce737a0adcf58a070a030332efa5149440",
+  "requirements.txt": "cc471b0d037e310573c597e665b4bb9ae7152fa572d36d7e53aefc52553d6190",
+  "requirements-cuda.txt": "f36c5ae9388fec87525869d0f868b832517a533dc05a9ae6516803dfb145ca87",
+  "requirements-ffn.txt": "022d1938cf35b564012e1322bfada1057ba7c3ed8631ab7a2dd09523e63e894a",
+  "examples/survey_training_data.py": "84b3ff315e8484536e8298b847a834d2cd9e120ce0ea2adf0d8c1cb47c7ce070"
+ },
+ "outputs_sha256": {
+  "precision-screen-20261021/precision_screen.json": "fdd1341b71bef82b0424564d811ae6ce5c8f438762fa6a11819f4d096a850d89",
+  "precision-screen-20261021/source_sha256.txt": "5acb0dfdc7aab0ed2ca8b2f98d8e8278a313d4eb7d28c129b5538321521207f3",
+  "precision-fp16-20261021/merged/benchmark.json": "f7b9751970876e1fb54dfe77e97eac27d147b6bd06490935734a723f61d048f5",
+  "precision-fp16-20261021/merged/benchmark_masks.npz": "e76be1826e5e97e22df3ef9fe7ededeebca4ec4541e4565684308824d555f737",
+  "precision-fp16-20261021/compare_to_reference.json": "b472ecd15ea4b2ba4cf896052ae762a96ab16fc6c3a6e944204dda4e2092614b",
+  "precision-fp16-20261021/source_sha256.txt": "5acb0dfdc7aab0ed2ca8b2f98d8e8278a313d4eb7d28c129b5538321521207f3",
+  "precision-fp16-20261021/parts/axon_10801/benchmark.json": "b6974b9377e31ba48ea5b866fdc19a1b7550db204fdddd567d4b2bf6853e5f62",
+  "precision-fp16-20261021/parts/axon_10801/benchmark_masks.npz": "c16c7c80011036101b288d7d4155324cfa0056e08110c807848996bc41f443d9",
+  "precision-fp16-20261021/parts/axon_13395/benchmark.json": "78e9a0147f524f7e3f877a9976f4e32a3530d33c4a61fdb79d75f8f7568c99cd",
+  "precision-fp16-20261021/parts/axon_13395/benchmark_masks.npz": "e6a100d3ed481404060a226448fd3e3e7362fd862d4b347809b21639d48d43f6",
+  "precision-fp16-20261021/parts/axon_218/benchmark.json": "d7ff906bd742620296e567d7e46c31ffef871582d5059efda9373fc965060fa0",
+  "precision-fp16-20261021/parts/axon_218/benchmark_masks.npz": "3d627c5d3f93f9b7d8c90ccc730bbb06c325cd592e4931bd7f356da407ee8c58",
+  "precision-fp16-20261021/parts/axon_3574/benchmark.json": "f0754f16c487ed45a5cd46a9f8f17c4a8ae6e6e08cd4646cb86b37b503dfc07e",
+  "precision-fp16-20261021/parts/axon_3574/benchmark_masks.npz": "cd1295baeed1224135dcebf0c373fe4697d8531e7f4492b35f164aa5e431ecb8",
+  "precision-fp16-20261021/parts/axon_5506/benchmark.json": "59d37e17c924938afa35e993cb45f649518a9e9fce7b13f4fa49081c43aa4ae6",
+  "precision-fp16-20261021/parts/axon_5506/benchmark_masks.npz": "b752463ffd8fa7e3c9c2b067754d8cc388d2d7ba5d267e34e92d78e550a103e8",
+  "precision-fp16-20261021/parts/axon_57259/benchmark.json": "29c508f5c4402a48acda821e4e18642a98aab3dd419a64ad396c5a32a5a6e805",
+  "precision-fp16-20261021/parts/axon_57259/benchmark_masks.npz": "b9ae4c4cdcfc6d9a0045effd3297164779c407939ad135215dc653f476ea45fc",
+  "precision-fp16-20261021/parts/dendrite_1525/benchmark.json": "befbbbf1386a637c2e7062f63552c4e2b3f0b73ce1ba9aeec843a55831d327da",
+  "precision-fp16-20261021/parts/dendrite_1525/benchmark_masks.npz": "274d8d0600dd44362efac322b0269692cc6b4fb0e1ed9e1eb6537b700e46c790",
+  "precision-fp16-20261021/parts/dendrite_56789/benchmark.json": "796a03f107b155ecd1c74cd88a29d2b853776c9fdb6b1596f2bdbf83a3d835b3",
+  "precision-fp16-20261021/parts/dendrite_56789/benchmark_masks.npz": "4d5b62fcf504b72ba914699c94997f8fdf8df7fd790a6c70ac788ee13db0be9a",
+  "precision-fp16-20261021/parts/dendrite_61046/benchmark.json": "d9adf3aa8f44dfa7657d40d46079f52cee0334639703ab76db5bc3da02a0a9b6",
+  "precision-fp16-20261021/parts/dendrite_61046/benchmark_masks.npz": "955f42d5abdc39a97bfbff3b9f02cbcad255fb65ecc4c2ca31a2ca7fd5e6497e",
+  "precision-fp16-20261021/parts/dendrite_93375/benchmark.json": "c4a6d1ce25db45d78a884ad1800d108b0c4ed56e225f11a382d862f4104df923",
+  "precision-fp16-20261021/parts/dendrite_93375/benchmark_masks.npz": "ef0e542b7899d939d90dc1e2c2a0967eaa0f458d74537e934d66f67f6dd97b6f",
+  "precision-fp16-20261021/parts/dendrite_99141/benchmark.json": "9f834fd68a064a5bf8fcb3ce0b5922364e002b1636c92eb7e9881d8ea9311194",
+  "precision-fp16-20261021/parts/dendrite_99141/benchmark_masks.npz": "978f578630fb88a75c057556d43b1b3f99125630425240a0930e73c2d8b391c0",
+  "precision-fp16-20261021/parts/notebook/benchmark.json": "9e87c5a20a640f7cdb8d1b9ec66dd147c0f9e29c6042e1d952e2fd07ca35ec57",
+  "precision-fp16-20261021/parts/notebook/benchmark_masks.npz": "13a1c5b4fe459c7e28be82cad0f94e3acfb938690d1504fc9336dfeae08cdb88",
+  "superseded-precision-fp16-20261021/merged/benchmark.json": "dfec896f44b3dcb17201fc3fc35ec223a284222b24ab354a972646f73b744cef",
+  "precision-bf16-20261021/merged/benchmark.json": "0aa52c836ccd4f9c3c10bb12f5e3d590805f63bde0453c4b78dd11fbbd10de94",
+  "precision-bf16-20261021/merged/benchmark_masks.npz": "1bc0450413fe7f98bdcad5ad5da07ae8e2d26930dc636a29514b47e554bbd292",
+  "precision-bf16-20261021/compare_to_reference.json": "26c170182eb4edf7f5a9875d1497d585918fe9059881a15ef82a7095d1c4af71",
+  "precision-bf16-20261021/source_sha256.txt": "5acb0dfdc7aab0ed2ca8b2f98d8e8278a313d4eb7d28c129b5538321521207f3",
+  "precision-bf16-20261021/parts/axon_10801/benchmark.json": "592289b93437cc4e22ecec6a313b13b1c3438d4796799c9972189a43197da61c",
+  "precision-bf16-20261021/parts/axon_10801/benchmark_masks.npz": "70fce2119e79165517007db65a046d7654c4920984d470a633271c0fbd9adf0b",
+  "precision-bf16-20261021/parts/axon_13395/benchmark.json": "276c36a13499bfba186568ed1b48a7ea344a0ef6c6ea80e459a8b85891f9e10e",
+  "precision-bf16-20261021/parts/axon_13395/benchmark_masks.npz": "eb013d585c102131d28adc761dfaaebe32eb5fbb1fcec8da94a7caacfefe42b6",
+  "precision-bf16-20261021/parts/axon_218/benchmark.json": "264a1771e096c6caee9671df8833ecc77f2d98d98ff67c355c303ec02c906104",
+  "precision-bf16-20261021/parts/axon_218/benchmark_masks.npz": "c46e0ff7c6ca663ea445236073a812c2f02e4dcebf06abb4d156139c42769aca",
+  "precision-bf16-20261021/parts/axon_3574/benchmark.json": "b70fb2b998b5b5fe966a33660da312d73d103a6e32139e17a3ec59de8c532906",
+  "precision-bf16-20261021/parts/axon_3574/benchmark_masks.npz": "8be9d56467ff9274a250247282d220c4a0c909fa11139720f3bf30b04b529eee",
+  "precision-bf16-20261021/parts/axon_5506/benchmark.json": "1aca5bc8aad18583a26f330413ca050635b2aa84cf4e413df5de295f6bd40f52",
+  "precision-bf16-20261021/parts/axon_5506/benchmark_masks.npz": "7f78691d7d609944b84ddee14ceb84aea6f734470314d9f887e2ae70ef98a926",
+  "precision-bf16-20261021/parts/axon_57259/benchmark.json": "bee072888ae1477cab9f4132abe0a7a42b7d54c1f7f1b16612cd117eaaab842b",
+  "precision-bf16-20261021/parts/axon_57259/benchmark_masks.npz": "c77f8ca935befb434ef2bcfc3068a6f33f8c4e8090e1b4b6cc2d215499f83294",
+  "precision-bf16-20261021/parts/dendrite_1525/benchmark.json": "e2282171b033bb3cacd5e05eb93da2d20f9cddfc26c2ac1f372e254e9638b7f7",
+  "precision-bf16-20261021/parts/dendrite_1525/benchmark_masks.npz": "e06e4558dc386c25c3ec7a92a9a37dfca6f79a8c84b0c9224711237b1acf0c79",
+  "precision-bf16-20261021/parts/dendrite_56789/benchmark.json": "43438ca4f9cd862341b78321adf4c3062954036fbb511f3f49c96155f40c71ef",
+  "precision-bf16-20261021/parts/dendrite_56789/benchmark_masks.npz": "1fa2a87c5a69faedf38c2f933b35e425e8d8eaef1d0e8a8a708031a0514066c3",
+  "precision-bf16-20261021/parts/dendrite_61046/benchmark.json": "6244defc7fb6ce6ec1641bb622606a665946325bd2b75e89cdb55990f54d5f8b",
+  "precision-bf16-20261021/parts/dendrite_61046/benchmark_masks.npz": "76ac4cbdf4f9039a58b52ee03dac3fcc33f4186eecf9ce5bb5ecc29e5f27e12a",
+  "precision-bf16-20261021/parts/dendrite_93375/benchmark.json": "dea291e710abc4942927558b62b867a6e7699884bee1c5c8f56d9ad771f22ba9",
+  "precision-bf16-20261021/parts/dendrite_93375/benchmark_masks.npz": "4b7c740aa87c38fe87084ebbff8ba633eb0efe15ebd05e1f43395c79bf043d4b",
+  "precision-bf16-20261021/parts/dendrite_99141/benchmark.json": "fe49e284bdae3fedca08116fa6fe47c645d8ef7e4e3f5e2d7d0265b6e4b7249c",
+  "precision-bf16-20261021/parts/dendrite_99141/benchmark_masks.npz": "420eaad42f8a004cd9ba45a5cb78b23b34965fb80629f243038fa8d70de4240a",
+  "precision-bf16-20261021/parts/notebook/benchmark.json": "3f9979aab0f80c8d008b95051623929271e2c641e24159c9a698680c8cd20903",
+  "precision-bf16-20261021/parts/notebook/benchmark_masks.npz": "2c01f74a5f3dc0cde0777bef4e57ee41bd18d42d28524e851a90b32940bea58a",
+  "superseded-precision-bf16-20261021/merged/benchmark.json": "c34c54e37b2261868d63185d7b90b15e6ec8f53e6d3794e6e5d3e86b42ec74e5",
+  "training-survey-20261021/training_data_survey.json": "d37ca27568b34a530ccc4eb3b868af450ea418a0cd3532b5260da824f0930749"
+ },
+ "documented_screen": {
+  "device_kind": "Tesla V100-SXM2-16GB",
+  "inputs_total": 1054,
+  "batch": 1,
+  "fp32_ms_per_eval_2dp": 14.69,
+  "selected": [
+   "fp16",
+   "bf16"
+  ],
+  "variants": {
+   "fp16": {
+    "flip_rate_6dp": 6.1e-05,
+    "non_finite_rate_6dp": 1e-06,
+    "inputs_with_non_finite": 5,
+    "ms_per_eval_2dp": 3.96
+   },
+   "fp16_ln32": {
+    "flip_rate_6dp": 6.1e-05,
+    "non_finite_rate_6dp": 1e-06,
+    "inputs_with_non_finite": 5,
+    "ms_per_eval_2dp": 4.05
+   },
+   "bf16": {
+    "flip_rate_6dp": 0.000215,
+    "non_finite_rate_6dp": 0.0,
+    "inputs_with_non_finite": 0,
+    "ms_per_eval_2dp": 10.02
+   },
+   "bf16_ln32": {
+    "flip_rate_6dp": 0.000215,
+    "non_finite_rate_6dp": 0.0,
+    "inputs_with_non_finite": 0,
+    "ms_per_eval_2dp": 10.03
+   }
+  }
+ },
+ "documented_runs": {
+  "precision-fp16-20261021": {
+   "variant": "fp16",
+   "passes_tolerance": true,
+   "seeds_outside_seed_rules": [],
+   "flagged_for_review": [
+    "axon_3574",
+    "axon_13395",
+    "axon_10801",
+    "axon_5506",
+    "axon_218",
+    "axon_57259",
+    "dendrite_1525",
+    "dendrite_99141",
+    "dendrite_56789",
+    "dendrite_61046",
+    "dendrite_93375",
+    "notebook"
+   ],
+   "ms_per_step_2dp": 8.99,
+   "reference_ms_per_step_2dp": 19.67,
+   "per_seed": {
+    "axon_3574": {
+     "iou_4dp": 0.9425,
+     "steps": 323,
+     "delta_recall_pts_2dp": 0.12,
+     "delta_precision_pts_2dp": 0.14,
+     "merges_cand": 0
+    },
+    "axon_13395": {
+     "iou_4dp": 0.9515,
+     "steps": 541,
+     "delta_recall_pts_2dp": -0.08,
+     "delta_precision_pts_2dp": 0.04,
+     "merges_cand": 0
+    },
+    "axon_10801": {
+     "iou_4dp": 0.9459,
+     "steps": 500,
+     "delta_recall_pts_2dp": -0.19,
+     "delta_precision_pts_2dp": -0.03,
+     "merges_cand": 0
+    },
+    "axon_5506": {
+     "iou_4dp": 0.8125,
+     "steps": 367,
+     "delta_recall_pts_2dp": 13.37,
+     "delta_precision_pts_2dp": -0.04,
+     "merges_cand": 0
+    },
+    "axon_218": {
+     "iou_4dp": 0.9717,
+     "steps": 7,
+     "delta_recall_pts_2dp": -0.06,
+     "delta_precision_pts_2dp": 0.0,
+     "merges_cand": 0
+    },
+    "axon_57259": {
+     "iou_4dp": 0.9393,
+     "steps": 153,
+     "delta_recall_pts_2dp": 1.1,
+     "delta_precision_pts_2dp": -0.18,
+     "merges_cand": 0
+    },
+    "dendrite_1525": {
+     "iou_4dp": 0.1754,
+     "steps": 376,
+     "delta_recall_pts_2dp": 0.79,
+     "delta_precision_pts_2dp": 81.72,
+     "merges_cand": 0
+    },
+    "dendrite_99141": {
+     "iou_4dp": 0.9559,
+     "steps": 979,
+     "delta_recall_pts_2dp": 0.6,
+     "delta_precision_pts_2dp": -0.16,
+     "merges_cand": 1
+    },
+    "dendrite_56789": {
+     "iou_4dp": 0.9537,
+     "steps": 939,
+     "delta_recall_pts_2dp": -0.72,
+     "delta_precision_pts_2dp": -0.24,
+     "merges_cand": 1
+    },
+    "dendrite_61046": {
+     "iou_4dp": 0.8175,
+     "steps": 742,
+     "delta_recall_pts_2dp": -0.04,
+     "delta_precision_pts_2dp": 12.98,
+     "merges_cand": 1
+    },
+    "dendrite_93375": {
+     "iou_4dp": 0.9522,
+     "steps": 830,
+     "delta_recall_pts_2dp": -0.56,
+     "delta_precision_pts_2dp": -0.46,
+     "merges_cand": 1
+    },
+    "notebook": {
+     "iou_4dp": 0.9307,
+     "steps": 360,
+     "delta_recall_pts_2dp": -0.41,
+     "delta_precision_pts_2dp": 0.06,
+     "merges_cand": 0
+    }
+   },
+   "all": {
+    "steps": 6117,
+    "mean_recall_drop_pts_2dp": -1.16,
+    "mean_precision_drop_pts_2dp": -7.82,
+    "mean_unlabeled_rise_pts_2dp": 0.04,
+    "merged_voxels_growth_pct_1dp": -93.9,
+    "within_tolerance": true
+   },
+   "without_sensitive_seeds": {
+    "steps": 5734,
+    "mean_recall_drop_pts_2dp": -1.32,
+    "mean_precision_drop_pts_2dp": -1.21,
+    "mean_unlabeled_rise_pts_2dp": -0.03,
+    "merged_voxels_growth_pct_1dp": -47.8,
+    "within_tolerance": true
+   },
+   "canvas_inf_voxels_total": 0
+  },
+  "precision-bf16-20261021": {
+   "variant": "bf16",
+   "passes_tolerance": false,
+   "seeds_outside_seed_rules": [
+    "dendrite_61046"
+   ],
+   "flagged_for_review": [
+    "axon_3574",
+    "axon_13395",
+    "axon_10801",
+    "axon_5506",
+    "axon_218",
+    "axon_57259",
+    "dendrite_1525",
+    "dendrite_99141",
+    "dendrite_56789",
+    "dendrite_61046",
+    "dendrite_93375",
+    "notebook"
+   ],
+   "ms_per_step_2dp": 14.78,
+   "reference_ms_per_step_2dp": 19.67,
+   "per_seed": {
+    "axon_3574": {
+     "iou_4dp": 0.9644,
+     "steps": 325,
+     "delta_recall_pts_2dp": 0.16,
+     "delta_precision_pts_2dp": 0.11,
+     "merges_cand": 0
+    },
+    "axon_13395": {
+     "iou_4dp": 0.9643,
+     "steps": 537,
+     "delta_recall_pts_2dp": -0.01,
+     "delta_precision_pts_2dp": 0.07,
+     "merges_cand": 0
+    },
+    "axon_10801": {
+     "iou_4dp": 0.9422,
+     "steps": 498,
+     "delta_recall_pts_2dp": -0.69,
+     "delta_precision_pts_2dp": -0.26,
+     "merges_cand": 0
+    },
+    "axon_5506": {
+     "iou_4dp": 0.9805,
+     "steps": 316,
+     "delta_recall_pts_2dp": 0.02,
+     "delta_precision_pts_2dp": -0.0,
+     "merges_cand": 0
+    },
+    "axon_218": {
+     "iou_4dp": 0.9131,
+     "steps": 12,
+     "delta_recall_pts_2dp": 0.48,
+     "delta_precision_pts_2dp": 0.0,
+     "merges_cand": 0
+    },
+    "axon_57259": {
+     "iou_4dp": 0.9755,
+     "steps": 161,
+     "delta_recall_pts_2dp": -0.39,
+     "delta_precision_pts_2dp": -0.0,
+     "merges_cand": 0
+    },
+    "dendrite_1525": {
+     "iou_4dp": 0.1797,
+     "steps": 375,
+     "delta_recall_pts_2dp": 0.82,
+     "delta_precision_pts_2dp": 80.16,
+     "merges_cand": 1
+    },
+    "dendrite_99141": {
+     "iou_4dp": 0.961,
+     "steps": 981,
+     "delta_recall_pts_2dp": 0.73,
+     "delta_precision_pts_2dp": -0.11,
+     "merges_cand": 1
+    },
+    "dendrite_56789": {
+     "iou_4dp": 0.9632,
+     "steps": 953,
+     "delta_recall_pts_2dp": -0.2,
+     "delta_precision_pts_2dp": -0.04,
+     "merges_cand": 1
+    },
+    "dendrite_61046": {
+     "iou_4dp": 0.1814,
+     "steps": 4357,
+     "delta_recall_pts_2dp": -0.0,
+     "delta_precision_pts_2dp": -69.13,
+     "merges_cand": 2
+    },
+    "dendrite_93375": {
+     "iou_4dp": 0.9596,
+     "steps": 816,
+     "delta_recall_pts_2dp": -0.13,
+     "delta_precision_pts_2dp": -0.32,
+     "merges_cand": 1
+    },
+    "notebook": {
+     "iou_4dp": 0.9374,
+     "steps": 354,
+     "delta_recall_pts_2dp": 0.68,
+     "delta_precision_pts_2dp": 0.0,
+     "merges_cand": 0
+    }
+   },
+   "all": {
+    "steps": 9685,
+    "mean_recall_drop_pts_2dp": -0.12,
+    "mean_precision_drop_pts_2dp": -0.87,
+    "mean_unlabeled_rise_pts_2dp": -0.28,
+    "merged_voxels_growth_pct_1dp": 93.1,
+    "within_tolerance": false
+   },
+   "without_sensitive_seeds": {
+    "steps": 9298,
+    "mean_recall_drop_pts_2dp": -0.02,
+    "mean_precision_drop_pts_2dp": 6.97,
+    "mean_unlabeled_rise_pts_2dp": -0.3,
+    "merged_voxels_growth_pct_1dp": 1578.9,
+    "within_tolerance": false
+   },
+   "canvas_inf_voxels_total": 0
+  }
+ },
+ "superseded_runs": {
+  "note": "First runs (screen 7365849 at batch 8; fp16 7365855; bf16 7365856) are kept as superseded-precision-*-20261021. The re-runs use a batch-1 screen and record canvas_inf_voxels; their per-seed canvas and visit-order sha256 equal the first runs for all 24 traces.",
+  "reruns_identical_to_superseded": true
+ },
+ "documented_training_survey": {
+  "labeled_fraction_3dp": 0.327,
+  "objects": 50691,
+  "bucket_top_level": [
+   "ExPID09_01/",
+   "ExPID124/",
+   "ExPID146/",
+   "ExPID150/",
+   "ExPID82_1/",
+   "models/",
+   "multiround_fusion/",
+   "ng_states/",
+   "sofima/"
+  ],
+  "volumes": {
+   "ExPID82_1/image_230130b": {
+    "finest_resolution_nm": [
+     9.0,
+     9.0,
+     12.0
+    ],
+    "finest_size_xyz": [
+     7650,
+     9740,
+     1590
+    ]
+   },
+   "ExPID82_1/segmentation/231030_agg_240123": {
+    "finest_resolution_nm": [
+     18.0,
+     18.0,
+     24.0
+    ],
+    "finest_size_xyz": [
+     3825,
+     4870,
+     795
+    ]
+   },
+   "ExPID124/image": {
+    "finest_resolution_nm": [
+     10.0,
+     10.0,
+     25.0
+    ],
+    "finest_size_xyz": [
+     47000,
+     13000,
+     1000
+    ]
+   },
+   "ExPID124/seg_230907_agglo231128_combined2": {
+    "finest_resolution_nm": [
+     20.0,
+     20.0,
+     25.0
+    ],
+    "finest_size_xyz": [
+     23500,
+     6500,
+     1000
+    ]
+   },
+   "ExPID146/image": {
+    "finest_resolution_nm": [
+     9.0,
+     9.0,
+     25.0
+    ],
+    "finest_size_xyz": [
+     11098,
+     11094,
+     2300
+    ]
+   },
+   "ExPID09_01/image": {
+    "finest_resolution_nm": [
+     10.0,
+     10.0,
+     25.0
+    ],
+    "finest_size_xyz": [
+     2304,
+     2304,
+     969
+    ]
+   },
+   "ExPID150/multiround_fusion_240918": {
+    "finest_resolution_nm": [
+     10.0,
+     10.0,
+     25.0
+    ],
+    "finest_size_xyz": [
+     11000,
+     11000,
+     12000
+    ]
+   }
+  }
+ },
+ "survey_note": "examples/survey_training_data.py runs locally (not on Wahab). It was revised after review to read the coarse label level once and to describe that read accurately; re-running the revised script reproduced training_data_survey.json byte for byte."
+}
