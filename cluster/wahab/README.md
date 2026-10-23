@@ -52,3 +52,17 @@ Copy `$RUN/merged` back to the Mac's `data/runs/` and compare it with another ru
 
 Jobs set `LICONN_BACKEND=gpu` and `XLA_FLAGS=--xla_gpu_deterministic_ops=true`. Each
 record stores the GPU model, node, Slurm job, XLA flags and library versions.
+
+## 5. Many-seed runs (docs/manyseed_design.md)
+
+The new crops are fetched once on the Mac (`.venv/bin/python -m liconn_v2.manyseed`)
+and copied to `/scratch/$USER/liconn_v2_data/manyseed/`. One array task runs one crop
+(up to 30 seeds); set the array to the number of crops in docs/manyseed_crops.json:
+
+    export RUN=/scratch/$USER/liconn_runs/manyseed-fp32 VARIANT=fp32; mkdir -p $RUN/logs
+    sbatch --export=ALL --array=0-12 -o "$RUN/logs/%A_%a.out" cluster/wahab/manyseed_array.sbatch
+
+Repeat with `VARIANT=fp16` and its own RUN, then judge (crops in order):
+
+    ~/envs/liconn_v2/bin/python examples/judge_manyseed.py \
+        --ref  $REF/crop-{00..12} --cand $RUN/crop-{00..12}

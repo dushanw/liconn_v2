@@ -1,0 +1,131 @@
+{
+ "about": "Evidence for docs/head32_results.md, checked by tests/test_head32_evidence.py.",
+ "slurm_jobs": {
+  "fp16_head32": 7404325,
+  "reference_fp32": 7389883
+ },
+ "source_note": "Run from a staged copy of the workspace (Wahab dir liconn_v2_m12); every staged file equals the checked workspace file.",
+ "run_source_sha256": {
+  "liconn_v2/earlystop.py": "413de84c4a670d10225fa90fc2e7b9f704b244c328bbda2e4a691fc24079c5b4",
+  "liconn_v2/manyseed.py": "8611b01feef08129b51ac645510051495ea41c520f1051c04db9d19f5161a92d",
+  "liconn_v2/precision.py": "1e389994f83ec0a702b6be83788594d009ec6183cfd8bb6d39f0c6ff37592ea7",
+  "liconn_v2/reference.py": "2de09cfa1545c20fcc60c6ab2428e803c48bdad27c2e33145101d4ac118ceb73",
+  "liconn_v2/data.py": "033ea6c8dcdf782acfdad5ac6c43d3fc5e8b43359bbeecf1aec6033c3a9b99e8",
+  "liconn_v2/benchmark.py": "309ea0a4d5d31ead276fbd1a87e7bf7575cda1e1ad1ffb98c1248dcbdbfbc23e",
+  "examples/run_manyseed.py": "dcb02f10d567fa03b92f82ad16f91021717bf75cbcf1067f1806c293c591b669",
+  "examples/run_policy_benchmark.py": "2fad76f43d2b05921fa7fe45e20fdb4c0849c6b33307a49e726986ad25086579",
+  "examples/judge_manyseed.py": "7a804c7cef82afbbbfe1efb2cebe765d6a4e9242564d7d09773aa1f426d58768",
+  "cluster/wahab/manyseed_array.sbatch": "edf0cbd270a6c8fbf04e36ba6963491a7764c2ec364b5c150dcb9e01254d1e81",
+  "docs/manyseed_seeds.json": "af6cf9f691c7722d2f6d86dfd73e66c3d9f096e30c8d624493b380c7bf952f85",
+  "docs/manyseed_crops.json": "52fbcba548e02828f1116f98429032db8f6494fd2232c3658a5eaa34c6c8f924"
+ },
+ "outputs_sha256": {
+  "manyseed-fp16_head32-20261022/crop-00/benchmark.json": "0fbe5b94d7b6fc614b4669868200d93914e9d1d2cc656a48090f830b8f75fe0c",
+  "manyseed-fp16_head32-20261022/crop-00/benchmark_masks.npz": "2c141d922df585c9ac79b93a703152cc476bd9b17625679c751c144b8f105016",
+  "manyseed-fp16_head32-20261022/crop-01/benchmark.json": "a2d8e1117b40c8f39901773c847a642938d972ef1961fa9bf0938635a4eda556",
+  "manyseed-fp16_head32-20261022/crop-01/benchmark_masks.npz": "0d4a503f116514dca4d3cd50e875e01efb949c19744352096958fc1b29548452",
+  "manyseed-fp16_head32-20261022/crop-02/benchmark.json": "c772a18e11d1aeade66c86acd043cfe652a88346da3f0bd2b4e8ec90f6669792",
+  "manyseed-fp16_head32-20261022/crop-02/benchmark_masks.npz": "75da102504a5faf98c48617558594661fa26946e6e289077c9e0b19e71acc8af",
+  "manyseed-fp16_head32-20261022/crop-03/benchmark.json": "7813856311e7dc44fcd3299ebdab69823072cbcfd46769b5155d860e32a85dfd",
+  "manyseed-fp16_head32-20261022/crop-03/benchmark_masks.npz": "9d5c3fc3d0be5c23b4b3a7415b306f946f19cd18ab9a9a5585a1d4086211f7a2",
+  "manyseed-fp16_head32-20261022/crop-04/benchmark.json": "4d71b49a345acda65dd979767845a7f4a04ffed7b84832f5516b364bd5e460f0",
+  "manyseed-fp16_head32-20261022/crop-04/benchmark_masks.npz": "2ae8895661468ca1f86740bbf9b4534077a067790406e9085498e2d7e0e675d6",
+  "manyseed-fp16_head32-20261022/crop-05/benchmark.json": "36f6b0b2860ab97dc1097ad9d18dd38ee5ea5268bc2cce2c0d91599b132a76ed",
+  "manyseed-fp16_head32-20261022/crop-05/benchmark_masks.npz": "8316f36c922a859d72513e3b2ba58a67f06fcd8cfebffae894bfa24f2df68807",
+  "manyseed-fp16_head32-20261022/crop-06/benchmark.json": "f5d2da1d24407a9be36886ed2f3c513b9a35e9e524f8e83309504b61c6894937",
+  "manyseed-fp16_head32-20261022/crop-06/benchmark_masks.npz": "7968ffc039d4520f6c5fadff8cc57be62196930473110f08753fcc17df453194",
+  "manyseed-fp16_head32-20261022/crop-07/benchmark.json": "9f01b8c6ba8877cf719d2ed930552eb702572dbe3f90ad03b0ec7edddf30255b",
+  "manyseed-fp16_head32-20261022/crop-07/benchmark_masks.npz": "34b8be5904612d269d0eb74f7f87a5ab42c2f4a0b51642dbbb152bc9d1a5b13e",
+  "manyseed-fp16_head32-20261022/crop-08/benchmark.json": "c1780660c8376ca1e79c88f5f5ce3e6e42706802482b42181454d5b471e32916",
+  "manyseed-fp16_head32-20261022/crop-08/benchmark_masks.npz": "3c18c1a1b9da8e7779b5bd352850117540b6b4b7e723eddd135c78f1d3e1951f",
+  "manyseed-fp16_head32-20261022/crop-09/benchmark.json": "673ec7b16165340e7014798eb90cb69a037e0fa9c6b0d934cc3d34602a184205",
+  "manyseed-fp16_head32-20261022/crop-09/benchmark_masks.npz": "fd39d444a5b4e550d24969b040fa6d6934fa8459be8f9cf671e6c07d2a160d88",
+  "manyseed-fp16_head32-20261022/crop-10/benchmark.json": "d996f89b7b34acb35610492bc2499b0afdfb0025dc7186ed3c6843ff4462f3b8",
+  "manyseed-fp16_head32-20261022/crop-10/benchmark_masks.npz": "a0e06ae297454530ddf9caf96b5b8bc67fdc419157bd141132d571385de42055",
+  "manyseed-fp16_head32-20261022/crop-11/benchmark.json": "79a86353162ba49857baf1312d58d54c50a36f7aab30f226e4a0069fbd802ecc",
+  "manyseed-fp16_head32-20261022/crop-11/benchmark_masks.npz": "58cd5d7379dd2ecee387dd4fe70b383f78a57567072900a68cf05637c52472c5",
+  "manyseed-fp16_head32-20261022/crop-12/benchmark.json": "b4abe6e45c3232ca7bf15d72b763ceafd7bad9d3b55338b9e066ed090f0e699e",
+  "manyseed-fp16_head32-20261022/crop-12/benchmark_masks.npz": "57c52fc4d421fafd624233e135eaa59558997fc26fbf3ace1fb8c5a4b099ba3a",
+  "manyseed-verdict-fp16_head32-20261022/manyseed_verdict.json": "48531a3d85f8f2386597d22b128f1cb62f4d9c5993e9db9d67923146964c6f13"
+ },
+ "documented": {
+  "counts": {
+   "new_merge": 1,
+   "new_early_stop": 1,
+   "avoided_merge": 2,
+   "extension": 4
+  },
+  "dendrite_counts": {
+   "new_merge": 0,
+   "new_early_stop": 0,
+   "avoided_merge": 1,
+   "extension": 0
+  },
+  "rules": {
+   "complete_same_inputs": true,
+   "all_300_seeds": true,
+   "new_merges": true,
+   "new_early_stops": true,
+   "mean_recall_drop": true,
+   "mean_precision_drop": true
+  },
+  "passes": true,
+  "mean_recall_change_pts_2dp": 0.27,
+  "mean_precision_change_pts_2dp": 0.13,
+  "upper_bound_pct_1dp": {
+   "new_merge_rate": 1.6,
+   "new_early_stop_rate": 1.6,
+   "dendrite_new_merge_rate": 4.1
+  },
+  "flipped": {
+   "m0_axon_30306": [
+    "extension"
+   ],
+   "m0_axon_3428": [
+    "extension"
+   ],
+   "m1_axon_132476": [
+    "new_merge"
+   ],
+   "m2_dendrite_17382": [
+    "avoided_merge"
+   ],
+   "m4_axon_59400": [
+    "extension"
+   ],
+   "m5_axon_228843": [
+    "extension"
+   ],
+   "m8_axon_78192": [
+    "avoided_merge"
+   ],
+   "m10_axon_145819": [
+    "new_early_stop"
+   ]
+  },
+  "ms_per_step_2dp": 8.95,
+  "total_steps": 92792,
+  "split": {
+   "fp16": {
+    "selection": {
+     "new_early_stop": 10,
+     "new_merge": 0
+    },
+    "other": {
+     "new_early_stop": 0,
+     "new_merge": 3
+    }
+   },
+   "fp16_head32": {
+    "selection": {
+     "new_early_stop": 1,
+     "new_merge": 0
+    },
+    "other": {
+     "new_early_stop": 0,
+     "new_merge": 1
+    }
+   }
+  }
+ }
+}
