@@ -1,0 +1,65 @@
+{
+ "about": "Evidence for docs/fasttrace_results.md, checked by tests/test_fasttrace_evidence.py.",
+ "slurm_jobs": {
+  "fresh_fp32": 7432091,
+  "fresh_fp16_head32": 7432092,
+  "bench_fp32": 7432093,
+  "bench_fp16_head32": 7432094
+ },
+ "source_note": "Run from a staged copy of the workspace (Wahab dir liconn_v2_m16), identical to the checked code: there are no post-run edits. The benchmark fp32 run compares against the pinned local copy of gpu-baseline-a-20261019/merged/benchmark.json, uploaded to Wahab as fasttrace-inputs/gpu-baseline-a-benchmark.json. The superseded 20261023 runs (face maxima on the host) are kept in data/runs and described in docs/fasttrace_results.md.",
+ "run_source_sha256": {
+  "liconn_v2/fasttrace.py": "6621cd1dfe8819c0a6d7857ecdfdc9f9f0878358dccde21bd5abe3324284ed60",
+  "liconn_v2/reference.py": "2de09cfa1545c20fcc60c6ab2428e803c48bdad27c2e33145101d4ac118ceb73",
+  "liconn_v2/earlystop.py": "413de84c4a670d10225fa90fc2e7b9f704b244c328bbda2e4a691fc24079c5b4",
+  "liconn_v2/precision.py": "1e389994f83ec0a702b6be83788594d009ec6183cfd8bb6d39f0c6ff37592ea7",
+  "liconn_v2/fresh.py": "65b3b69e8d9fab44e82490d676abb17ed8a989cfe853d646b8619ee12107317d",
+  "liconn_v2/manyseed.py": "8611b01feef08129b51ac645510051495ea41c520f1051c04db9d19f5161a92d",
+  "liconn_v2/benchmark.py": "309ea0a4d5d31ead276fbd1a87e7bf7575cda1e1ad1ffb98c1248dcbdbfbc23e",
+  "liconn_v2/data.py": "033ea6c8dcdf782acfdad5ac6c43d3fc5e8b43359bbeecf1aec6033c3a9b99e8",
+  "examples/run_fasttrace.py": "96ba3e2276062f0f1eeb899cda7692a314cc2bb6a0c2565512769b1aec5315d5",
+  "examples/run_policy_benchmark.py": "2fad76f43d2b05921fa7fe45e20fdb4c0849c6b33307a49e726986ad25086579",
+  "cluster/wahab/fasttrace.sbatch": "9b58273c3c80ecf0dc32de48f049fd46ed5c7642cc9f3c27dbed9b572f72f03a",
+  "docs/fresh_seeds.json": "ce293bc92767cca43af774fabf90e319e101d23dabe778dc0f5ef4a01a0f376c",
+  "docs/fresh_crops.json": "8f66ce28351d446fb18b14585f590c3f87271efbf9517fe52015eecba9887e3f"
+ },
+ "post_run_edits": {},
+ "outputs_sha256": {
+  "fasttrace-fresh-fp32-20261024/fasttrace_run.json": "31c5afcaa0f18c367ff407e5ae0828ee035d9a8a8050418c510c1a377013a035",
+  "fasttrace-fresh-fp16_head32-20261024/fasttrace_run.json": "bfa7ba61307d5f2b109dcc2bb12c243678ed3b981ea8d2883735168107cec67e",
+  "fasttrace-bench-fp32-20261024/fasttrace_run.json": "d8e030229706447d035738e07dc478db87d56b22c50ef5cd224a27abe4ba9aa0",
+  "fasttrace-bench-fp16_head32-20261024/fasttrace_run.json": "b49a3428063d24f4e165af8a14b8e6988f97ae90053496bfe2ae14f260c02414",
+  "gpu-baseline-a-20261019/merged/benchmark.json": "d640bf803f938ed0710dd5446be4d103f333b5839783ef0bd65eb82045aff704"
+ },
+ "documented": {
+  "fresh_fp32": {
+   "seeds": 300,
+   "all_match_recorded": true,
+   "steps": 111209,
+   "fast_ms_per_step": 17.56
+  },
+  "fresh_fp16_head32": {
+   "seeds": 300,
+   "all_match_recorded": true,
+   "steps": 118757,
+   "fast_ms_per_step": 6.41
+  },
+  "bench_fp32": {
+   "seeds": 12,
+   "all_match_recorded": true,
+   "steps": 8407,
+   "fast_ms_per_step": 17.16,
+   "all_match_reference": true,
+   "reference_ms_per_step": 19.27,
+   "speedup_over_reference": 1.12
+  },
+  "bench_fp16_head32": {
+   "seeds": 12,
+   "all_match_recorded": null,
+   "steps": 8230,
+   "fast_ms_per_step": 5.96,
+   "all_match_reference": true,
+   "reference_ms_per_step": 8.55,
+   "speedup_over_reference": 1.43
+  }
+ }
+}
