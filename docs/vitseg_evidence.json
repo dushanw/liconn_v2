@@ -1,0 +1,199 @@
+{
+ "design": "docs/vitseg_design.md",
+ "results": "docs/vitseg_results.md",
+ "decision": "Owner decision 2026-10-26: stop before the test crops; test crops 13-40 not segmented.",
+ "run_source_sha256": {
+  "liconn_v2/vitseg.py": "77c4fe1636749474e6d82d2b143a74250d04c4b6024885ee06779ade64e7019d",
+  "examples/train_vitseg.py": "515355ff7b3704b5da05b7a8943ef38ade141ad320a591a54a7564dbcfd154c9",
+  "examples/run_vitseg.py": "ae9017a570a7a2bab22a2d8c1de66ebbd5201c344c1af780391249ae6d69ceef",
+  "examples/check_vitseg.py": "2d71978f96142ee360c6f29cce9dbbdfd15239d53b7f40f9ca1f585c8e8b50d9",
+  "tests/test_vitseg.py": "4bcb135c9555d13d3aa8d5e5678737077a3f601eb026f02404ca853d66d38a4b",
+  "cluster/wahab/vitseg.sbatch": "0dd790789f962ada3330748dbd778f552943a27091f29730582200547a31a5bb"
+ },
+ "outputs_sha256": {
+  "vitseg-train-r3-20261025/train_log.json": "9f3aa24f964c1279dd5d97f4f0581ef1ff4f09c670c0ee1ea399c7f9422a7a3c",
+  "vitseg-train-r3-20261025/params.msgpack": "2df480d83dbbb1df2299f5debab3aadb3fb6a594a007354a8a2f6965b463f931",
+  "vitseg-tune-r3-s66000-20261026/vitseg_tuning.json": "e15c7f20efd57f248438e465204a6133407de571b3d3e96645b750317ab97d35",
+  "vitseg-breakdown-s66000-20261026/breakdown.json": "4b596c84540b3cadc7c96ce32c69c57db9a939038609ada69bd099685e25f2af",
+  "vitseg-breakdown-s66000-20261026/vit_scenes.json": "bb691a88824fe32f2c31d7834101791c89432e1c3d0902f8fce41d3536979c0f",
+  "vitseg-breakdown-s66000-20261026/breakdown.py": "fb6d0d9a7dc1b1d8faaab8b18a3b7c14e675c0fdae7ed38da0d886f4c61d4652",
+  "vitseg-breakdown-s66000-20261026/meshes.py": "534caecc042ffc3a82b8e98acfa3a45089cd20caa2a9a0caa1e4ee32540b5827",
+  "vitseg-breakdown-s66000-20261026/aff_uint8.npy": "4f8838204c93dab9a698bce426d9da3c42fecc2ca4e92f2165db7d123879ab0c",
+  "vitseg-tune-r3-s66000-20261026/7451650.out": "5ee5f72e08d617fd5ffe3b7ae0922882338f585c4755e3183bd1e6586a79cefb",
+  "vitseg-breakdown-s66000-20261026/7452001.out": "ebeaa8e54b3a76b501bd111d959704d012518f104488ddd92b59bd16e3fca766",
+  "vitseg-breakdown-s66000-20261026/mesh_7452015.out": "b39a37350795bcb12bc4507cbb4a7b329299b2f5ad233c5ca17307d399193a21"
+ },
+ "slurm_jobs": {
+  "train": 7448381,
+  "tune": 7451650,
+  "breakdown": 7452001,
+  "meshes": 7452015
+ },
+ "training": {
+  "planned_steps": 170000,
+  "stopped_step": 67344,
+  "stopped_reason": "200 consecutive non-finite steps",
+  "best_step": 66000,
+  "best_validation_loss": 0.2676,
+  "skipped_steps": 972,
+  "first_skipped_step": 66246,
+  "unstable": true
+ },
+ "tuning": {
+  "objects": 457,
+  "threshold": 0.5,
+  "mean_f1": 0.5314,
+  "mean_recall": 0.5022,
+  "mean_precision": 0.826,
+  "background_precision": 0.8858,
+  "background_recall": 0.8889,
+  "fragments": 59303
+ },
+ "breakdown": {
+  "recall": 0.5022,
+  "precision": 0.826,
+  "f1": 0.5314,
+  "lost_to_background": 0.0932,
+  "lost_to_other_segments": 0.4046,
+  "pieces_over_1pct": 5.6652
+ },
+ "seeds_in_background": 7,
+ "neuron_channel": {
+  "precision": 0.9227,
+  "recall": 0.9205
+ },
+ "hybrids": {
+  "label_neuron_mask__predicted_affinities": {
+   "best_threshold": 0.3,
+   "mean_f1": 0.7439,
+   "mean_recall": 0.6574,
+   "mean_precision": 0.9794
+  },
+  "predicted_neuron_mask__label_affinities": {
+   "best_threshold": 0.8,
+   "mean_f1": 0.7785,
+   "mean_recall": 0.6962,
+   "mean_precision": 0.9625
+  }
+ },
+ "ffn_reference": {
+  "run": "manyseed-fp16_head32-20261022",
+  "seeds": 300,
+  "mean_recall": 0.85,
+  "mean_precision": 0.985,
+  "mean_f1": 0.894,
+  "note": "per-seed F1 = 2PR/(P+R), crops 0-12",
+  "mean_unlabeled_fraction": 0.136
+ },
+ "details": {
+  "note": "Secondary numbers cited in docs/vitseg_results.md; ranges are [min, max] over channels or distance bands.",
+  "validation_loss": {
+   "2000": 0.3952,
+   "20000": 0.2896,
+   "50000": 0.278,
+   "66000": 0.2676,
+   "67344": 0.5148
+  },
+  "tuning_points": {
+   "0.05": {
+    "mean_f1": 0.0975,
+    "mean_recall": 0.8545,
+    "mean_precision": 0.1125
+   },
+   "0.75": {
+    "mean_recall": 0.3484,
+    "mean_precision": 0.9529
+   },
+   "0.95": {
+    "mean_f1": 0.2981
+   }
+  },
+  "background_predicted_fraction": 0.4112,
+  "background_labelled_fraction": 0.4097,
+  "neuron_missed_at_boundary": 0.1816,
+  "neuron_missed_further_in": [
+   0.0194,
+   0.0279
+  ],
+  "background_called_neuron_at_boundary": 0.1397,
+  "deep_background_called_neuron": 0.4799,
+  "deep_background_voxels": 794273,
+  "nearest_same_below_half": [
+   0.1436,
+   0.1462
+  ],
+  "nearest_diff_at_or_above_half": [
+   0.1174,
+   0.1253
+  ],
+  "nearest_same_mean": [
+   0.8077,
+   0.8119
+  ],
+  "long_range_errors": [
+   0.0717,
+   0.0792
+  ],
+  "interior_unconfident_fraction": 0.14,
+  "median_pieces": 5,
+  "thickness_terciles": [
+   {
+    "objects": 161,
+    "f1": 0.4684
+   },
+   {
+    "objects": 195,
+    "f1": 0.5168
+   },
+   {
+    "objects": 101,
+    "f1": 0.6599
+   }
+  ],
+  "split_rate": [
+   0.0106,
+   0.0111
+  ],
+  "hybrid_thresholds": [
+   0.3,
+   0.4,
+   0.5,
+   0.6,
+   0.7,
+   0.8,
+   0.9
+  ],
+  "examples": {
+   "vit12_p90": {
+    "rank": 411,
+    "f1": 0.9152,
+    "pieces": 4
+   },
+   "vit12_p50": {
+    "rank": 229,
+    "f1": 0.5601,
+    "pieces": 11
+   },
+   "vit12_p10": {
+    "rank": 46,
+    "f1": 0.0836,
+    "pieces": 8
+   }
+  },
+  "paired_object": {
+   "object_id": 346093,
+   "vit_rank": 283,
+   "vit_recall": 0.5233,
+   "vit_precision": 0.8452,
+   "vit_f1": 0.6464,
+   "ffn_recall": 0.7682,
+   "ffn_precision": 0.9995,
+   "ffn_f1": 0.8687
+  },
+  "ffn_unlabeled_fraction_quartiles": [
+   0.1057,
+   0.16
+  ]
+ },
+ "tolerance": 0.0001
+}
