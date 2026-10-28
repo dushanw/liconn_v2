@@ -1,0 +1,215 @@
+{
+ "about": "Evidence for docs/earlystop_results.md, checked by tests/test_earlystop_evidence.py.",
+ "slurm_jobs": {
+  "fp32open": 7392292,
+  "fp16": 7392293,
+  "superseded": [
+   7392246,
+   7392247
+  ]
+ },
+ "source_note": "Run from a staged copy of the workspace (Wahab dir liconn_v2_m11). The first pair of jobs picked float16 controls by float16 step counts (a bug); they are kept as superseded-earlystop-* and not used.",
+ "run_source_sha256": {
+  "liconn_v2/earlystop.py": "4f3bda500de59857a25e84b26e97539ab48e787b66dc70481958350b8d66027c",
+  "liconn_v2/precision.py": "1e389994f83ec0a702b6be83788594d009ec6183cfd8bb6d39f0c6ff37592ea7",
+  "liconn_v2/reference.py": "2de09cfa1545c20fcc60c6ab2428e803c48bdad27c2e33145101d4ac118ceb73",
+  "liconn_v2/manyseed.py": "622d3c1858208b8d977c56ecb43fc3505f9593fa072915aaca207d3f0fda6bf4",
+  "liconn_v2/data.py": "033ea6c8dcdf782acfdad5ac6c43d3fc5e8b43359bbeecf1aec6033c3a9b99e8",
+  "examples/run_earlystop.py": "1a9cbe337cb2a5e5021f6a870cce6bcd2512ed3d4df6c424199850321f3b5e2e",
+  "examples/run_policy_benchmark.py": "2fad76f43d2b05921fa7fe45e20fdb4c0849c6b33307a49e726986ad25086579",
+  "examples/analyze_earlystop.py": "c6f0a7c9c04a53b2e3e0037fcb2eb7d5c1e5259ad51bddb7449fbe545d4fef46",
+  "cluster/wahab/earlystop.sbatch": "6ee280b07895b13463ff65dd16c92c59712a44cdb8941e24db80763c65a5227b",
+  "docs/manyseed_seeds.json": "af6cf9f691c7722d2f6d86dfd73e66c3d9f096e30c8d624493b380c7bf952f85",
+  "docs/manyseed_crops.json": "52fbcba548e02828f1116f98429032db8f6494fd2232c3658a5eaa34c6c8f924"
+ },
+ "post_run_edits": {
+  "liconn_v2/earlystop.py": {
+   "changed_definitions": [
+    "PLATEAU",
+    "Recorder",
+    "face_errors",
+    "frontier",
+    "install",
+    "non_finite_faces",
+    "plateau_stats",
+    "run_layout",
+    "voxel_flips"
+   ],
+   "why": "Analysis only, after the runs: float16 NaN face scores are excluded from the error statistics and counted separately; the exploratory plateau statistics were added; after review, the frontier label dropped_at_pop was renamed queued_not_evaluated because the recorder does not see why a queued move is not evaluated. The GPU runs use none of these. Milestone 12 (review finding): the open-loop voxel flip count (voxel_flips, used by Recorder) now counts a non-finite candidate output as changed. The recorded runs used the earlier count, which undercounts NaN outputs; their voxel flip rate is not cited in docs/earlystop_results.md. install() and run_layout() were added to run fp16_head32 through the many-seed runner. Nothing else in Recorder changed."
+  },
+  "examples/analyze_earlystop.py": {
+   "changed_definitions": [
+    "analyze"
+   ],
+   "why": "Reports the NaN counts and the exploratory plateau statistics. Not run on the cluster; re-run by the evidence test."
+  },
+  "liconn_v2/manyseed.py": {
+   "changed_definitions": [
+    "fetch_and_select"
+   ],
+   "why": "Review finding (early-stop check 2): cached crops are verified before the coarse level is downloaded. The early-stop runs only load crops and seeds; they never call fetch_and_select."
+  }
+ },
+ "outputs_sha256": {
+  "earlystop-fp32open-20261022/earlystop_run.json": "bf40114a41d76a28a916afa42872fb962d9faa8cab26227d185c99ad290a8204",
+  "earlystop-fp32open-20261022/steps/m10_axon_145819.json": "a8509c9f2dded548866e225a0a1149c064c2f2a4bbaa785af1299040d0549652",
+  "earlystop-fp32open-20261022/steps/m10_axon_199806.json": "b2fc3e4c6fce97fe3a857ec0a006f91937370e7ee9dc0f7c1725f8f6d6d5291d",
+  "earlystop-fp32open-20261022/steps/m1_axon_129792.json": "5a26be26322ef8b58c41b7fd9994a92318901543b987eb20a0f27ddc62c726b0",
+  "earlystop-fp32open-20261022/steps/m1_axon_134866.json": "8a59fbf1d1527f65a35430ce8951a88389533c62edcf88151f679dd6af622d25",
+  "earlystop-fp32open-20261022/steps/m1_axon_173408.json": "3dd8447ae670272351c6a1062b3e3217e30b164a90a38ee38824f8759c99a202",
+  "earlystop-fp32open-20261022/steps/m1_axon_175567.json": "21675f540b9be8ee98b330c19d165ddfc796585cbc4b5a7c5898ec2fa43509b0",
+  "earlystop-fp32open-20261022/steps/m2_axon_86613.json": "9b8f216c23dfb3bbc2a0bf4a1039253439c7b28090ae0153ef1c0b18b324a699",
+  "earlystop-fp32open-20261022/steps/m2_axon_92043.json": "e701d772effa3cbeaba46778d22800232e37972d074449fa0881bc3b1b9e71b6",
+  "earlystop-fp32open-20261022/steps/m2_dendrite_104095.json": "4ec19cf257a5762f38eb5ffc9adbd32b903bbad210f1e0e61a99ef189b865bc4",
+  "earlystop-fp32open-20261022/steps/m2_dendrite_221993.json": "611e4f65d9d745e9d49b81d95e5f24673e1e019c22b751d50a77cff8f5c833f3",
+  "earlystop-fp32open-20261022/steps/m3_dendrite_1291.json": "40d9d540eca8f27373e0adb5bc8cbfb9944578087de62b8db468ccf50ab2967a",
+  "earlystop-fp32open-20261022/steps/m3_dendrite_142095.json": "07c41883cfa7edb956c9b794b2d981863d700753d2158672185ab79cbbcaf12e",
+  "earlystop-fp32open-20261022/steps/m5_axon_183529.json": "432f59d8ab2523035fb8c1039356b58d0dff446a9ae374bf5052c03c65a38a8f",
+  "earlystop-fp32open-20261022/steps/m5_axon_232100.json": "c340b06801993efb3d7b8525eaa91d320a8804379bf31dd2b3f91f3c2656f4fd",
+  "earlystop-fp32open-20261022/steps/m5_dendrite_226719.json": "5b71af647ba023ac71bb18a20d10a41a3fb8ce58d3682bd0f6b7c3e3b34573f8",
+  "earlystop-fp32open-20261022/steps/m5_dendrite_238120.json": "673a05890c1e927f5bdfc898709352b8d18982a1f7c4fb99a4f18630a42e0337",
+  "earlystop-fp32open-20261022/steps/m6_axon_215927.json": "844b644905407db4cc8b9a96591680addf07848a79880522acf17eb63c8fdfcb",
+  "earlystop-fp32open-20261022/steps/m6_axon_216332.json": "2080ef1d01dd15196e398b033dea0de9717f85078a47ba35de9e1d8a21868b17",
+  "earlystop-fp32open-20261022/steps/m7_axon_275334.json": "f6677bb12735211374ac07f1c007a3249c16ce7ece09ba1866eada98c7b16295",
+  "earlystop-fp32open-20261022/steps/m7_axon_320743.json": "ae0abbda201605c39fccba3ca4b5f4672aa157332611fbe2424e9776cf2ec4f5",
+  "earlystop-fp32open-20261022/source/examples/analyze_earlystop.py": "c6f0a7c9c04a53b2e3e0037fcb2eb7d5c1e5259ad51bddb7449fbe545d4fef46",
+  "earlystop-fp32open-20261022/source/liconn_v2/earlystop.py": "4f3bda500de59857a25e84b26e97539ab48e787b66dc70481958350b8d66027c",
+  "earlystop-fp16-20261022/earlystop_run.json": "4d2cc741b99c2a48162fd535286f4dd95c93cde2a35bb4309294850480320a97",
+  "earlystop-fp16-20261022/steps/m10_axon_145819.json": "085f955fbe558adcf9d4b28378e5ae791b6ba10657fae5dbbe5b7f1929abb85e",
+  "earlystop-fp16-20261022/steps/m10_axon_199806.json": "0f0e179b6513744daea4f1ea13725f59508ca9639c9dc1107abaf04c8dab93cf",
+  "earlystop-fp16-20261022/steps/m1_axon_129792.json": "8f279d90a15d0e2962e633395623938af75de19fba7f7ffdba6d389c8be724d3",
+  "earlystop-fp16-20261022/steps/m1_axon_134866.json": "57a18492f53b04ce01e9f873fdcb11c4abeb9d15fdd98ebd013322c8a655a69f",
+  "earlystop-fp16-20261022/steps/m1_axon_173408.json": "1a7938fe7c06ac73e644c9a561eb63cf3dcc5b258c7094a72ffc2fc0ebbb1118",
+  "earlystop-fp16-20261022/steps/m1_axon_175567.json": "91a3ec39848eba95dd297c12e53292a92741e93bbf82214c60d10c096ded964a",
+  "earlystop-fp16-20261022/steps/m2_axon_86613.json": "4b2c0e1dc35aaa1513b1fded3051c95161984a8362083e0fe89538bead031876",
+  "earlystop-fp16-20261022/steps/m2_axon_92043.json": "62038cb213adca743229a9cddc18ff760d47636aa449f66bd33bbe31661e12b8",
+  "earlystop-fp16-20261022/steps/m2_dendrite_104095.json": "d9156dd5c4913138d400ad5ab9573506ee7b41d15b743c816d15cb6797a90223",
+  "earlystop-fp16-20261022/steps/m2_dendrite_221993.json": "3b5e72f20a2a1be489e91866226d7ea3176210c318af016bbd3365bd160b7064",
+  "earlystop-fp16-20261022/steps/m3_dendrite_1291.json": "b3bd775e3d784573857a82b06f731cfd1f2bf67e7487e3a90e8fd6500961a692",
+  "earlystop-fp16-20261022/steps/m3_dendrite_142095.json": "65d6409bbf04eefd5cc2374950e72fe73d949e303eff30b3df59d19797c831e4",
+  "earlystop-fp16-20261022/steps/m5_axon_183529.json": "49433e5656b266637a92003d16a7d8a3040b5e1eb8c9001edfa85cab4aa4f11a",
+  "earlystop-fp16-20261022/steps/m5_axon_232100.json": "d7d2c26d2884bc888ab777ff70d03cd56604dae09ea8eb101f50eec394dcc5c5",
+  "earlystop-fp16-20261022/steps/m5_dendrite_226719.json": "4e889f2ee34833cbcdbcf384c1dbffeaef4c07c183121c876bb07a79afaef376",
+  "earlystop-fp16-20261022/steps/m5_dendrite_238120.json": "5aa6fa1cc0170cbcab7b1d63b8d8df28ef9085ad52c87971d003b51e01d1134c",
+  "earlystop-fp16-20261022/steps/m6_axon_215927.json": "7dba677eae0501f8554e6388c350d0345b51eed143d29c5d4c59dbf4da27eebe",
+  "earlystop-fp16-20261022/steps/m6_axon_216332.json": "1937aa22919dc33216a42064abeba2ae67a8e015d501b20a6371560284e57456",
+  "earlystop-fp16-20261022/steps/m7_axon_275334.json": "952fd0f1e5202cc55b69fe76066fe34d153d32eb277d44b8eae2367fc80ec317",
+  "earlystop-fp16-20261022/steps/m7_axon_320743.json": "cb057587fc2ede503cdd1cd224fa8db8f2a4ea8821f8ce5c76a9294d9076bce3",
+  "earlystop-analysis-20261022/earlystop_analysis.json": "ff7939413854abd1c7b4b43f14190bbde9723e6bca36920403f3079e558cf501",
+  "earlystop-fp32open-20261022/source/liconn_v2/manyseed.py": "622d3c1858208b8d977c56ecb43fc3505f9593fa072915aaca207d3f0fda6bf4"
+ },
+ "documented": {
+  "frontier_kinds": {
+   "early_stop": {
+    "threshold": 2,
+    "argmax": 7,
+    "queued_not_evaluated": 1,
+    "none": 0
+   },
+   "controls": {
+    "threshold": 2,
+    "argmax": 7,
+    "queued_not_evaluated": 1,
+    "none": 0
+   }
+  },
+  "first_difference_kinds": {
+   "early_stop": {
+    "threshold": 0,
+    "argmax": 9,
+    "order": 1,
+    "none": 0
+   },
+   "controls": {
+    "threshold": 0,
+    "argmax": 10,
+    "order": 0,
+    "none": 0
+   }
+  },
+  "frontier_by_seed": {
+   "m1_axon_175567": "argmax",
+   "m1_axon_173408": "threshold",
+   "m2_dendrite_104095": "argmax",
+   "m2_axon_92043": "threshold",
+   "m3_dendrite_142095": "argmax",
+   "m5_dendrite_226719": "argmax",
+   "m5_axon_232100": "argmax",
+   "m6_axon_216332": "queued_not_evaluated",
+   "m7_axon_320743": "argmax",
+   "m10_axon_145819": "argmax",
+   "m1_axon_129792": "threshold",
+   "m1_axon_134866": "argmax",
+   "m2_dendrite_221993": "threshold",
+   "m2_axon_86613": "argmax",
+   "m3_dendrite_1291": "queued_not_evaluated",
+   "m5_dendrite_238120": "argmax",
+   "m5_axon_183529": "argmax",
+   "m6_axon_215927": "argmax",
+   "m7_axon_275334": "argmax",
+   "m10_axon_199806": "argmax"
+  },
+  "A_supported": false,
+  "B_near_controls": {
+   "n": 7,
+   "mean_4dp": -0.0003,
+   "ci95_4dp": [
+    -0.0028,
+    0.0037
+   ]
+  },
+  "B_all_faces_controls_mean_5dp": -0.00031,
+  "B_supported": false,
+  "non_finite": {
+   "fp16": {
+    "faces": 27528,
+    "non_finite": 6,
+    "non_finite_where_float32_moves": 6
+   },
+   "fp16_head32": {
+    "faces": 27528,
+    "non_finite": 6,
+    "non_finite_where_float32_moves": 6
+   },
+   "fp16_res32": {
+    "faces": 27528,
+    "non_finite": 0,
+    "non_finite_where_float32_moves": 0
+   }
+  },
+  "C_speedup_2dp": {
+   "fp16": 3.45,
+   "fp16_head32": 3.43,
+   "fp16_res32": 3.32
+  },
+  "C_flip_rate_early_stop_4dp": {
+   "fp16": 0.8424,
+   "fp16_head32": 0.1601,
+   "fp16_res32": 0.834
+  },
+  "C_flip_rate_all_4dp": {
+   "fp16": 0.8437,
+   "fp16_head32": 0.1595,
+   "fp16_res32": 0.8396
+  },
+  "C_selected": "fp16_head32",
+  "exploratory_plateau": {
+   "moving_faces": 23254,
+   "on_plateau_fraction_3dp": 0.907,
+   "argmax_shifts": {
+    "fp16": {
+     "on_plateau": 8229,
+     "below": 63
+    },
+    "fp16_head32": {
+     "on_plateau": 649,
+     "below": 22
+    },
+    "fp16_res32": {
+     "on_plateau": 8154,
+     "below": 67
+    }
+   }
+  }
+ }
+}

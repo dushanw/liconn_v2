@@ -1,0 +1,289 @@
+{
+ "about": "Evidence for docs/manyseed_results.md, checked by tests/test_manyseed_evidence.py.",
+ "slurm_jobs": {
+  "fp32": 7389883,
+  "fp16": 7389884,
+  "cancelled_before_results": [
+   7389879,
+   7389880
+  ]
+ },
+ "source_note": "Run from a staged copy of the workspace (Wahab dir liconn_v2_m10, no git metadata, so the logs say \"source unknown\"); every staged file equals the checked workspace file (source_sha256.txt in each run dir).",
+ "run_source_sha256": {
+  "liconn_v2/manyseed.py": "143bf6f26cf11e6711a5f4a2b437e92d80e631867e204f8ae06a87841cb36d06",
+  "liconn_v2/benchmark.py": "309ea0a4d5d31ead276fbd1a87e7bf7575cda1e1ad1ffb98c1248dcbdbfbc23e",
+  "liconn_v2/precision.py": "1e389994f83ec0a702b6be83788594d009ec6183cfd8bb6d39f0c6ff37592ea7",
+  "liconn_v2/reference.py": "2de09cfa1545c20fcc60c6ab2428e803c48bdad27c2e33145101d4ac118ceb73",
+  "liconn_v2/data.py": "033ea6c8dcdf782acfdad5ac6c43d3fc5e8b43359bbeecf1aec6033c3a9b99e8",
+  "liconn_v2/heldout.py": "79b17299ef961b16c0872902c36f547b4e0ac880a4423d36fae7e92910a5d70f",
+  "liconn_v2/proofread_classes.json": "7e5d3c5e310bd0fdaf042075c7b3fe3d75393e3fc749fa046dc0ae241fe4313b",
+  "examples/run_manyseed.py": "9e2896467cc46b44e8803c7237ef77cdac4d159a002a86ddf892ea7a902e82a2",
+  "examples/run_policy_benchmark.py": "2fad76f43d2b05921fa7fe45e20fdb4c0849c6b33307a49e726986ad25086579",
+  "examples/judge_manyseed.py": "0b8d796d8d82db896cbe2fd6a55a2f0059eae8739eb51223221d9a3e924c113b",
+  "cluster/wahab/manyseed_array.sbatch": "edf0cbd270a6c8fbf04e36ba6963491a7764c2ec364b5c150dcb9e01254d1e81",
+  "docs/manyseed_crops.json": "52fbcba548e02828f1116f98429032db8f6494fd2232c3658a5eaa34c6c8f924",
+  "docs/manyseed_seeds.json": "ca5e9c6a6d16b0decad60319a9902867602afcae94e995780c7e89bcb55f00da"
+ },
+ "outputs_sha256": {
+  "manyseed-fp32-20261021/crop-00/benchmark.json": "09d88488be089c968980b133e948240b7538d8f4e346a6b80fa0449a6dc4c480",
+  "manyseed-fp32-20261021/crop-00/benchmark_masks.npz": "b8377dff36c0365fa00d462cf21dde2f47091f54811e474bc344bf09c70fbfbf",
+  "manyseed-fp32-20261021/crop-01/benchmark.json": "28194c4f2c4109746be7e0f17f62f01e54d9406582c9f7120af7b71e559ed23d",
+  "manyseed-fp32-20261021/crop-01/benchmark_masks.npz": "3cf68c84f548c21755b51bab7f23c5bf4f61ba5124c63752fa839b401d2b781b",
+  "manyseed-fp32-20261021/crop-02/benchmark.json": "3ab0e9c312473c1b9342ac5e5088dbbbdc67f7c868f6a407f5e52b45a6f8030b",
+  "manyseed-fp32-20261021/crop-02/benchmark_masks.npz": "467527f0268e0a15a7ea04adc2b49e48f2dfba8e79ffa6a6c895eaf4941a181a",
+  "manyseed-fp32-20261021/crop-03/benchmark.json": "8ea208c36ba629c59ddf65817f6a636762d4cc27263bac9bcad14ef14360721c",
+  "manyseed-fp32-20261021/crop-03/benchmark_masks.npz": "59cba0ef1c9d05bd4ceeead8f04d7c9ffe4e29358fb66543fbc8eddb20433251",
+  "manyseed-fp32-20261021/crop-04/benchmark.json": "affae7f041c8e399ea2f58257674479369ac39a12ac0cc0bc7681f860bb1ff0c",
+  "manyseed-fp32-20261021/crop-04/benchmark_masks.npz": "57ecd533bf7e755c4347d6c20b9ff9a3a5269250d113802354f303977f3b3dc9",
+  "manyseed-fp32-20261021/crop-05/benchmark.json": "5117d8739756bc18757bd5570eff7bdab04f9450d459ebd0278e2ac0a524662d",
+  "manyseed-fp32-20261021/crop-05/benchmark_masks.npz": "638f8b9c22637ded36835eca8f11dd75cbe687b9ea390ebe40704ec43bf2908b",
+  "manyseed-fp32-20261021/crop-06/benchmark.json": "70b204ecae6dcf9ddfe8924832cc44a9452b858e4880339b2f0b126313e35297",
+  "manyseed-fp32-20261021/crop-06/benchmark_masks.npz": "ca7610754f92d88d308323f8d26bb9585c73d868825c6e05224a99654e256d84",
+  "manyseed-fp32-20261021/crop-07/benchmark.json": "f142cddbc4016bfbc0117162a56488fe19c4ef00bf50e9bf336f8f1b2c7b3b80",
+  "manyseed-fp32-20261021/crop-07/benchmark_masks.npz": "3457a73863c494872fd2ee2d29d1e87088a5c221fdba486b35e313ea98b411b1",
+  "manyseed-fp32-20261021/crop-08/benchmark.json": "724e3ed714ea277c771b40b6e93a6c1452e400d8b1b461b2de4b817e635e242c",
+  "manyseed-fp32-20261021/crop-08/benchmark_masks.npz": "4b9ea2e1de88ef0ac5e6915837a777365ec3d4ca03cfd85badbed7c5f465fb8c",
+  "manyseed-fp32-20261021/crop-09/benchmark.json": "1d861a6fbb23529c74aee0ff348300b6d7cc8c5131812c7543dc7d4bb7c5a5b7",
+  "manyseed-fp32-20261021/crop-09/benchmark_masks.npz": "0b319953aa58988dfa3537d5d9ba4e027d046762df12ba0a10a0bd68e41c9c1e",
+  "manyseed-fp32-20261021/crop-10/benchmark.json": "1903c5c66b0f8de4b6485c4e3d07baa70a342033f62d9e3bb8d654db0e6a1585",
+  "manyseed-fp32-20261021/crop-10/benchmark_masks.npz": "a4e2f01fce32a6cc9a68bb9db484f1a6c6b85834b1aa58f3e3eeada590b659b3",
+  "manyseed-fp32-20261021/crop-11/benchmark.json": "307c74f91a80e93b83a812614a1c0f2733ba7c18c716415b8ca3b66ac5b891c5",
+  "manyseed-fp32-20261021/crop-11/benchmark_masks.npz": "e339d5bd04920f747e2306c539c76abd2b89112545eae2d50ae55689cc518f3a",
+  "manyseed-fp32-20261021/crop-12/benchmark.json": "e10fd30264796e6d29c22b900fee1f9c7535d6c54d5e4a67df5ceea491700113",
+  "manyseed-fp32-20261021/crop-12/benchmark_masks.npz": "665bd12774f11cb9e5a312b04cdf4e7e7e441b0a875bb639c5ba058b2b5154ad",
+  "manyseed-fp16-20261021/crop-00/benchmark.json": "3b103852e6e51c0b67dbd22aa6b2ff021400f0899c22e65a129495f656f6fdd9",
+  "manyseed-fp16-20261021/crop-00/benchmark_masks.npz": "e8a3e53d6ee0c8627b599dbffd5e2d4dd1f42bf57e30a4c5081552935dfba95d",
+  "manyseed-fp16-20261021/crop-01/benchmark.json": "a080d2e4eb002bc5ac4e4e775a311eea8b98bddd577a682a374e2b525ed0ea17",
+  "manyseed-fp16-20261021/crop-01/benchmark_masks.npz": "110469b60046ee38c5d423ec1de43bcadc9e89364d2194b810f958fe413741e5",
+  "manyseed-fp16-20261021/crop-02/benchmark.json": "99911032b223b51b259b5ed5198ed0d40dfed8f801552290640ed596cc8113d6",
+  "manyseed-fp16-20261021/crop-02/benchmark_masks.npz": "769f8eea51330b29b9b322035c2e3e586118d52d140542bddb57eebd87f755d2",
+  "manyseed-fp16-20261021/crop-03/benchmark.json": "0bcd230e658f095236875c3ba27f90b2bb13bb1546b3bec88d887751f976cab7",
+  "manyseed-fp16-20261021/crop-03/benchmark_masks.npz": "10836aede3e77231ec86f6715de0eec9575fb0df3b1aeb5b125309cfda0426e0",
+  "manyseed-fp16-20261021/crop-04/benchmark.json": "c59e56b0b865ba8add283f9f242d5d8989ca9e2a8f54e4265fa14023471e70e1",
+  "manyseed-fp16-20261021/crop-04/benchmark_masks.npz": "f55843f871a8d0fe98b5c7339e5c5ea9052552000aad23eb41a46049f0ff73e2",
+  "manyseed-fp16-20261021/crop-05/benchmark.json": "e1f03052dae8d635d1c4fe95f5e7a9ed3cef8fc2d82c8475c2a3c29a63b3ad4e",
+  "manyseed-fp16-20261021/crop-05/benchmark_masks.npz": "1a737879066789a9f2c19ffae9678fc5bcd0c08da455b45b6526cfb519a2df38",
+  "manyseed-fp16-20261021/crop-06/benchmark.json": "31faef6c3b4939f9254fd0dc93da23f327c48c708ea28b366d50c14e087e6ff0",
+  "manyseed-fp16-20261021/crop-06/benchmark_masks.npz": "8fc33d0831d72909c991a484cdf320417af2e88e017860eff91cb28b133924b0",
+  "manyseed-fp16-20261021/crop-07/benchmark.json": "8e3173b723cc25853da31e68b2e94eea5e07a2b1d11ebe5366fadcf403f10f96",
+  "manyseed-fp16-20261021/crop-07/benchmark_masks.npz": "fdf6e460101e3ce97b472095af0378d3b097e710e923acdc02ed97eb968cf85b",
+  "manyseed-fp16-20261021/crop-08/benchmark.json": "8503446c8681e7a0a4b0ffc49b7c0af1f6552f0fa6bd5b7d582815ae60dd66cd",
+  "manyseed-fp16-20261021/crop-08/benchmark_masks.npz": "11d1a4bdaee65419c7edcf22e4a75acfd41b3ca7226cc1486fc6d35491a6cee5",
+  "manyseed-fp16-20261021/crop-09/benchmark.json": "c44363849d78dc4dc4d67c403f499a0edacabb53f9d49fe0b4603d5e559f3f09",
+  "manyseed-fp16-20261021/crop-09/benchmark_masks.npz": "081158c559d94811ec7137e487630b4cb01fc0ac84ff72b246f3a8e0f9db01f4",
+  "manyseed-fp16-20261021/crop-10/benchmark.json": "1ed3c9661f9520047de36e2112abb895b62402e8f28bd75c478adda9890e27a7",
+  "manyseed-fp16-20261021/crop-10/benchmark_masks.npz": "526604b65622ccc54f17866a49a547e9454944d9208c6479312c63c2bb65f463",
+  "manyseed-fp16-20261021/crop-11/benchmark.json": "24152e47d5452bd8b46bdb4fd1dfb3e368f85a4a058db2e2a1f3d1c498a789b7",
+  "manyseed-fp16-20261021/crop-11/benchmark_masks.npz": "a1b25f51dec360b3739c8b174670fb014f7aab66cfbc8de63e467a272122c1c5",
+  "manyseed-fp16-20261021/crop-12/benchmark.json": "f470dd33a506bb9ecb6c73d0530018a50b0368d424c1fef07a5c505ae2778c63",
+  "manyseed-fp16-20261021/crop-12/benchmark_masks.npz": "e5853ee392d271dda49cabaaeb1357b0d1c7a92a8766c5d4155bc80eea9a1a6f",
+  "manyseed-verdict-fp16-20261021/manyseed_verdict.json": "56e30c2ffaf3ef113733b8e19d1e44523e7a6c18b7eda49dcb600c6a1539868e",
+  "manyseed-fp32-20261021/source/liconn_v2/manyseed.py": "143bf6f26cf11e6711a5f4a2b437e92d80e631867e204f8ae06a87841cb36d06",
+  "manyseed-fp32-20261021/source/examples/judge_manyseed.py": "0b8d796d8d82db896cbe2fd6a55a2f0059eae8739eb51223221d9a3e924c113b",
+  "manyseed-fp32-20261021/source/docs/manyseed_seeds.json": "ca5e9c6a6d16b0decad60319a9902867602afcae94e995780c7e89bcb55f00da",
+  "manyseed-fp32-20261021/source/examples/run_manyseed.py": "9e2896467cc46b44e8803c7237ef77cdac4d159a002a86ddf892ea7a902e82a2"
+ },
+ "documented": {
+  "seeds": 300,
+  "dendrite_seeds": 72,
+  "counts": {
+   "new_merge": 3,
+   "new_early_stop": 10,
+   "avoided_merge": 2,
+   "extension": 4
+  },
+  "dendrite_counts": {
+   "new_merge": 1,
+   "new_early_stop": 3,
+   "avoided_merge": 1,
+   "extension": 0
+  },
+  "rules": {
+   "complete_same_inputs": true,
+   "all_300_seeds": true,
+   "new_merges": true,
+   "new_early_stops": false,
+   "mean_recall_drop": true,
+   "mean_precision_drop": true
+  },
+  "passes": false,
+  "mean_recall_change_pts_2dp": -0.11,
+  "mean_precision_change_pts_2dp": -0.31,
+  "upper_bound_pct_1dp": {
+   "new_merge_rate": 2.6,
+   "new_early_stop_rate": 5.6,
+   "dendrite_new_merge_rate": 6.4
+  },
+  "flipped": {
+   "m1_axon_175567": {
+    "recall_pts_1dp": -55.5,
+    "precision_pts_1dp": 0.0,
+    "events": [
+     "new_early_stop"
+    ]
+   },
+   "m1_axon_173408": {
+    "recall_pts_1dp": -12.2,
+    "precision_pts_1dp": -0.4,
+    "events": [
+     "new_early_stop"
+    ]
+   },
+   "m2_dendrite_104095": {
+    "recall_pts_1dp": -10.5,
+    "precision_pts_1dp": -0.0,
+    "events": [
+     "new_early_stop"
+    ]
+   },
+   "m2_axon_92043": {
+    "recall_pts_1dp": -11.4,
+    "precision_pts_1dp": 0.2,
+    "events": [
+     "new_early_stop"
+    ]
+   },
+   "m3_dendrite_142095": {
+    "recall_pts_1dp": -15.1,
+    "precision_pts_1dp": 0.2,
+    "events": [
+     "new_early_stop"
+    ]
+   },
+   "m4_axon_59400": {
+    "recall_pts_1dp": 17.5,
+    "precision_pts_1dp": -0.1,
+    "events": [
+     "extension"
+    ]
+   },
+   "m5_dendrite_226719": {
+    "recall_pts_1dp": -19.8,
+    "precision_pts_1dp": 0.1,
+    "events": [
+     "new_early_stop"
+    ]
+   },
+   "m5_axon_228843": {
+    "recall_pts_1dp": 32.3,
+    "precision_pts_1dp": -0.0,
+    "events": [
+     "extension"
+    ]
+   },
+   "m5_axon_232100": {
+    "recall_pts_1dp": -19.5,
+    "precision_pts_1dp": 0.0,
+    "events": [
+     "new_early_stop"
+    ]
+   },
+   "m6_axon_216332": {
+    "recall_pts_1dp": -19.8,
+    "precision_pts_1dp": 1.6,
+    "events": [
+     "new_early_stop"
+    ]
+   },
+   "m6_axon_172905": {
+    "recall_pts_1dp": 62.2,
+    "precision_pts_1dp": 0.8,
+    "events": [
+     "extension"
+    ]
+   },
+   "m6_axon_175989": {
+    "recall_pts_1dp": 29.0,
+    "precision_pts_1dp": -79.4,
+    "events": [
+     "new_merge",
+     "extension"
+    ]
+   },
+   "m7_dendrite_374312": {
+    "recall_pts_1dp": 0.3,
+    "precision_pts_1dp": 73.6,
+    "events": [
+     "avoided_merge"
+    ]
+   },
+   "m7_axon_320743": {
+    "recall_pts_1dp": -15.3,
+    "precision_pts_1dp": 0.8,
+    "events": [
+     "new_early_stop"
+    ]
+   },
+   "m8_axon_78192": {
+    "recall_pts_1dp": 0.4,
+    "precision_pts_1dp": 24.7,
+    "events": [
+     "avoided_merge"
+    ]
+   },
+   "m9_dendrite_231945": {
+    "recall_pts_1dp": -1.6,
+    "precision_pts_1dp": -27.8,
+    "events": [
+     "new_merge"
+    ]
+   },
+   "m9_axon_148932": {
+    "recall_pts_1dp": -0.0,
+    "precision_pts_1dp": -83.3,
+    "events": [
+     "new_merge"
+    ]
+   },
+   "m10_axon_145819": {
+    "recall_pts_1dp": -29.0,
+    "precision_pts_1dp": -2.2,
+    "events": [
+     "new_early_stop"
+    ]
+   }
+  },
+  "reference_already_merged": [
+   "m2_axon_178794"
+  ],
+  "ms_per_step_2dp": {
+   "fp32": 19.58,
+   "fp16": 8.88
+  },
+  "total_steps": {
+   "fp32": 93863,
+   "fp16": 95927
+  }
+ },
+ "post_run_edits": {
+  "liconn_v2/manyseed.py": {
+   "changed_definitions": [
+    "fetch_and_select",
+    "seeds_text",
+    "verdict"
+   ],
+   "why": "Review finding (check 1): verdict() now also checks every record against the registered seed list and its crop. fetch_and_select() writes the seeds file through the new seeds_text(), one seed per line. The GPU runs call none of these; the verdict is recomputed with the current code by the evidence test."
+  },
+  "examples/judge_manyseed.py": {
+   "changed_definitions": [
+    "RECORDED",
+    "docstring",
+    "main"
+   ],
+   "why": "Passes the registered seed dicts to verdict(). Not run on the cluster; re-run by the evidence test. Milestone 12: --recorded judges a recorded candidate run against the recorded float32 run."
+  },
+  "docs/manyseed_seeds.json": {
+   "reformatted_json": true,
+   "why": "Rewritten one seed per line (identical content) so that the review packet fits the 230 KB limit. The evidence test checks that the content equals the file that ran."
+  },
+  "examples/run_manyseed.py": {
+   "changed_definitions": [
+    "VARIANTS",
+    "docstring",
+    "import:earlystop",
+    "main"
+   ],
+   "why": "Milestone 12: the runner also accepts the candidate layout fp16_head32 (earlystop.run_layout). For precision.VARIANTS names it still calls precision.run_variant exactly as before."
+  }
+ }
+}

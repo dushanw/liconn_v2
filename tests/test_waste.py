@@ -129,6 +129,9 @@ class InstrumentedNotebookTraceTest(unittest.TestCase):
     self.assertEqual(int(self.a['established_owner_voxels'].sum()), predicted)
     self.assertLessEqual(int(self.a['final_owner_voxels'].sum()), predicted)
     self.assertEqual([tuple(p) for p in self.a['positions'].tolist()], self.trace.history)
+    # Pre-step features: the queue score is the entry FFN actually popped, every step.
+    self.assertTrue(self.a['feat_queue_match'].all())
+    self.assertEqual(list(self.a['feat_step_index']), list(range(self.trace.iterations)))
     # Final decisions owned by steps equal the final mask.
     final_fg = int((self.trace.seed >= waste.T).sum())
     owned_fg = int((self.trace.seed[self.rec.owner >= 0] >= waste.T).sum())

@@ -86,13 +86,32 @@ voxels, total steps, total GFLOP, and total steps per 1,000 correctly segmented 
 (a ratio of totals). Single-seed evaluations-per-voxel figures reward stopping before thin,
 low-yield branches. Read them together with recall.
 
-## Proposed tolerance for speed variants (owner to confirm)
+## Tolerance change decided 2026-10-21
 
-On the same seeds, compared with the baseline FFN:
-- mean recall and mean precision each drop by at most 1 percentage point;
-- no seed gains a new merge, and total merged voxels do not grow by more than 10%;
-- mean unlabeled_fraction grows by at most 1 percentage point;
-- no seed's recall drops by more than 5 percentage points.
+After float16 failed on held-out seeds through rare large merge flips
+(docs/heldout_results.md), the owner decided to move to a tolerance judged over many
+more seeds that accepts rare merge flips. The owner confirmed the numbers the same day:
+300 fresh seeds; a flip is a per-seed precision or recall change of more than 10
+points; at most 3 of 300 new merges and at most 3 of 300 new early stops; mean recall
+and precision may each fall by at most 1 point. The full definition, crops and seed
+rule are in docs/manyseed_design.md. The rules below remain the recorded criterion
+for all results obtained before that milestone.
+
+## Accuracy tolerance for speed variants (owner-confirmed 2026-10-19)
+
+A faster variant is compared seed by seed with the reference run on the same seeds and
+inputs. It passes only if all of these hold, each at 1%:
+- mean recall drops by at most 1 percentage point;
+- mean precision drops by at most 1 percentage point;
+- mean unlabeled_fraction rises by at most 1 percentage point;
+- no seed's recall drops by more than 1 percentage point;
+- total merged voxels grow by at most 1%, and no seed gains a new merge.
+
+The implementer's earlier proposal allowed 5 points for single-seed recall and 10% for
+merged voxels; the owner set every rule to 1%.
+
+Reference run (owner decision, 2026-10-19): the 12-seed GPU baseline run a on Wahab
+V100s (docs/gpu_baseline.md), `data/runs/gpu-baseline-a-20261019/merged`.
 
 Caution (from the 12-seed baseline, docs/benchmark_baseline.md):
 - dendrite_1525 accounts for 31% of all steps and 89% of merged voxels, and includes one

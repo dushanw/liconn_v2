@@ -1,4 +1,4 @@
-"""The authors' LICONN FFN inference example as a CPU script, plus its fingerprint.
+"""The authors' LICONN FFN inference example as a script, plus its fingerprint.
 
 Follows google/ffn notebooks/jax_ffn_inference_liconn.ipynb at commit 12d680e
 (see docs/method_source.md for the verbatim notebook code and the disclosed
@@ -13,9 +13,24 @@ from pathlib import Path
 import time
 
 os.environ.setdefault('PROTOCOL_BUFFERS_PYTHON_IMPLEMENTATION', 'python')
-# The reference is defined on CPU (owner decision). Set before anything can
-# initialize a JAX backend; run_trace re-checks the active backend.
-os.environ['JAX_PLATFORMS'] = 'cpu'
+
+# LICONN_BACKEND selects the JAX backend: 'cpu' (default; the bitwise reference is
+# defined on CPU) or 'gpu'. JAX names the platform 'cuda' but reports the active
+# backend as 'gpu'.
+BACKENDS = {'cpu': ('cpu', 'cpu'), 'gpu': ('cuda', 'gpu')}
+
+
+def backend_settings(value=None):
+  """Returns (JAX_PLATFORMS value, expected jax.default_backend())."""
+  value = os.environ.get('LICONN_BACKEND', 'cpu') if value is None else value
+  if value not in BACKENDS:
+    raise ValueError(f'LICONN_BACKEND must be one of {sorted(BACKENDS)}, got {value!r}')
+  return BACKENDS[value]
+
+
+# Set before anything can initialize a JAX backend; Tracer re-checks the active one.
+JAX_PLATFORM, EXPECTED_BACKEND = backend_settings()
+os.environ['JAX_PLATFORMS'] = JAX_PLATFORM
 
 import numpy as np  # pylint: disable=g-import-not-at-top
 from scipy.ndimage import label
@@ -46,6 +61,17 @@ class Trace:
   trace_seconds: float
   counters: dict
   backend: str
+  device_kind: str = ''
+
+
+def _hide_gpus_from_tensorflow(tf):
+  """TF only reads the checkpoint; keep it off the GPUs (as in the notebook)."""
+  try:
+    tf.config.set_visible_devices([], 'GPU')
+  except RuntimeError:
+    # Already initialized (e.g. a second Tracer in this process): fine if hidden.
+    if tf.config.get_visible_devices('GPU'):
+      raise
 
 
 def normalize(raw_xyz: np.ndarray) -> np.ndarray:
@@ -61,16 +87,16 @@ class Tracer:
 
   def __init__(self, ckpt_path: str):
     import tensorflow as tf  # pylint: disable=g-import-not-at-top
-    tf.config.set_visible_devices([], 'GPU')
+    _hide_gpus_from_tensorflow(tf)
     from clu import checkpoint  # pylint: disable=g-import-not-at-top
     from connectomics.jax.models import convstack  # pylint: disable=g-import-not-at-top
     import jax  # pylint: disable=g-import-not-at-top
     import jax.numpy as jnp  # pylint: disable=g-import-not-at-top
-    # TF device settings do not constrain JAX; fail if a backend other than CPU was
+    # TF device settings do not constrain JAX; fail if another backend was
     # initialized before this module set JAX_PLATFORMS.
-    jax.config.update('jax_platforms', 'cpu')
-    if jax.default_backend() != 'cpu':
-      raise RuntimeError(f'JAX backend is {jax.default_backend()}, expected cpu')
+    jax.config.update('jax_platforms', JAX_PLATFORM)
+    if jax.default_backend() != EXPECTED_BACKEND:
+      raise RuntimeError(f'JAX backend is {jax.default_backend()}, expected {EXPECTED_BACKEND}')
     from ffn.inference import executor  # pylint: disable=g-import-not-at-top
     from ffn.inference import inference  # pylint: disable=g-import-not-at-top
     from ffn.inference import inference_pb2  # pylint: disable=g-import-not-at-top
@@ -79,6 +105,7 @@ class Tracer:
     self._inference = inference
     self._inference_utils = inference_utils
     self.backend = jax.default_backend()
+    self.device_kind = jax.devices()[0].device_kind
 
     ckpt = checkpoint.Checkpoint('')
     state = ckpt.load_state(state=None, checkpoint=ckpt_path)
@@ -130,7 +157,7 @@ class Tracer:
     counters = {k: v - before.get(k, 0) for k, v in after.items()}
     counters.update(json.loads(trace_counters.dumps()))
     return Trace(seed, history, int(iterations), self.compile_seconds, trace_seconds,
-                 counters, self.backend)
+                 counters, self.backend, self.device_kind)
 
   def close(self):
     self._exc.stop_server()
@@ -188,6 +215,14 @@ def load_mask_npz(path) -> np.ndarray:
   return full
 
 
+def canvas_sha256(seed: np.ndarray) -> str:
+  return _sha(np.ascontiguousarray(seed, dtype='<f4'))
+
+
+def history_sha256(history) -> str:
+  return hashlib.sha256(json.dumps(history).encode()).hexdigest()
+
+
 def _sha(arr: np.ndarray) -> str:
   return hashlib.sha256(np.ascontiguousarray(arr).tobytes()).hexdigest()
 
@@ -200,12 +235,12 @@ def fingerprint(trace: Trace) -> dict:
   comp = seed_component(seed)
   z, y, x = SEED_XYZ[::-1]
   return {
-      'seed_sha256': _sha(seed),
+      'seed_sha256': canvas_sha256(seed),
       'seed_canonical_sha256': _sha(canonical),
       'predicted_voxels': int((~np.isnan(seed)).sum()),
       'predicted_mask_sha256': _sha(~np.isnan(seed)),
       'iterations': trace.iterations,
-      'history_sha256': hashlib.sha256(json.dumps(trace.history).encode()).hexdigest(),
+      'history_sha256': history_sha256(trace.history),
       'history_first': list(trace.history[0]) if trace.history else None,
       'notebook_mask_sha256': _sha(nb),
       'notebook_mask_voxels': int(nb.sum()),

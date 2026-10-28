@@ -1,0 +1,162 @@
+{
+ "about": "Evidence for docs/predictability_results.md, checked by tests/test_predictability_evidence.py.",
+ "slurm_job": 7359027,
+ "base_commit": "ac5ad6a",
+ "trace_source_sha256": {
+  "liconn_v2/waste.py": "4d87ad0d49bb18417186aabe5409926a23220b522da98b12070bbe84066ac765",
+  "liconn_v2/reference.py": "2de09cfa1545c20fcc60c6ab2428e803c48bdad27c2e33145101d4ac118ceb73",
+  "liconn_v2/benchmark.py": "309ea0a4d5d31ead276fbd1a87e7bf7575cda1e1ad1ffb98c1248dcbdbfbc23e",
+  "liconn_v2/data.py": "033ea6c8dcdf782acfdad5ac6c43d3fc5e8b43359bbeecf1aec6033c3a9b99e8",
+  "liconn_v2/proofread_classes.json": "7e5d3c5e310bd0fdaf042075c7b3fe3d75393e3fc749fa046dc0ae241fe4313b",
+  "requirements.txt": "cc471b0d037e310573c597e665b4bb9ae7152fa572d36d7e53aefc52553d6190",
+  "requirements-cuda.txt": "f36c5ae9388fec87525869d0f868b832517a533dc05a9ae6516803dfb145ca87",
+  "requirements-ffn.txt": "022d1938cf35b564012e1322bfada1057ba7c3ed8631ab7a2dd09523e63e894a"
+ },
+ "trace_source_note": "Files that produced the traces and per-step records on Wahab, unchanged since. liconn_v2/predict.py and examples/run_predictability.py were extended after the run (near-enclosed subset, oriented AUC, nested feature-set comparison, reference_checks helper, --from-steps); re-analysing the recorded steps with the current code reproduces the run analysis exactly.",
+ "reference_run": "gpu-baseline-a-20261019 (on Wahab: liconn_runs/gpu-baseline-a/merged)",
+ "outputs_sha256": {
+  "predictability-20261019/predictability.json": "b9582228331bdf5a37622a20f65cc9280e6d055e5652656d2aae89687d7c7092",
+  "predictability-20261019/predictability_steps.npz": "1b82514243fffb2e7e8031c8b161dbcd7fcdd0b1ce85753a966a2f2e17af70f9",
+  "predictability-20261019/source_sha256.txt": "540596d288906589db17514618400ec10778b1c00378f9477b77edde9141e633"
+ },
+ "documented": {
+  "all_steps": {
+   "steps": 5838,
+   "low_yield": {
+    "prevalence": 0.152,
+    "model_oof_auc": 0.907,
+    "per_seed_auc_quartiles": [
+     0.905,
+     0.925,
+     0.955
+    ],
+    "feature_auc_oriented": {
+     "unpredicted_fraction": 0.957,
+     "fg_fraction": 0.588,
+     "uncertain_fraction": 0.705,
+     "mean_margin": 0.506,
+     "center_value": 0.541,
+     "queue_score": 0.564,
+     "overlap_count": 0.761,
+     "step_index": 0.536
+    },
+    "feature_set_oof_auc": {
+     "coverage": {
+      "pooled": 0.956,
+      "per_seed_median": 0.96
+     },
+     "coverage_and_position": {
+      "pooled": 0.902,
+      "per_seed_median": 0.929
+     },
+     "all": {
+      "pooled": 0.907,
+      "per_seed_median": 0.925
+     }
+    }
+   },
+   "mask_low_yield": {
+    "prevalence": 0.341,
+    "model_oof_auc": 0.834,
+    "per_seed_auc_quartiles": [
+     0.828,
+     0.835,
+     0.842
+    ],
+    "feature_auc_oriented": {
+     "unpredicted_fraction": 0.796,
+     "fg_fraction": 0.559,
+     "uncertain_fraction": 0.73,
+     "mean_margin": 0.632,
+     "center_value": 0.509,
+     "queue_score": 0.52,
+     "overlap_count": 0.653,
+     "step_index": 0.523
+    },
+    "feature_set_oof_auc": {
+     "coverage": {
+      "pooled": 0.794,
+      "per_seed_median": 0.798
+     },
+     "coverage_and_position": {
+      "pooled": 0.785,
+      "per_seed_median": 0.8
+     },
+     "all": {
+      "pooled": 0.834,
+      "per_seed_median": 0.835
+     }
+    }
+   }
+  },
+  "near_enclosed": {
+   "steps": 1587,
+   "low_yield": {
+    "prevalence": 0.56,
+    "model_oof_auc": 0.752,
+    "per_seed_auc_quartiles": [
+     0.725,
+     0.752,
+     0.77
+    ],
+    "feature_auc_oriented": {
+     "unpredicted_fraction": 0.696,
+     "fg_fraction": 0.535,
+     "uncertain_fraction": 0.644,
+     "mean_margin": 0.574,
+     "center_value": 0.522,
+     "queue_score": 0.504,
+     "overlap_count": 0.581,
+     "step_index": 0.507
+    },
+    "feature_set_oof_auc": {
+     "coverage": {
+      "pooled": 0.692,
+      "per_seed_median": 0.687
+     },
+     "coverage_and_position": {
+      "pooled": 0.696,
+      "per_seed_median": 0.685
+     },
+     "all": {
+      "pooled": 0.752,
+      "per_seed_median": 0.752
+     }
+    }
+   },
+   "mask_low_yield": {
+    "prevalence": 0.633,
+    "model_oof_auc": 0.663,
+    "per_seed_auc_quartiles": [
+     0.64,
+     0.669,
+     0.696
+    ],
+    "feature_auc_oriented": {
+     "unpredicted_fraction": 0.586,
+     "fg_fraction": 0.566,
+     "uncertain_fraction": 0.615,
+     "mean_margin": 0.594,
+     "center_value": 0.523,
+     "queue_score": 0.509,
+     "overlap_count": 0.55,
+     "step_index": 0.514
+    },
+    "feature_set_oof_auc": {
+     "coverage": {
+      "pooled": 0.581,
+      "per_seed_median": 0.604
+     },
+     "coverage_and_position": {
+      "pooled": 0.588,
+      "per_seed_median": 0.611
+     },
+     "all": {
+      "pooled": 0.663,
+      "per_seed_median": 0.669
+     }
+    }
+   }
+  }
+ }
+}

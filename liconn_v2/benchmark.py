@@ -62,6 +62,17 @@ def seed_point(gt_zyx: np.ndarray, obj_id: int) -> tuple:
   return tuple(int(v) for v in pos)
 
 
+def pick(seeds: list, names) -> list:
+  """The named seeds, in canonical order. Unknown names raise."""
+  if not names:
+    return list(seeds)
+  known = [s['name'] for s in seeds]
+  unknown = sorted(set(names) - set(known))
+  if unknown:
+    raise ValueError(f'unknown seed(s) {unknown}; known: {known}')
+  return [s for s in seeds if s['name'] in set(names)]
+
+
 def select_seeds(gt_zyx: np.ndarray, classes: dict | None = None) -> list:
   """Deterministic seeds: up to 6 axons, up to 6 dendrites, then the notebook seed."""
   classes = load_classes() if classes is None else classes
@@ -161,7 +172,10 @@ def run(seeds: list, raw_zyx: np.ndarray, gt_zyx: np.ndarray, ckpt_path: str, on
       rec.update(score(mask, gt_zyx, s['seed_zyx']))
       rec.update(cost(trace.iterations, rec['correct_voxels'], gflop))
       rec.update({'trace_seconds': trace.trace_seconds, 'gflop_per_eval': gflop,
-                  'number_format': 'float32', 'backend': trace.backend})
+                  'number_format': 'float32', 'backend': trace.backend,
+                  'device_kind': trace.device_kind,
+                  'history_sha256': reference.history_sha256(trace.history),
+                  'canvas_sha256': reference.canvas_sha256(trace.seed)})
       records.append(rec)
       masks[s['name']] = mask
       if on_record is not None:

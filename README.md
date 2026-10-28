@@ -16,6 +16,7 @@ version must reproduce it bitwise. Sources and disclosed deviations: `docs/metho
 /Users/dushan/.local/bin/python3.12 -m venv .venv
 .venv/bin/python -m pip install -r requirements.txt
 .venv/bin/python -m pip install --no-deps -r requirements-ffn.txt
+.venv/bin/python -m pip install -r examples/requirements-erl.txt  # only for ERL (docs/fresh_design.md)
 .venv/bin/python -m liconn_v2.data          # one-time public download, sha256-pinned
 .venv/bin/python -m unittest discover -s tests -t .   # ~2.5 min on an M5 Max CPU
 .venv/bin/python examples/trace_reference.py           # writes outputs/
@@ -39,3 +40,10 @@ evaluations and GFLOP per correctly segmented voxel. Design: `docs/benchmark_des
 `tools/view_benchmark.py` serves a local Neuroglancer view: the image crop, the FFN
 traces of a full benchmark run and the matching proofread objects, with labelled seed
 points. Setup and usage are in `tools/requirements-viewer.txt`.
+
+## GPU runs (Wahab)
+
+Set `LICONN_BACKEND=gpu` to run on an NVIDIA GPU. The CPU stays the default, and the
+bitwise reference is CPU-only. Cluster setup, job arrays and combining results:
+`cluster/wahab/README.md`. Comparing two runs seed by seed: `examples/compare_runs.py`.
+GPU baseline and its comparison with the CPU: `docs/gpu_baseline.md`.

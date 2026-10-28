@@ -1,0 +1,245 @@
+{
+ "about": "Evidence for docs/heldout_results.md, checked by tests/test_heldout_evidence.py.",
+ "slurm_jobs": {
+  "heldout-fp32-20261021": 7370167,
+  "heldout-fp16-20261021": 7370168,
+  "profile-fp16-20261021": 7370178,
+  "probe-direct-call-20261021": 7370208
+ },
+ "source_note": "Run from a staged copy of the workspace plus the held-out files (Wahab dir liconn_v2_m9; git describe ac5ad6a-dirty). run_source_sha256 identifies the code.",
+ "run_source_sha256": {
+  "liconn_v2/heldout.py": "79b17299ef961b16c0872902c36f547b4e0ac880a4423d36fae7e92910a5d70f",
+  "examples/run_heldout.py": "18e8e34f0b2eeda14d81851010ed4ca0a9f5ac5ae090698a4ee5e32706fa9c07",
+  "examples/merge_heldout.py": "dd62531da2da69329c9a51ccc0df024e1e04ad4b5ed7c6be1448d9cd84c1b0a0",
+  "cluster/wahab/heldout_array.sbatch": "5f1b631ed39a01e734f0281b1ee03e241a9ed819ea6dcbd181848ffec588f3d0",
+  "liconn_v2/precision.py": "1e389994f83ec0a702b6be83788594d009ec6183cfd8bb6d39f0c6ff37592ea7",
+  "liconn_v2/reference.py": "2de09cfa1545c20fcc60c6ab2428e803c48bdad27c2e33145101d4ac118ceb73",
+  "liconn_v2/benchmark.py": "309ea0a4d5d31ead276fbd1a87e7bf7575cda1e1ad1ffb98c1248dcbdbfbc23e",
+  "liconn_v2/data.py": "033ea6c8dcdf782acfdad5ac6c43d3fc5e8b43359bbeecf1aec6033c3a9b99e8",
+  "liconn_v2/compare.py": "ac0c0552f041d8dc2891fdaf42a1bfe77cd8238a7879d0f62e543ad28c4bf845",
+  "examples/run_policy_benchmark.py": "2fad76f43d2b05921fa7fe45e20fdb4c0849c6b33307a49e726986ad25086579",
+  "liconn_v2/proofread_classes.json": "7e5d3c5e310bd0fdaf042075c7b3fe3d75393e3fc749fa046dc0ae241fe4313b",
+  "requirements.txt": "cc471b0d037e310573c597e665b4bb9ae7152fa572d36d7e53aefc52553d6190",
+  "requirements-cuda.txt": "f36c5ae9388fec87525869d0f868b832517a533dc05a9ae6516803dfb145ca87",
+  "requirements-ffn.txt": "022d1938cf35b564012e1322bfada1057ba7c3ed8631ab7a2dd09523e63e894a"
+ },
+ "outputs_sha256": {
+  "heldout-fp32-20261021/merged/benchmark.json": "16cf219866511f83b15f259a5b594a257594f753077b85172429953d381e774f",
+  "heldout-fp32-20261021/merged/benchmark_masks.npz": "b252766112552feb9b76c87ce2ef5eeaf406f71c0ed73d7fb1311001272f970a",
+  "heldout-fp32-20261021/source_sha256.txt": "d30a28b1e8d2366bb3aeab6cddd6467b0e1f9a1bafaab9e0530aed77eb01681f",
+  "heldout-fp32-20261021/parts/heldout_axon_14447/benchmark.json": "52c908cf3a0a17bb151e164c47aef546512d96bccf090b0d19c85efd0a35b1bb",
+  "heldout-fp32-20261021/parts/heldout_axon_14447/benchmark_masks.npz": "b0a4b4274dd14705a43ebfa6dbcfc9908d9d537d9887e6e16608298b60b0a63c",
+  "heldout-fp32-20261021/parts/heldout_axon_151289/benchmark.json": "e72fb620a3ee421e8cee0a7716da42d6c4eb19ae2dd0c9f97836b3ff4952ccdd",
+  "heldout-fp32-20261021/parts/heldout_axon_151289/benchmark_masks.npz": "a8c423b5a256228aeb4b8218baec2cd8916b2c2bd0ef8ff9caed896c5b70f48d",
+  "heldout-fp32-20261021/parts/heldout_axon_176723/benchmark.json": "5f32a9f84731318695fbd4c9d3f6c7bd80874b5f6ea15e2c92ba0b4f86ab6f4f",
+  "heldout-fp32-20261021/parts/heldout_axon_176723/benchmark_masks.npz": "6a0419db248af63c13683de04a9b7529d3ab299dd54f99e0e5201de00cfe544b",
+  "heldout-fp32-20261021/parts/heldout_axon_197450/benchmark.json": "546961453aeab95780b69e609b3c27e15509b22812d2a8ea4b2c7ba9627461fe",
+  "heldout-fp32-20261021/parts/heldout_axon_197450/benchmark_masks.npz": "52367ddf9f698b8cb30096b86e2493d7441be22c238cbdcf403423465fb59a98",
+  "heldout-fp32-20261021/parts/heldout_axon_229311/benchmark.json": "81a5cef515f5b55a768370b4b9c8ec1b1450237e21aff7a63a428fd399b68b78",
+  "heldout-fp32-20261021/parts/heldout_axon_229311/benchmark_masks.npz": "9503524cabef675c078346cc9e14f90cd4f363c6c518989251e765305793fa08",
+  "heldout-fp32-20261021/parts/heldout_axon_242804/benchmark.json": "e86a001c942de5df4aa397212c502b4c4f254cc7ffcd441775ba92c0da50bc0f",
+  "heldout-fp32-20261021/parts/heldout_axon_242804/benchmark_masks.npz": "6612b99f2e1d240d2fb3b9b5f65715cc2d3b87fb1963fc18794ff09db1ffad7b",
+  "heldout-fp32-20261021/parts/heldout_dendrite_211590/benchmark.json": "f584e98f4de2394229c5a2cd93eca55802d5ea46061f56bf8029b47189a4d773",
+  "heldout-fp32-20261021/parts/heldout_dendrite_211590/benchmark_masks.npz": "36d5c3c41b874e3be6097362a456e59d28acb3ab82672a5c8f05748b0ec708ba",
+  "heldout-fp32-20261021/parts/heldout_dendrite_217911/benchmark.json": "194b526712b2621b2120c078f10796faf670319df708a5b1a7c05849982e615e",
+  "heldout-fp32-20261021/parts/heldout_dendrite_217911/benchmark_masks.npz": "e17e25e213ed1aa9ae27a0ccbe90e9813f2f89b90b0351dec864d47c39a96e53",
+  "heldout-fp32-20261021/parts/heldout_dendrite_245099/benchmark.json": "80f5af6a31248c6f9677f4ad8a35689ee2951103ecb5abb84eab1b06b1149882",
+  "heldout-fp32-20261021/parts/heldout_dendrite_245099/benchmark_masks.npz": "2cf2d962a7762e5d38c01ddf6f713a21d193ca5736d311fdbb189d9f3ed3065d",
+  "heldout-fp32-20261021/parts/heldout_dendrite_250842/benchmark.json": "27f543937ff763ec93a7ae2ab122fc21af5a90070f22c44a975c46378e335c4e",
+  "heldout-fp32-20261021/parts/heldout_dendrite_250842/benchmark_masks.npz": "10984c54cb3c0535399b4ec90c1822c766da64a8e4ddb09c42565c110dd42cdc",
+  "heldout-fp32-20261021/parts/heldout_dendrite_283334/benchmark.json": "292d730159d9a57bf1ff1fa4b7527fd934d6fefd4af38f14e5cb5db55d1c49e2",
+  "heldout-fp32-20261021/parts/heldout_dendrite_283334/benchmark_masks.npz": "25d06bde2813749ac3d595cff8d89ee6bda5ec033c51a57958212845e4a1d907",
+  "heldout-fp32-20261021/parts/heldout_dendrite_283771/benchmark.json": "d15975253b2a95b76a3bf664437ecaa712768690394baa3acbf9f59c3f5f90df",
+  "heldout-fp32-20261021/parts/heldout_dendrite_283771/benchmark_masks.npz": "834ce56f6b44f8411d669b162a69df502befe4e1a210c73e345ee849730fe883",
+  "heldout-fp16-20261021/merged/benchmark.json": "fae4ca73438451f39bc359c712442ff9ebbda33e8c46bbbb03cb744168a5cd79",
+  "heldout-fp16-20261021/merged/benchmark_masks.npz": "75ca2bf35968acc66d9a55344cf076e2046ace867de490bbbc83d9707e4a8c8b",
+  "heldout-fp16-20261021/source_sha256.txt": "d30a28b1e8d2366bb3aeab6cddd6467b0e1f9a1bafaab9e0530aed77eb01681f",
+  "heldout-fp16-20261021/parts/heldout_axon_14447/benchmark.json": "dad8c9fab18a42138afe7ec4c50aed20f29ab53a3e9b6901c2cb3fde28e0c350",
+  "heldout-fp16-20261021/parts/heldout_axon_14447/benchmark_masks.npz": "109a5f4fb1c0b099c32074a34237472268e0e36f3af1547219a29cd4d887536e",
+  "heldout-fp16-20261021/parts/heldout_axon_151289/benchmark.json": "1e45043f066e85d3e1a0ee78f7e3ad4de78af761cd0c9965c3ec4f2215480df8",
+  "heldout-fp16-20261021/parts/heldout_axon_151289/benchmark_masks.npz": "b343541dc74ef630e268d2fdbd3d7ac09e11835a99fd08e2f8aa02d9f36ec91a",
+  "heldout-fp16-20261021/parts/heldout_axon_176723/benchmark.json": "8b2c7495467e723df4ee88f746f49ed7bd5bf0972e27a17efedec6b8506ab7f7",
+  "heldout-fp16-20261021/parts/heldout_axon_176723/benchmark_masks.npz": "8a6c174fa2c76a9159dd2db64482a1cf96406a28c3571c597fe0c566ff2812f0",
+  "heldout-fp16-20261021/parts/heldout_axon_197450/benchmark.json": "0ad7cac560ec8eaf60d66e17944dd4bd2fffa2c54e58965b2fe184e5af07c71d",
+  "heldout-fp16-20261021/parts/heldout_axon_197450/benchmark_masks.npz": "90c5d2f06222d3e0ae741b7878faf587e75a6c2119a27dfb212f00282bac4dab",
+  "heldout-fp16-20261021/parts/heldout_axon_229311/benchmark.json": "408e3bd0161f277242254abf6cdbdc452e91255d7c0c8e70abb9d6c2ace17320",
+  "heldout-fp16-20261021/parts/heldout_axon_229311/benchmark_masks.npz": "14532be0deb71f58abc70b1019a31165098506bd488a61c30e4c7aa978e84338",
+  "heldout-fp16-20261021/parts/heldout_axon_242804/benchmark.json": "7b1911a6eb5dd3624f39ba4b6f35049ad7cb82b13dc3df093bbbd9368e6dc7f1",
+  "heldout-fp16-20261021/parts/heldout_axon_242804/benchmark_masks.npz": "fe5acc66726aa10762e9a5d2b77b43709f18a16d7798c80e53c5af1f2b665cc1",
+  "heldout-fp16-20261021/parts/heldout_dendrite_211590/benchmark.json": "09a4824f85449b4cbdbb988f308a2c5c1adcfa269640797b8cb12d8eddb97507",
+  "heldout-fp16-20261021/parts/heldout_dendrite_211590/benchmark_masks.npz": "d51cb54e6eb4d312ff4fb1e1df58288716b084f662cbac28bc3ad686846b810d",
+  "heldout-fp16-20261021/parts/heldout_dendrite_217911/benchmark.json": "edc1b9a3d8e9615999258599d0ab7e0a76503b6ee1a2adcd1e1836afb9ede0c6",
+  "heldout-fp16-20261021/parts/heldout_dendrite_217911/benchmark_masks.npz": "6c2d5f54c14f4b26391297f6046d45fca82ac70430e2151640ff5b01b969bb5a",
+  "heldout-fp16-20261021/parts/heldout_dendrite_245099/benchmark.json": "3cdcc0d417626b7cfc1b9d223c44ab4d7954e90010bbca3daceaaa8aab55f74d",
+  "heldout-fp16-20261021/parts/heldout_dendrite_245099/benchmark_masks.npz": "baaa807de63c8c269e56be544393f4bb0c4c6c095774793d1952c0fec24f0b2e",
+  "heldout-fp16-20261021/parts/heldout_dendrite_250842/benchmark.json": "0e5f0ca3c69ea2232eccd07ab7b86951d679326a1945a072d453e0ecdfff6886",
+  "heldout-fp16-20261021/parts/heldout_dendrite_250842/benchmark_masks.npz": "798ec7dca32c5992a1f6b820a286da166b27aca217949dbc47650de3c72a9acf",
+  "heldout-fp16-20261021/parts/heldout_dendrite_283334/benchmark.json": "3752da91b9fb0d8ccef1c8e510eb30b409395b6dc46a32f3ec130094f445b9eb",
+  "heldout-fp16-20261021/parts/heldout_dendrite_283334/benchmark_masks.npz": "4efb83449bdaef7bbce0cf033d31d7ce22550bda4723ecdfb21bd6a35881d9a3",
+  "heldout-fp16-20261021/parts/heldout_dendrite_283771/benchmark.json": "fd7c6f70fff7d25271b55d416563bade279b76d1e182ba55edcbd5ea593b4e7a",
+  "heldout-fp16-20261021/parts/heldout_dendrite_283771/benchmark_masks.npz": "f5895a86a7991ca9e82d098cc75a648937e7f352218bf555f56e0a9d85b269cb",
+  "heldout-fp16-20261021/compare_to_heldout_fp32.json": "eb83c8832b40de17d97a6a8cfd7d142e908e640b93ebf1986ef75fcaa89d777d",
+  "profile-fp16-20261021/profile.json": "edfa9befc3d5c2f01fd905aab76784116f5802ae9e1d8854d494b8c34f7e9a6f",
+  "profile-fp16-20261021/log.txt": "4952c147311a66bd8d22183fca6563781f28692adc57bf5421fc9633348e2ed9",
+  "profile-fp16-20261021/profile_step.py": "cb720c1a7f057d81415352548e82663169c78909def3a366556ef9d839e75d57",
+  "probe-direct-call-20261021/result.json": "6879e3e8da99d4ece1427a4093d1b22b425c14610a0a2f3933f14d9d77fd04ae",
+  "probe-direct-call-20261021/log.txt": "5e9bbf8ae170ecedb951ff70ea51192663b75bba3766f9130847d032f907fed0",
+  "probe-direct-call-20261021/probe_direct_call.py": "b97bdb1af4697ec7463f68dd3cd5b3c22268178e5b5cd620a5e0208269e27965"
+ },
+ "documented": {
+  "passes_tolerance": false,
+  "seeds_outside_seed_rules": [
+   "heldout_dendrite_283771",
+   "heldout_dendrite_245099",
+   "heldout_dendrite_250842"
+  ],
+  "new_merges": {
+   "heldout_dendrite_245099": [
+    238468
+   ],
+   "heldout_dendrite_250842": [
+    238468,
+    245232
+   ]
+  },
+  "mean_recall_drop_pts_2dp": -1.42,
+  "mean_precision_drop_pts_2dp": 13.95,
+  "ms_per_step_fp32_2dp": 20.06,
+  "ms_per_step_fp16_2dp": 9.07,
+  "per_seed": {
+   "heldout_axon_151289": {
+    "iou_4dp": 0.9307,
+    "steps_fp32": 280,
+    "steps_fp16": 283,
+    "delta_recall_pts_2dp": 0.8,
+    "delta_precision_pts_2dp": 0.38
+   },
+   "heldout_axon_229311": {
+    "iou_4dp": 0.9398,
+    "steps_fp32": 144,
+    "steps_fp16": 141,
+    "delta_recall_pts_2dp": -0.92,
+    "delta_precision_pts_2dp": -0.37
+   },
+   "heldout_axon_197450": {
+    "iou_4dp": 0.9447,
+    "steps_fp32": 262,
+    "steps_fp16": 277,
+    "delta_recall_pts_2dp": 0.02,
+    "delta_precision_pts_2dp": 0.2
+   },
+   "heldout_axon_176723": {
+    "iou_4dp": 0.938,
+    "steps_fp32": 521,
+    "steps_fp16": 503,
+    "delta_recall_pts_2dp": -0.24,
+    "delta_precision_pts_2dp": 0.29
+   },
+   "heldout_axon_14447": {
+    "iou_4dp": 0.641,
+    "steps_fp32": 303,
+    "steps_fp16": 489,
+    "delta_recall_pts_2dp": 27.87,
+    "delta_precision_pts_2dp": -0.02
+   },
+   "heldout_axon_242804": {
+    "iou_4dp": 0.9399,
+    "steps_fp32": 196,
+    "steps_fp16": 201,
+    "delta_recall_pts_2dp": -0.35,
+    "delta_precision_pts_2dp": 0.01
+   },
+   "heldout_dendrite_283334": {
+    "iou_4dp": 0.8939,
+    "steps_fp32": 238,
+    "steps_fp16": 254,
+    "delta_recall_pts_2dp": 1.26,
+    "delta_precision_pts_2dp": 0.0
+   },
+   "heldout_dendrite_211590": {
+    "iou_4dp": 0.9419,
+    "steps_fp32": 257,
+    "steps_fp16": 267,
+    "delta_recall_pts_2dp": -0.61,
+    "delta_precision_pts_2dp": 0.01
+   },
+   "heldout_dendrite_217911": {
+    "iou_4dp": 0.9314,
+    "steps_fp32": 351,
+    "steps_fp16": 347,
+    "delta_recall_pts_2dp": 0.53,
+    "delta_precision_pts_2dp": 0.1
+   },
+   "heldout_dendrite_283771": {
+    "iou_4dp": 0.9084,
+    "steps_fp32": 104,
+    "steps_fp16": 101,
+    "delta_recall_pts_2dp": -4.07,
+    "delta_precision_pts_2dp": 0.0
+   },
+   "heldout_dendrite_245099": {
+    "iou_4dp": 0.2301,
+    "steps_fp32": 727,
+    "steps_fp16": 2866,
+    "delta_recall_pts_2dp": -4.99,
+    "delta_precision_pts_2dp": -74.77
+   },
+   "heldout_dendrite_250842": {
+    "iou_4dp": 0.066,
+    "steps_fp32": 79,
+    "steps_fp16": 2266,
+    "delta_recall_pts_2dp": -2.25,
+    "delta_precision_pts_2dp": -93.18
+   }
+  },
+  "canvas_inf_voxels_total": {
+   "fp32": 0,
+   "fp16": 0
+  },
+  "merges": {
+   "heldout_dendrite_245099": {
+    "fp32": [
+     [
+      245232,
+      2571
+     ]
+    ],
+    "fp16": [
+     [
+      245232,
+      678477
+     ],
+     [
+      238468,
+      13444
+     ]
+    ]
+   },
+   "heldout_dendrite_250842": {
+    "fp32": [],
+    "fp16": [
+     [
+      245232,
+      669850
+     ],
+     [
+      238468,
+      13976
+     ]
+    ]
+   }
+  }
+ },
+ "probe_note": "Exploratory probes cited in docs/beyond_fp16_ideas.md. The direct-call probe log also contains the traceback of a first submission (7370207) that failed because the probe returned a read-only array; the fixed probe ran as 7370208.",
+ "documented_probe": {
+  "all_identical": true,
+  "ms_per_step_2dp": 17.88,
+  "reference_ms_per_step_2dp": 19.67,
+  "seeds": 12
+ },
+ "documented_profile": {
+  "steps": 360,
+  "ms_per_step_1dp": 10.2,
+  "executor_inference_ms_per_step_1dp": 4.0
+ }
+}
