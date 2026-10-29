@@ -1,0 +1,243 @@
+{
+ "design": "docs/segneuron_finetune_design.md",
+ "results": "docs/segneuron_finetune_results.md",
+ "run": "segneuron-ft-20261028",
+ "run_source_sha256": {
+  "liconn_v2/segneuron_ft.py": "49531b839ba2970ee5d99e09f44947ab4ef0a302d501163a8ad78c04b19fe878",
+  "examples/train_segneuron.py": "d69dbdb200c88a4b650326e0fc8ebd1f1d60371dcc9fa94e4bd56972844d51e5",
+  "examples/run_segneuron_ft.py": "a9384ccdab69615f13f8c8eb1539b8852d854296500eb54f2f292b01959676ba",
+  "cluster/wahab/segneuron_ft.sbatch": "b07266a3aa4dc4a85f35509b2377ee3f22955d9019671c482f090836f8c1eb87",
+  "liconn_v2/segneuron.py": "1bb120b0d4478bc7f1b781e8f68ebfb27523d101daec6b3bf71a2636aa07fe65",
+  "liconn_v2/vitseg.py": "77c4fe1636749474e6d82d2b143a74250d04c4b6024885ee06779ade64e7019d",
+  "examples/run_segneuron.py": "75110a2495b0a0a8dd6385ed6e71e2c41572595e86cfa5a2d1d74ba13b6d225d"
+ },
+ "outputs_sha256": {
+  "segneuron-ft-20261028/segneuron_ft_crop12.json": "2bcf4cc92b2bdb78fbf88cc884eff397852e2bca10ad5a33ee55bf217e6731c1",
+  "segneuron-ft-20261028/train/train_log.json": "c5f15106ec4f43c9724bbcba7bf83347b27191ba149718f8c4cf039ee9f00308",
+  "segneuron-ft-20261028/native/infer/inference.json": "fbacba9d35a1a1ba1923f22f1ee0e650b61615cc248522d5e01bb2cd4ec89e50",
+  "segneuron-ft-20261028/data/manifest.json": "1a065a8771a96a4cd555319afc659df2a5b080ee29312c5d510918a30fb984f2",
+  "segneuron-ft-20261028/7478595.out": "3eec196a5ff41686eb8086145c37b0796a23199721e5f6959614a923c7816ebe",
+  "segneuron-ft-20261028/7478596.out": "546a4b54120a4d7cacc4bc0864306ae3952f693ef2f464485bb12dbefb47131e",
+  "segneuron-ft-20261028/env-train.txt": "c3719ef4d82c1dd91d1fb4ccca1da3a9d54407b58da054472ff6d3e95cc6924e",
+  "segneuron-ft-20261028/env-infer.txt": "61b160708444dc6eb5222fcddc8449e94ab4f7e70549024a7ea75efdec0c8b2b",
+  "segneuron-ft-20261028/env-frmc.txt": "6ff8e7829c23804fa07ba6b8dae5e10a14e20f5e5615620f0189fdcb7d251d38",
+  "segneuron-ft-20261028/gpu.txt": "bfa58fb4cfaf2f4bc6f33779cfa70f952d8d85fd5d0d67eaf598f15b992d5177",
+  "segneuron-ft-20261028/probe-b4/train_log.json": "cfc91dae276178d2cdb30c543eaae4d4e1e6c9234955b2e154ff6713f267b668"
+ },
+ "slurm_jobs": {
+  "train": 7478595,
+  "post": 7478596
+ },
+ "segneuron": {
+  "commit": "ea6f0c963a2f60f0f130244da27e2b2d753f8ee9",
+  "released_checkpoint_sha256": "3767a3793cbbdbf98041b8c4c270b92d2355213d11605568c003322bb759bef5",
+  "finetuned_checkpoint_sha256": "e726bb43201aefbcf1e19b6feb8be555656f635241c07e3d7803329dbf55f228"
+ },
+ "objects": 457,
+ "training": {
+  "iters": 64000,
+  "batch": 4,
+  "steps_done": 64000,
+  "stopped": null,
+  "seconds": 69008.4,
+  "gpu": "Tesla V100-SXM2-16GB",
+  "torch": "2.7.1+cu126",
+  "base_lr": 0.001,
+  "end_lr": 1e-05,
+  "power": 1.5,
+  "train_crops": [
+   0,
+   1,
+   2,
+   3,
+   4,
+   5,
+   6,
+   7,
+   8,
+   9,
+   10,
+   11
+  ],
+  "valid_crop": 12,
+  "validations": 65,
+  "max_memory_gb": 12.7516,
+  "best_step": 64000,
+  "validation": {
+   "0": {
+    "valid_loss": 2.0527,
+    "same_below_0.5": 0.074,
+    "diff_at_or_above_0.5": 0.8284
+   },
+   "1000": {
+    "valid_loss": 0.5208,
+    "same_below_0.5": 0.0756,
+    "diff_at_or_above_0.5": 0.75
+   },
+   "2000": {
+    "valid_loss": 0.4855,
+    "same_below_0.5": 0.0765,
+    "diff_at_or_above_0.5": 0.7387
+   },
+   "10000": {
+    "valid_loss": 0.4233,
+    "same_below_0.5": 0.0592,
+    "diff_at_or_above_0.5": 0.76
+   },
+   "20000": {
+    "valid_loss": 0.4111,
+    "same_below_0.5": 0.0615,
+    "diff_at_or_above_0.5": 0.7243
+   },
+   "32000": {
+    "valid_loss": 0.4055,
+    "same_below_0.5": 0.0607,
+    "diff_at_or_above_0.5": 0.7163
+   },
+   "48000": {
+    "valid_loss": 0.4,
+    "same_below_0.5": 0.0573,
+    "diff_at_or_above_0.5": 0.7237
+   },
+   "64000": {
+    "valid_loss": 0.398,
+    "same_below_0.5": 0.0574,
+    "diff_at_or_above_0.5": 0.7172
+   }
+  }
+ },
+ "inference": {
+  "input_shape_zyx": [
+   500,
+   500,
+   500
+  ],
+  "input_sha256": "ba38daefbb4b9a757f3f646662cf74a92b1c1873bb61ba743adbfbc648bf1521",
+  "patch_count": 2450,
+  "inference_seconds": 214.2
+ },
+ "foreground": {
+  "auc": 0.9762,
+  "precision": 0.9293,
+  "recall": 0.9532,
+  "predicted_fraction": 0.6055,
+  "label_zero_median": 0.0083
+ },
+ "affinities": {
+  "z": {
+   "same_below_0.5": 0.0494,
+   "diff_at_or_above_0.5": 0.7758,
+   "neuron_background_at_or_above_0.5": 0.2744,
+   "auc_same_vs_diff": 0.8515,
+   "auc_same_vs_neuron_background": 0.9342,
+   "diff_median": 0.7638,
+   "same_median": 0.9715
+  },
+  "y": {
+   "same_below_0.5": 0.0489,
+   "diff_at_or_above_0.5": 0.777,
+   "neuron_background_at_or_above_0.5": 0.2459,
+   "auc_same_vs_diff": 0.8517,
+   "auc_same_vs_neuron_background": 0.943,
+   "diff_median": 0.7612,
+   "same_median": 0.9719
+  },
+  "x": {
+   "same_below_0.5": 0.0488,
+   "diff_at_or_above_0.5": 0.7589,
+   "neuron_background_at_or_above_0.5": 0.2748,
+   "auc_same_vs_diff": 0.8542,
+   "auc_same_vs_neuron_background": 0.931,
+   "diff_median": 0.7539,
+   "same_median": 0.9712
+  }
+ },
+ "ours": {
+  "threshold": 0.6,
+  "fragments": 51745,
+  "recall": 0.8009,
+  "precision": 0.9256,
+  "f1": 0.8234,
+  "lost_to_background": 0.0529,
+  "lost_to_other_segments": 0.1461,
+  "pieces_over_1pct": 2.1751,
+  "seeds_in_background": 3,
+  "median_pieces": 2.0,
+  "background_precision": 0.93,
+  "background_recall": 0.8955,
+  "f1_at_0.5": 0.8077
+ },
+ "frmc": {
+  "beta": 0.25,
+  "table": {
+   "0.1": {
+    "segments": 2173,
+    "masked_f1": 0.7551,
+    "as_released_f1": 0.7772
+   },
+   "0.25": {
+    "segments": 9042,
+    "masked_f1": 0.7627,
+    "as_released_f1": 0.7854
+   },
+   "0.4": {
+    "segments": 53935,
+    "masked_f1": 0.6093,
+    "as_released_f1": 0.6258
+   },
+   "0.5": {
+    "segments": 118314,
+    "masked_f1": 0.4759,
+    "as_released_f1": 0.4866
+   },
+   "0.6": {
+    "segments": 171752,
+    "masked_f1": 0.2951,
+    "as_released_f1": 0.301
+   },
+   "0.75": {
+    "segments": 214558,
+    "masked_f1": 0.0359,
+    "as_released_f1": 0.0369
+   },
+   "0.9": {
+    "segments": 224317,
+    "masked_f1": 0.0212,
+    "as_released_f1": 0.022
+   }
+  },
+  "masked": {
+   "recall": 0.69,
+   "precision": 0.9507,
+   "f1": 0.7627,
+   "lost_to_background": 0.0529,
+   "lost_to_other_segments": 0.257,
+   "pieces_over_1pct": 3.1729
+  },
+  "as_released": {
+   "recall": 0.7269,
+   "precision": 0.9509,
+   "f1": 0.7854,
+   "lost_to_background": 0.0,
+   "lost_to_other_segments": 0.2731,
+   "pieces_over_1pct": 3.3195
+  }
+ },
+ "references": {
+  "zeroshot_native": {
+   "source": "docs/segneuron_evidence.json"
+  },
+  "vit_crop12": {
+   "source": "docs/vitseg_evidence.json"
+  }
+ },
+ "tolerance": 0.0001,
+ "paired_vs_zeroshot_native": {
+  "objects_f1_higher": 419,
+  "objects_f1_lower": 38,
+  "median_f1_change": 0.2793,
+  "largest_drop": -0.8622,
+  "objects_f1_at_least_0.9": 249,
+  "zeroshot_objects_f1_at_least_0.9": 36
+ }
+}
