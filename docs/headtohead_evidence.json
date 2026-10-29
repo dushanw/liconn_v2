@@ -1,0 +1,119 @@
+{
+ "design": "docs/headtohead_design.md",
+ "results": "docs/headtohead_results.md",
+ "run": "headtohead-20261029",
+ "run_source_sha256": {
+  "liconn_v2/headtohead.py": "f3de0535960b8311e5ce04ce89f2bb0132815a5c784a9322bf3ae00fdf07cf97",
+  "examples/run_headtohead.py": "4da69365fdd3681cad93abcfd41a8cb0bed3df5f2dc6a4b3181fbd9181a796b5",
+  "cluster/wahab/headtohead.sbatch": "7776653f112b636fced5f0f2191e31f30db33689a743e9c9bdff0e57715b9032",
+  "liconn_v2/benchmark.py": "309ea0a4d5d31ead276fbd1a87e7bf7575cda1e1ad1ffb98c1248dcbdbfbc23e",
+  "liconn_v2/manyseed.py": "8611b01feef08129b51ac645510051495ea41c520f1051c04db9d19f5161a92d",
+  "liconn_v2/segneuron.py": "1bb120b0d4478bc7f1b781e8f68ebfb27523d101daec6b3bf71a2636aa07fe65",
+  "liconn_v2/vitseg.py": "77c4fe1636749474e6d82d2b143a74250d04c4b6024885ee06779ade64e7019d",
+  "liconn_v2/data.py": "033ea6c8dcdf782acfdad5ac6c43d3fc5e8b43359bbeecf1aec6033c3a9b99e8",
+  "liconn_v2/earlystop.py": "413de84c4a670d10225fa90fc2e7b9f704b244c328bbda2e4a691fc24079c5b4",
+  "liconn_v2/fasttrace.py": "6621cd1dfe8819c0a6d7857ecdfdc9f9f0878358dccde21bd5abe3324284ed60",
+  "liconn_v2/reference.py": "2de09cfa1545c20fcc60c6ab2428e803c48bdad27c2e33145101d4ac118ceb73",
+  "examples/run_policy_benchmark.py": "2fad76f43d2b05921fa7fe45e20fdb4c0849c6b33307a49e726986ad25086579",
+  "examples/run_segneuron.py": "75110a2495b0a0a8dd6385ed6e71e2c41572595e86cfa5a2d1d74ba13b6d225d"
+ },
+ "outputs_sha256": {
+  "headtohead-20261029/headtohead_crop12.json": "26d21bd97e44642909fdadc3f197170ceb249ca8f04f8a5440e38b943067239a",
+  "headtohead-20261029/ffn_crop12.json": "6c6c390eec4ed12c239780cb5ae0cc2092b2f1ceb5f039e8aefaa2cada8620a0",
+  "headtohead-20261029/segneuron_crop12.json": "a4169b85dd996389ce445554b8b3c9810d7acfa964c66271d62dab2cf953663d",
+  "headtohead-20261029/infer/inference.json": "0e8a161a9203e26a50e407d7bcb172b7d4661e4c889b0654f627a37d8b5920c2",
+  "headtohead-20261029/gpu.txt": "06ff7126497bcc3a245ecd5747bfacb06d603673a2946be6f960645c8067cd92",
+  "headtohead-20261029/env-infer.txt": "61b160708444dc6eb5222fcddc8449e94ab4f7e70549024a7ea75efdec0c8b2b",
+  "headtohead-20261029/7483667.out": "fd23dae2852bf68e840b9cacfab847c210193cd7b473e98cf1ba2703425034ae"
+ },
+ "slurm_job": 7483667,
+ "elapsed": "01:43:49",
+ "node": "d3-w4140b-03",
+ "ffn_variant": "fp16_head32",
+ "segneuron_threshold": 0.6,
+ "segneuron_checkpoint_sha256": "e726bb43201aefbcf1e19b6feb8be555656f635241c07e3d7803329dbf55f228",
+ "objects": 457,
+ "accuracy": {
+  "ffn": {
+   "recall": 0.859,
+   "precision": 0.9703,
+   "f1": 0.8908
+  },
+  "segneuron": {
+   "recall": 0.8009,
+   "precision": 0.9256,
+   "f1": 0.8234
+  },
+  "ffn_higher": 340,
+  "segneuron_higher": 117,
+  "equal": 0,
+  "segneuron_seeds_in_background": 3,
+  "ffn_merges": 93,
+  "ffn_objects_with_merge": 65,
+  "ffn_merged_voxels": 4087878,
+  "segneuron_merges": 249,
+  "segneuron_objects_with_merge": 80,
+  "segneuron_merged_voxels": 15367121,
+  "mean_f1_difference": 0.0674,
+  "f1_difference_quantiles": [
+   -0.7751,
+   -0.0544,
+   -0.0008,
+   0.0148,
+   0.0758,
+   0.3083,
+   0.991
+  ],
+  "ffn_mean_f1_where_segneuron_seed_found": 0.8902,
+  "segneuron_mean_f1_where_seed_found": 0.8288,
+  "ffn_objects_f1_at_least_0.9": 319,
+  "segneuron_objects_f1_at_least_0.9": 249,
+  "ffn_voxels_in_merges_of_at_least_1000": 4004330,
+  "segneuron_voxels_in_merges_of_at_least_1000": 15308484
+ },
+ "ffn_overlap": {
+  "voxels_in_any_mask": 42729864,
+  "voxels_in_two_or_more": 1205578,
+  "sum_of_mask_voxels": 43968325,
+  "max_masks_on_a_voxel": 4
+ },
+ "speed": {
+  "ffn": {
+   "trace_seconds": 910.53,
+   "wall_seconds": 1154.15,
+   "setup_seconds": 79.12,
+   "steps": 137723,
+   "ms_per_step": 6.61,
+   "wall_seconds_per_object": 2.53,
+   "median_wall_seconds_per_object": 2.28
+  },
+  "segneuron": {
+   "inference_wall_seconds": 251.47,
+   "inference_seconds": 213.66,
+   "post_seconds": 282.8,
+   "total_seconds": 534.28,
+   "seconds_per_object": 1.17
+  },
+  "post_breakdown": {
+   "watershed_seconds": 271.92,
+   "agglomeration_seconds": 10.03,
+   "segmentation_seconds": 0.85
+  },
+  "ffn_over_segneuron": 2.1602,
+  "break_even_objects": {
+   "end_to_end": 211.6,
+   "gpu_only": 107.2,
+   "end_to_end_with_ffn_setup": 180.2
+  },
+  "ffn_compile_seconds": 5.29
+ },
+ "checks": {
+  "ffn_trace_matches_recorded": true,
+  "segneuron_max_abs_affinity_change_vs_recorded": 0.0,
+  "segneuron_max_abs_foreground_change_vs_recorded": 0.0,
+  "segneuron_max_abs_f1_change_vs_recorded": 0.0,
+  "segneuron_mean_f1_recorded": 0.8234
+ },
+ "tolerance": 0.0001,
+ "seconds_tolerance": 0.01
+}
