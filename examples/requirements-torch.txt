@@ -1,0 +1,3 @@
+# PyTorch for the factorised FFN (liconn_v2/factorised.py; docs/factorised_design.md).
+# Same release as the SegNeuron training environments on Wahab and MIT (CPU wheel locally).
+torch==2.7.1

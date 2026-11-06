@@ -74,6 +74,7 @@ python3.12 -m venv .venv
 .venv/bin/python -m pip install -r requirements.txt
 .venv/bin/python -m pip install --no-deps -r requirements-ffn.txt
 .venv/bin/python -m pip install -r examples/requirements-erl.txt   # ERL (kimimaro); needed by tests/test_erl.py
+.venv/bin/python -m pip install -r examples/requirements-torch.txt # PyTorch; needed by tests/test_factorised.py
 .venv/bin/python -m liconn_v2.data            # one-time download of the public sample crop and checkpoint, sha256-pinned
 .venv/bin/python -m unittest discover -s tests -t .
 ```
