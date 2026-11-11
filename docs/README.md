@@ -85,6 +85,7 @@ once) was developed in the timing study of R2 ([distil_results](distil_results.m
 |---|---|---|---|---|
 | Every method on crops 41-50, frozen in advance | [unseen_design](unseen_design.md) | [unseen_results](unseen_results.md) | [unseen_evidence](unseen_evidence.json) | [test_unseen_evidence](../tests/test_unseen_evidence.py) |
 | SegNeuron timed on the B200 (addendum, planned after the test's results) | [unseen_b200_segneuron_design](unseen_b200_segneuron_design.md) | [unseen_b200_results](unseen_b200_results.md) | [unseen_b200_evidence](unseen_b200_evidence.json) | [test_unseen_b200_evidence](../tests/test_unseen_b200_evidence.py) |
+| Whole test-crop neurons as reconstructed by every method (manuscript figure, after the test) | [figure_neurons_design](figure_neurons_design.md) | three objects run, no verification failures (Run section of [figure_neurons_design](figure_neurons_design.md)); Fig. 5 (Draft 10) | [figure_neurons_evidence](figure_neurons_evidence/logs.txt) | [test_figure_neurons](../tests/test_figure_neurons.py), [test_figure_neurons_evidence](../tests/test_figure_neurons_evidence.py) |
 
 ## Records
 
