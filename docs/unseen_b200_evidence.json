@@ -1,0 +1,805 @@
+{
+ "design": "docs/unseen_b200_segneuron_design.md",
+ "design_sha256": "3211f066a15563cbc8577bb12adcf9ddd4b9ee53dad317c8dd6f5606a7ec246f",
+ "devices": {
+  "41": {
+   "gpu": "NVIDIA B200, 590.48.01",
+   "job": "host node5700-c1 job 28228697_41 cpus 8"
+  },
+  "42": {
+   "gpu": "NVIDIA B200, 590.48.01",
+   "job": "host node5800-c1 job 28228697_42 cpus 8"
+  },
+  "43": {
+   "gpu": "NVIDIA B200, 590.48.01",
+   "job": "host node5800-c1 job 28228697_43 cpus 8"
+  },
+  "44": {
+   "gpu": "NVIDIA B200, 590.48.01",
+   "job": "host node5700-c1 job 28228697_44 cpus 8"
+  },
+  "45": {
+   "gpu": "NVIDIA B200, 590.48.01",
+   "job": "host node5800-c1 job 28228697_45 cpus 8"
+  },
+  "46": {
+   "gpu": "NVIDIA B200, 590.48.01",
+   "job": "host node5700-c1 job 28228697_46 cpus 8"
+  },
+  "47": {
+   "gpu": "NVIDIA B200, 590.48.01",
+   "job": "host node5800-c1 job 28228697_47 cpus 8"
+  },
+  "48": {
+   "gpu": "NVIDIA B200, 590.48.01",
+   "job": "host node5700-c1 job 28228697_48 cpus 8"
+  },
+  "49": {
+   "gpu": "NVIDIA B200, 590.48.01",
+   "job": "host node5800-c1 job 28228697_49 cpus 8"
+  },
+  "50": {
+   "gpu": "NVIDIA B200, 590.48.01",
+   "job": "host node5700-c1 job 28228697_50 cpus 8"
+  }
+ },
+ "judged": {
+  "agreement": {
+   "41": {
+    "identical_f1": 170,
+    "max_abs_f1_difference": 0.0037619667779154042,
+    "mean_f1_b200": 0.8010347835062221,
+    "mean_f1_difference": 1.0452788456430383e-05,
+    "mean_f1_v100": 0.8010243307177656,
+    "objects": 401,
+    "objects_abs_difference_gt_0.1": 0
+   },
+   "42": {
+    "identical_f1": 227,
+    "max_abs_f1_difference": 0.0008529077082626291,
+    "mean_f1_b200": 0.8324813845784101,
+    "mean_f1_difference": -1.253845921369199e-06,
+    "mean_f1_v100": 0.8324826384243315,
+    "objects": 532,
+    "objects_abs_difference_gt_0.1": 0
+   },
+   "43": {
+    "identical_f1": 189,
+    "max_abs_f1_difference": 0.03562608994209404,
+    "mean_f1_b200": 0.8440306564040149,
+    "mean_f1_difference": 1.2661283118662208e-05,
+    "mean_f1_v100": 0.8440179951208963,
+    "objects": 451,
+    "objects_abs_difference_gt_0.1": 0
+   },
+   "44": {
+    "identical_f1": 159,
+    "max_abs_f1_difference": 0.0031573877035686593,
+    "mean_f1_b200": 0.8316345543897938,
+    "mean_f1_difference": 5.4593693420911345e-06,
+    "mean_f1_v100": 0.8316290950204517,
+    "objects": 433,
+    "objects_abs_difference_gt_0.1": 0
+   },
+   "45": {
+    "identical_f1": 188,
+    "max_abs_f1_difference": 0.0015329363367991844,
+    "mean_f1_b200": 0.8108316291704246,
+    "mean_f1_difference": -4.186241981776815e-06,
+    "mean_f1_v100": 0.8108358154124062,
+    "objects": 464,
+    "objects_abs_difference_gt_0.1": 0
+   },
+   "46": {
+    "identical_f1": 179,
+    "max_abs_f1_difference": 0.0022159920989406334,
+    "mean_f1_b200": 0.8364172979167082,
+    "mean_f1_difference": -3.4112272735989194e-06,
+    "mean_f1_v100": 0.8364207091439818,
+    "objects": 446,
+    "objects_abs_difference_gt_0.1": 0
+   },
+   "47": {
+    "identical_f1": 175,
+    "max_abs_f1_difference": 0.0010871150122033768,
+    "mean_f1_b200": 0.8197312358044253,
+    "mean_f1_difference": -1.7913329966454268e-06,
+    "mean_f1_v100": 0.8197330271374219,
+    "objects": 415,
+    "objects_abs_difference_gt_0.1": 0
+   },
+   "48": {
+    "identical_f1": 182,
+    "max_abs_f1_difference": 0.11954542136646984,
+    "mean_f1_b200": 0.8420810393386301,
+    "mean_f1_difference": -0.00022158398191211387,
+    "mean_f1_v100": 0.8423026233205422,
+    "objects": 496,
+    "objects_abs_difference_gt_0.1": 1
+   },
+   "49": {
+    "identical_f1": 174,
+    "max_abs_f1_difference": 0.05919029565100531,
+    "mean_f1_b200": 0.8250718719394566,
+    "mean_f1_difference": 0.00013366092631247845,
+    "mean_f1_v100": 0.8249382110131444,
+    "objects": 443,
+    "objects_abs_difference_gt_0.1": 0
+   },
+   "50": {
+    "identical_f1": 189,
+    "max_abs_f1_difference": 0.1976240259475679,
+    "mean_f1_b200": 0.8272816344361507,
+    "mean_f1_difference": 0.0003937506252871629,
+    "mean_f1_v100": 0.8268878838108635,
+    "objects": 498,
+    "objects_abs_difference_gt_0.1": 1
+   }
+  },
+  "agreement_pooled": {
+   "max_abs_f1_difference": 0.1976240259475679,
+   "mean_f1_difference": 3.336654021322373e-05,
+   "objects": 4579,
+   "objects_abs_difference_gt_0.1": 2
+  },
+  "comparisons": {
+   "end_to_end": {
+    "F1": {
+     "break_even": {
+      "max": 112.099993644203,
+      "median": 77.53219847211713,
+      "min": 62.61810625701945
+     },
+     "break_even_per_crop": {
+      "41": 62.61810625701945,
+      "42": 86.5847459337722,
+      "43": 100.60729892843949,
+      "44": 73.2689823737404,
+      "45": 112.099993644203,
+      "46": 65.2902538189873,
+      "47": 92.30303364166312,
+      "48": 64.67668265651862,
+      "49": 81.79541457049388,
+      "50": 69.75910393421294
+     },
+     "cheaper_on": [
+      41,
+      42,
+      43,
+      44,
+      45,
+      46,
+      47,
+      48,
+      49,
+      50
+     ],
+     "crops_judged": 10,
+     "crops_segneuron_cheaper": 10,
+     "crops_segneuron_dearer": 0,
+     "segneuron_over_run": {
+      "41": 0.15615487844643253,
+      "42": 0.16275328183039886,
+      "43": 0.22307605083911197,
+      "44": 0.16921243042434275,
+      "45": 0.2415948138883685,
+      "46": 0.14639070363001636,
+      "47": 0.22241694853412797,
+      "48": 0.13039653761394884,
+      "49": 0.1846397620101442,
+      "50": 0.1400785219562509
+     },
+     "statement": "SegNeuron was cheaper than float32 FFN one object at a time on every test crop",
+     "totals": {
+      "break_even_per_crop": 80.44333977137298,
+      "run_seconds": 12984.35,
+      "segneuron_seconds": 2281.075515965116
+     }
+    },
+    "F5": {
+     "break_even": {
+      "max": 540.6545810252007,
+      "median": 397.76370438869253,
+      "min": 222.16106433524007
+     },
+     "break_even_per_crop": {
+      "41": 222.16106433524007,
+      "42": 455.48272607828426,
+      "43": 540.6545810252007,
+      "44": 371.9353370418429,
+      "45": 532.0774321627136,
+      "46": 310.1092001868639,
+      "47": 447.56646031908457,
+      "48": 332.44538900166447,
+      "49": 423.59207173554216,
+      "50": 352.10919654977664
+     },
+     "cheaper_on": [
+      41,
+      42,
+      44,
+      46,
+      48,
+      49,
+      50
+     ],
+     "crops_judged": 10,
+     "crops_segneuron_cheaper": 7,
+     "crops_segneuron_dearer": 3,
+     "segneuron_over_run": {
+      "41": 0.55401761679611,
+      "42": 0.8561705377411358,
+      "43": 1.1987906452886936,
+      "44": 0.8589730647617619,
+      "45": 1.1467186037989519,
+      "46": 0.6953121080422959,
+      "47": 1.07847339835924,
+      "48": 0.6702528004065816,
+      "49": 0.9561897781840681,
+      "50": 0.7070465794172222
+     },
+     "statement": "SegNeuron was cheaper on 7 of 10 crops",
+     "totals": {
+      "break_even_per_crop": 388.51274787264674,
+      "run_seconds": 2688.469,
+      "segneuron_seconds": 2281.075515965116
+     }
+    },
+    "P2": {
+     "break_even": {
+      "max": 1047.6542210098296,
+      "median": 660.8364813571354,
+      "min": 434.43341967574327
+     },
+     "break_even_per_crop": {
+      "41": 523.1388012895171,
+      "42": 990.5807065214098,
+      "43": 908.9180297117645,
+      "44": 749.2354452702652,
+      "45": 1047.6542210098296,
+      "46": 434.43341967574327,
+      "47": 719.3710915361133,
+      "48": 481.83559461761615,
+      "49": 568.3724033882186,
+      "50": 602.3018711781576
+     },
+     "cheaper_on": [
+      46,
+      48
+     ],
+     "crops_judged": 10,
+     "crops_segneuron_cheaper": 2,
+     "crops_segneuron_dearer": 8,
+     "segneuron_over_run": {
+      "41": 1.3045855393753543,
+      "42": 1.86199380925077,
+      "43": 2.015339311999478,
+      "44": 1.7303359013170099,
+      "45": 2.2578754763142874,
+      "46": 0.9740659633985275,
+      "47": 1.7334243169544898,
+      "48": 0.9714427310839036,
+      "49": 1.2830076825919154,
+      "50": 1.2094415083898749
+     },
+     "statement": "SegNeuron was cheaper on 2 of 10 crops",
+     "totals": {
+      "break_even_per_crop": 673.5379573673431,
+      "run_seconds": 1550.7730000000001,
+      "segneuron_seconds": 2281.075515965116
+     }
+    },
+    "Q2": {
+     "break_even": {
+      "max": 1582.7820477319333,
+      "median": 1080.986224335324,
+      "min": 776.9723177273396
+     },
+     "break_even_per_crop": {
+      "41": 1254.2536910317363,
+      "42": 1582.7820477319333,
+      "43": 1354.7147152768264,
+      "44": 1132.859031164589,
+      "45": 1269.824618439864,
+      "46": 790.9982596389956,
+      "47": 1029.113417506059,
+      "48": 776.9723177273396,
+      "49": 866.1065778852256,
+      "50": 979.5765581469816
+     },
+     "cheaper_on": [],
+     "crops_judged": 10,
+     "crops_segneuron_cheaper": 0,
+     "crops_segneuron_dearer": 10,
+     "segneuron_over_run": {
+      "41": 3.12781469085221,
+      "42": 2.975154225060025,
+      "43": 3.0038020294386394,
+      "44": 2.616302612389351,
+      "45": 2.7366909880169485,
+      "46": 1.7735386987421426,
+      "47": 2.4797913674844794,
+      "48": 1.5664764470309265,
+      "49": 1.9550938552713897,
+      "50": 1.9670212010983565
+     },
+     "statement": "P4 was cheaper than SegNeuron on every test crop",
+     "totals": {
+      "break_even_per_crop": 1075.2146521331897,
+      "run_seconds": 971.4381,
+      "segneuron_seconds": 2281.075515965116
+     }
+    },
+    "S10": {
+     "break_even": {
+      "max": 870.8033577557418,
+      "median": 583.3971824793161,
+      "min": 416.89815590540104
+     },
+     "break_even_per_crop": {
+      "41": 445.35090139634815,
+      "42": 693.3596600419481,
+      "43": 690.1971999489236,
+      "44": 575.2401410754875,
+      "45": 870.8033577557418,
+      "46": 416.89815590540104,
+      "47": 633.3126303129792,
+      "48": 462.49187447312437,
+      "49": 561.6975262580879,
+      "50": 591.5542238831448
+     },
+     "cheaper_on": [
+      46,
+      48
+     ],
+     "crops_judged": 10,
+     "crops_segneuron_cheaper": 2,
+     "crops_segneuron_dearer": 8,
+     "segneuron_over_run": {
+      "41": 1.1106007516118408,
+      "42": 1.3033076316577972,
+      "43": 1.5303707315940656,
+      "44": 1.328499171075029,
+      "45": 1.8767313744735814,
+      "46": 0.9347492284874463,
+      "47": 1.5260545308746487,
+      "48": 0.9324432953087185,
+      "49": 1.2679402398602435,
+      "50": 1.1878598873155517
+     },
+     "statement": "SegNeuron was cheaper on 2 of 10 crops",
+     "totals": {
+      "break_even_per_crop": 586.8226869118746,
+      "run_seconds": 1779.932,
+      "segneuron_seconds": 2281.075515965116
+     }
+    }
+   },
+   "without_startup": {
+    "F1": {
+     "break_even": {
+      "max": 110.02790931937781,
+      "median": 74.53961629595983,
+      "min": 54.09503870000082
+     },
+     "break_even_per_crop": {
+      "41": 54.09503870000082,
+      "42": 84.92269572727882,
+      "43": 98.82960002291085,
+      "44": 70.04727366371256,
+      "45": 110.02790931937781,
+      "46": 63.95737375012466,
+      "47": 90.59103017300123,
+      "48": 63.128305181886816,
+      "49": 79.0319589282071,
+      "50": 68.37057833529532
+     },
+     "cheaper_on": [
+      41,
+      42,
+      43,
+      44,
+      45,
+      46,
+      47,
+      48,
+      49,
+      50
+     ],
+     "crops_judged": 10,
+     "crops_segneuron_cheaper": 10,
+     "crops_segneuron_dearer": 0,
+     "segneuron_over_run": {
+      "41": 0.13490034588528882,
+      "42": 0.1596291273069151,
+      "43": 0.21913436812175358,
+      "44": 0.161771994604417,
+      "45": 0.23712911491245217,
+      "46": 0.14340218329624363,
+      "47": 0.21829163897108728,
+      "48": 0.12727480883444922,
+      "49": 0.1784017131562237,
+      "50": 0.13729031794236007
+     },
+     "statement": "SegNeuron was cheaper than float32 FFN one object at a time on every test crop",
+     "totals": {
+      "break_even_per_crop": 77.69404706723192,
+      "run_seconds": 12984.35,
+      "segneuron_seconds": 2203.1157458777307
+     }
+    },
+    "F5": {
+     "break_even": {
+      "max": 531.1013869011723,
+      "median": 382.43100162991107,
+      "min": 191.92230636168424
+     },
+     "break_even_per_crop": {
+      "41": 191.92230636168424,
+      "42": 446.7394405172038,
+      "43": 531.1013869011723,
+      "44": 355.58097703718823,
+      "45": 522.2423798051116,
+      "46": 303.7784180574828,
+      "47": 439.26515859266834,
+      "48": 324.4865554509535,
+      "49": 409.28102622263395,
+      "50": 345.1006112118004
+     },
+     "cheaper_on": [
+      41,
+      42,
+      44,
+      46,
+      48,
+      49,
+      50
+     ],
+     "crops_judged": 10,
+     "crops_segneuron_cheaper": 7,
+     "crops_segneuron_dearer": 3,
+     "segneuron_over_run": {
+      "41": 0.47860924279721756,
+      "42": 0.8397357904458718,
+      "43": 1.177608396676657,
+      "44": 0.8212031802244533,
+      "45": 1.125522370269637,
+      "46": 0.6811175292768673,
+      "47": 1.0584702616690804,
+      "48": 0.6542067650220837,
+      "49": 0.9238849350398058,
+      "50": 0.6929731148831334
+     },
+     "statement": "SegNeuron was cheaper on 7 of 10 crops",
+     "totals": {
+      "break_even_per_crop": 375.2346409935963,
+      "run_seconds": 2688.469,
+      "segneuron_seconds": 2203.1157458777307
+     }
+    },
+    "P2": {
+     "break_even": {
+      "max": 1028.2891183133793,
+      "median": 648.1708806207388,
+      "min": 425.56459757039494
+     },
+     "break_even_per_crop": {
+      "41": 451.9334006217434,
+      "42": 971.5658690917132,
+      "43": 892.8577378259528,
+      "44": 716.290831032605,
+      "45": 1028.2891183133793,
+      "46": 425.56459757039494,
+      "47": 706.0284552718919,
+      "48": 470.3003186798583,
+      "49": 549.1699586874876,
+      "50": 590.3133059695857
+     },
+     "cheaper_on": [
+      46,
+      48
+     ],
+     "crops_judged": 10,
+     "crops_segneuron_cheaper": 2,
+     "crops_segneuron_dearer": 8,
+     "segneuron_over_run": {
+      "41": 1.1270159616502329,
+      "42": 1.8262516336310397,
+      "43": 1.979728908704995,
+      "44": 1.654251341876686,
+      "45": 2.2161403411926277,
+      "46": 0.9541807120412442,
+      "47": 1.7012733861973295,
+      "48": 0.9481861263706821,
+      "49": 1.239661306292297,
+      "50": 1.1853680842762766
+     },
+     "statement": "SegNeuron was cheaper on 2 of 10 crops",
+     "totals": {
+      "break_even_per_crop": 650.518612354879,
+      "run_seconds": 1550.7730000000001,
+      "segneuron_seconds": 2203.1157458777307
+     }
+    },
+    "Q2": {
+     "break_even": {
+      "max": 1552.399522485754,
+      "median": 1046.535952596243,
+      "min": 758.3713879058373
+     },
+     "break_even_per_crop": {
+      "41": 1083.534875320105,
+      "42": 1552.399522485754,
+      "43": 1330.7773380457356,
+      "44": 1083.0461132053963,
+      "45": 1246.3528625404165,
+      "46": 774.8502780780594,
+      "47": 1010.02579198709,
+      "48": 758.3713879058373,
+      "49": 836.8451929769569,
+      "50": 960.0784991069826
+     },
+     "cheaper_on": [],
+     "crops_judged": 10,
+     "crops_segneuron_cheaper": 0,
+     "crops_segneuron_dearer": 10,
+     "segneuron_over_run": {
+      "41": 2.702081983341907,
+      "42": 2.918044215198786,
+      "43": 2.9507258049794585,
+      "44": 2.5012612314212386,
+      "45": 2.6861053071991736,
+      "46": 1.7373324620584292,
+      "47": 2.433797089125518,
+      "48": 1.528974572390801,
+      "49": 1.8890410676680747,
+      "50": 1.9278684721023747
+     },
+     "statement": "P4 was cheaper than SegNeuron on every test crop",
+     "totals": {
+      "break_even_per_crop": 1038.467299190152,
+      "run_seconds": 971.4381,
+      "segneuron_seconds": 2203.1157458777307
+     }
+    },
+    "S10": {
+     "break_even": {
+      "max": 854.7072106557002,
+      "median": 564.8629281791098,
+      "min": 384.7333572694094
+     },
+     "break_even_per_crop": {
+      "41": 384.7333572694094,
+      "42": 680.0501728601257,
+      "43": 678.001635412191,
+      "44": 549.9462702884306,
+      "45": 854.7072106557002,
+      "46": 408.3873107141345,
+      "47": 621.5661754342328,
+      "48": 451.41969248695926,
+      "49": 542.7205920821667,
+      "50": 579.779586069789
+     },
+     "cheaper_on": [
+      41,
+      46,
+      48
+     ],
+     "crops_judged": 10,
+     "crops_segneuron_cheaper": 3,
+     "crops_segneuron_dearer": 7,
+     "segneuron_over_run": {
+      "41": 0.9594348061581282,
+      "42": 1.2782897986092587,
+      "43": 1.5033295685414434,
+      "44": 1.2700837651003014,
+      "45": 1.8420414022752163,
+      "46": 0.9156666159509743,
+      "47": 1.4977498203234527,
+      "48": 0.9101203477559662,
+      "49": 1.2251029166640333,
+      "50": 1.164216036284717
+     },
+     "statement": "SegNeuron was cheaper on 3 of 10 crops",
+     "totals": {
+      "break_even_per_crop": 566.7669888722788,
+      "run_seconds": 1779.932,
+      "segneuron_seconds": 2203.1157458777307
+     }
+    }
+   }
+  },
+  "failures": {},
+  "objects_per_crop": {
+   "41": 401,
+   "42": 532,
+   "43": 451,
+   "44": 433,
+   "45": 464,
+   "46": 446,
+   "47": 415,
+   "48": 496,
+   "49": 443,
+   "50": 498
+  },
+  "segneuron_b200": {
+   "41": {
+    "end_to_end": 215.36880835331976,
+    "inference_seconds": 52.30417644511908,
+    "inference_wall_seconds": 81.61842775344849,
+    "post_seconds": 133.75038059987128,
+    "without_startup": 186.05455704499036
+   },
+   "42": {
+    "end_to_end": 253.60541881376412,
+    "inference_seconds": 51.19388307409827,
+    "inference_wall_seconds": 56.06200313568115,
+    "post_seconds": 197.54341567808297,
+    "without_startup": 248.73729875218123
+   },
+   "43": {
+    "end_to_end": 256.00653746398166,
+    "inference_seconds": 50.64574544399511,
+    "inference_wall_seconds": 55.169299364089966,
+    "post_seconds": 200.8372380998917,
+    "without_startup": 251.4829835438868
+   },
+   "44": {
+    "end_to_end": 193.85991303995252,
+    "inference_seconds": 47.30930284317583,
+    "inference_wall_seconds": 55.83351254463196,
+    "post_seconds": 138.02640049532056,
+    "without_startup": 185.3357033384964
+   },
+   "45": {
+    "end_to_end": 285.7680096597178,
+    "inference_seconds": 52.62047969608102,
+    "inference_wall_seconds": 57.902687072753906,
+    "post_seconds": 227.86532258696388,
+    "without_startup": 280.4858022830449
+   },
+   "46": {
+    "end_to_end": 181.53764766454697,
+    "inference_seconds": 47.14596414845437,
+    "inference_wall_seconds": 50.8519983291626,
+    "post_seconds": 130.68564933538437,
+    "without_startup": 177.83161348383874
+   },
+   "47": {
+    "end_to_end": 270.3344559263205,
+    "inference_seconds": 52.99127837398555,
+    "inference_wall_seconds": 58.00534462928772,
+    "post_seconds": 212.3291112970328,
+    "without_startup": 265.32038967101835
+   },
+   "48": {
+    "end_to_end": 183.81347924750298,
+    "inference_seconds": 47.05844393093139,
+    "inference_wall_seconds": 51.458988904953,
+    "post_seconds": 132.35449034254998,
+    "without_startup": 179.41293427348137
+   },
+   "49": {
+    "end_to_end": 255.98825884610415,
+    "inference_seconds": 50.079141441965476,
+    "inference_wall_seconds": 58.727697134017944,
+    "post_seconds": 197.2605617120862,
+    "without_startup": 247.33970315405168
+   },
+   "50": {
+    "end_to_end": 184.79298694990575,
+    "inference_seconds": 47.244135471992195,
+    "inference_wall_seconds": 50.922362089157104,
+    "post_seconds": 133.87062486074865,
+    "without_startup": 181.11476033274084
+   }
+  },
+  "segneuron_v100": {
+   "41": {
+    "end_to_end": 583.3026834362536,
+    "inference_seconds": 216.745954670012,
+    "inference_wall_seconds": 275.96209049224854,
+    "post_seconds": 307.34059294400504,
+    "without_startup": 524.086547614017
+   },
+   "42": {
+    "end_to_end": 513.1594005786465,
+    "inference_seconds": 210.48393843800295,
+    "inference_wall_seconds": 218.32444524765015,
+    "post_seconds": 294.8349553309963,
+    "without_startup": 505.31889376899926
+   },
+   "43": {
+    "end_to_end": 517.6315147842106,
+    "inference_seconds": 212.6920966700127,
+    "inference_wall_seconds": 220.75027751922607,
+    "post_seconds": 296.8812372649845,
+    "without_startup": 509.5733339349972
+   },
+   "44": {
+    "end_to_end": 549.3577408389829,
+    "inference_seconds": 213.44143550400622,
+    "inference_wall_seconds": 245.90428376197815,
+    "post_seconds": 303.4534570770047,
+    "without_startup": 516.8948925810109
+   },
+   "45": {
+    "end_to_end": 556.6886246276554,
+    "inference_seconds": 216.21841137998854,
+    "inference_wall_seconds": 250.38364219665527,
+    "post_seconds": 306.3049824310001,
+    "without_startup": 522.5233938109886
+   },
+   "46": {
+    "end_to_end": 540.6154720750055,
+    "inference_seconds": 215.18889985702117,
+    "inference_wall_seconds": 237.23966479301453,
+    "post_seconds": 303.375807281991,
+    "without_startup": 518.5647071390122
+   },
+   "47": {
+    "end_to_end": 518.2891364175011,
+    "inference_seconds": 212.18130996500258,
+    "inference_wall_seconds": 219.97734141349792,
+    "post_seconds": 298.3117950040032,
+    "without_startup": 510.4931049690058
+   },
+   "48": {
+    "end_to_end": 534.3152646264352,
+    "inference_seconds": 215.11987664698972,
+    "inference_wall_seconds": 235.72109127044678,
+    "post_seconds": 298.59417335598846,
+    "without_startup": 513.7140500029782
+   },
+   "49": {
+    "end_to_end": 521.6955060852051,
+    "inference_seconds": 212.21078399999533,
+    "inference_wall_seconds": 220.79442930221558,
+    "post_seconds": 300.90107678298955,
+    "without_startup": 513.1118607829849
+   },
+   "50": {
+    "end_to_end": 515.7255782503053,
+    "inference_seconds": 211.85716984898318,
+    "inference_wall_seconds": 219.82370400428772,
+    "post_seconds": 295.90187424601754,
+    "without_startup": 507.7590440950007
+   }
+  }
+ },
+ "result_files_sha256": {
+  "crop-41/env-infer.txt": "75bfde34630038bfea1d31fbbcce44c6a31262d2baa7aa9daf23a45f58266f3e",
+  "crop-41/segneuron.json": "c65755a449329d23fedcee5911a7c12e65349650c061d71f999d132ed0912a33",
+  "crop-42/env-infer.txt": "75bfde34630038bfea1d31fbbcce44c6a31262d2baa7aa9daf23a45f58266f3e",
+  "crop-42/segneuron.json": "eda7b6b9540238e8b49588b69f6a43b9c3eed272e3556bcd365632118941237d",
+  "crop-43/env-infer.txt": "75bfde34630038bfea1d31fbbcce44c6a31262d2baa7aa9daf23a45f58266f3e",
+  "crop-43/segneuron.json": "6cbe3d46b54d09b5f5d1d9b19a36b0ef6f6ad3e15cd1b4d4b172ff824d7947c3",
+  "crop-44/env-infer.txt": "75bfde34630038bfea1d31fbbcce44c6a31262d2baa7aa9daf23a45f58266f3e",
+  "crop-44/segneuron.json": "3cebaf99d7228a0dc1334138bfa4146e1f2338b8efe4368e0f725ec6a5a41304",
+  "crop-45/env-infer.txt": "75bfde34630038bfea1d31fbbcce44c6a31262d2baa7aa9daf23a45f58266f3e",
+  "crop-45/segneuron.json": "0f3c709cef63eb7c12d0eb0f4c6f0b6b5a6de751cf3e8c336dcc900aca32cb51",
+  "crop-46/env-infer.txt": "75bfde34630038bfea1d31fbbcce44c6a31262d2baa7aa9daf23a45f58266f3e",
+  "crop-46/segneuron.json": "1ce5b4bce0ecc75cdd58450c00a4fb9a31581f8dbb596ab6a22752a1b949906b",
+  "crop-47/env-infer.txt": "75bfde34630038bfea1d31fbbcce44c6a31262d2baa7aa9daf23a45f58266f3e",
+  "crop-47/segneuron.json": "7aa696bf963b130efc76faaf170c30aa7079cb676d859eda8b2d3f585daf83e9",
+  "crop-48/env-infer.txt": "75bfde34630038bfea1d31fbbcce44c6a31262d2baa7aa9daf23a45f58266f3e",
+  "crop-48/segneuron.json": "f8dbf9029a22dce64f0474d88ae4f2586a49f4563c94960612731632b16582c4",
+  "crop-49/env-infer.txt": "75bfde34630038bfea1d31fbbcce44c6a31262d2baa7aa9daf23a45f58266f3e",
+  "crop-49/segneuron.json": "360375f9a6b825854838fcfdcac560e7303f2820a12c0e77fa335c6bd97013bc",
+  "crop-50/env-infer.txt": "75bfde34630038bfea1d31fbbcce44c6a31262d2baa7aa9daf23a45f58266f3e",
+  "crop-50/segneuron.json": "cad3d0aed01f2aa863d9d62fa0515379103b6398e6ac010ea8ec8e3e611dd323"
+ },
+ "test_evidence_sha256": "87074a2ede893f7e87d8a952677f8f2a3fb60b5c487d8a972a3188cf87151571",
+ "v100_files_sha256": {
+  "v100/crop-41/segneuron.json": "9768cbde2a8a8e4fc921e3dc341837a695c192a455acea7fcbf8b19b5da8b443",
+  "v100/crop-42/segneuron.json": "47e68e0dc330a3ccc8e701bbe25103c57f5677c76be94a25da457a0cf7e8d754",
+  "v100/crop-43/segneuron.json": "f55739c5707ba791e18855b2d5043d4fd30c13e2ad7f07844a539110c9213c74",
+  "v100/crop-44/segneuron.json": "0c88b42457b5a7942fd7a4bc73bd0b0f878c10a7f7ff2e1ad5c9e7c904e36a31",
+  "v100/crop-45/segneuron.json": "846dc0d156a11b3651f9614a1115d897af14680ab690a584d57f002c4dd99dcc",
+  "v100/crop-46/segneuron.json": "5277882f18df912452b77800f84d1ca69b9065ec98523fbd3d83f6fed15bace0",
+  "v100/crop-47/segneuron.json": "5afeaa40f1c97b102a592ecc08e9800f5f5a2566f78afdea6e29763abb7b1a35",
+  "v100/crop-48/segneuron.json": "36ecc31e0b9767bf728ab7927b6137f02e414e9d2a6f6104780349c1be75ef2a",
+  "v100/crop-49/segneuron.json": "49c5a8f247fc049d40ee3adf3f05b3cf3dd03be68cd8a779355c19d685f0dbce",
+  "v100/crop-50/segneuron.json": "3d830cc08e1dde695fe5dab6845c78f15966cfd50666b3900b79ab384fa2cd53"
+ }
+}
