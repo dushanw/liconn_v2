@@ -75,7 +75,10 @@ class EvidenceTest(unittest.TestCase):
     self.assertEqual(hashlib.sha256(listed.encode()).hexdigest(), EVIDENCE['source_list_sha256'])
     self.assertEqual(listed, (RUN / 'v100' / 'source_sha256.txt').read_text())
     for rel, sha in mapping.items():
-      self.assertEqual(data.sha256_file(ROOT / rel), sha, rel)
+      # README.md was rewritten after the test (owner's decision, 2026-11-07); the version that ran is kept, exactly,
+      # in docs/records/README_as_staged_for_unseen_test.md and checked there. Every other file is checked live.
+      path = ROOT / 'docs' / 'records' / 'README_as_staged_for_unseen_test.md' if rel == 'README.md' else ROOT / rel
+      self.assertEqual(data.sha256_file(path), sha, rel)
 
 
 def pct(x):
